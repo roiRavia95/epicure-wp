@@ -20,6 +20,7 @@ while (have_posts()):
                 </div>
             </div>
         </section>
+        <!--TODO: add css to all below-->
         <section class="popular-restaurants">
             <h1>The Popular Restaurants in Epicure</h1>
             <?php
@@ -30,6 +31,7 @@ while (have_posts()):
             ?>
             <a href="<?php the_permalink($restaurants_page->ID) ?>">All Restaurants</a>
         </section>
+
         <section class="popular-restaurants">
             <h1>Signature Dish of:</h1>
             <?php
