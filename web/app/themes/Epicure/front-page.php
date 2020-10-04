@@ -11,6 +11,7 @@ while (have_posts()):
             if (has_post_thumbnail()) {
                 $thumbnailURL = get_the_post_thumbnail_url();
             }
+            
             ?>
 
             <div class="hero-image" style="background-image:url(<?php echo $thumbnailURL ?>)">
