@@ -46,8 +46,8 @@ add_action('after_setup_theme', 'epicure_theme_support');
 function epicure_menu()
 {
     register_nav_menus(array(
-        'main-menu' => __('Main Menu'),
-        'meal-time-menu' => __('Meal Times')
+        'main-menu' => __('Main Menu', 'epicure'),
+        'mobile-menu-front' => __('Mobile Menu Front', 'epicure')
     ));
 }
 

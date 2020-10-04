@@ -1,13 +1,12 @@
 $ = jQuery.noConflict();
 
 $(document).ready(() => {
-        console.log("yo")
         //Create scrolling functionality in restaurant menu
         $(".meal-nav ul li a").click(function (event) {
             event.preventDefault();
             let mealTime = event.target.innerHTML;
             mealTime = mealTime.toLowerCase();
-            
+
             //Scrolling animation
             $('html, body').animate({
                 scrollTop: ($(`section#${mealTime}`).offset().top - 150)
@@ -34,8 +33,7 @@ $(document).ready(() => {
         window.onscroll = () => {
             let offset = window.scrollY;
             //Use static number because the position of the menuNavY is dynamic
-            console.log(offset)
-            if (offset > 650) {
+            if (offset > menuNavY) {
                 $("nav.meal-nav").addClass("fixed-nav")
             } else {
                 $("nav.meal-nav").removeClass("fixed-nav")
