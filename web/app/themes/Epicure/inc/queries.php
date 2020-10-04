@@ -34,9 +34,31 @@ function get_meals($mealTime)
                 ?>
                 <li class="meal">
                     <a href="<?php esc_html(the_permalink()) ?>">
-                        <?php the_post_thumbnail('meal-image'); ?>
+                        <?php the_post_thumbnail('full'); ?>
+
                         <h2><?php the_title() ?></h2>
                         <p class="ingredients"> <?php the_content() ?></p>
+                        <div class="extra-info">
+                            <?php
+                            //Add icon logic
+                            $spicyIcon = get_template_directory_uri() . '/images/meal-icons/spicy.svg';
+                            $veganIcon = get_template_directory_uri() . '/images/meal-icons/vegan.svg';
+                            $vegetarianIcon = get_template_directory_uri() . '/images/meal-icons/vegetarian.svg';
+
+                            if (get_field("extra-info")["spicy"]) { ?>
+                                <img class="info-icon" src="<?php echo $spicyIcon ?>" alt="spicy">
+                            <?php }
+                            if (get_field("extra-info")["vegetarian"]) { ?>
+                                <img class="info-icon" src="<?php echo $vegetarianIcon ?>" alt="vegetarian">
+
+                            <?php }
+                            if (get_field("extra-info")["vegan"]) {
+                                ?>
+                                <img class="info-icon" src="<?php echo $veganIcon ?>" alt="vegan">
+                            <?php } ?>
+                        </div>
+                        <?php
+                        ?>
                         <div class="price-line">
                             <p class="price"><?php echo get_field("price") ?></p>
                         </div>
@@ -68,9 +90,28 @@ function get_signature_meal($restaurant)
 
     while ($meals->have_posts()):$meals->the_post(); ?>
         <a href="<?php esc_html(the_permalink()) ?>">
-            <?php the_post_thumbnail('meal-image'); ?>
+            <?php the_post_thumbnail('full'); ?>
             <h2><?php the_title() ?></h2>
             <p class="ingredients"> <?php the_content() ?></p>
+            <div class="extra-info">
+                <?php
+                //Add icon logic
+                $spicyIcon = get_template_directory_uri() . '/images/meal-icons/spicy.svg';
+                $veganIcon = get_template_directory_uri() . '/images/meal-icons/vegan.svg';
+                $vegetarianIcon = get_template_directory_uri() . '/images/meal-icons/vegetarian.svg';
+
+                if (get_field("extra-info")["spicy"]) { ?>
+                    <img class="info-icon" src="<?php echo $spicyIcon ?>" alt="spicy">
+                <?php }
+                if (get_field("extra-info")["vegetarian"]) { ?>
+                    <img class="info-icon" src="<?php echo $vegetarianIcon ?>" alt="vegetarian">
+
+                <?php }
+                if (get_field("extra-info")["vegan"]) {
+                    ?>
+                    <img class="info-icon" src="<?php echo $veganIcon ?>" alt="vegan">
+                <?php } ?>
+            </div>
             <div class="price-line">
                 <p class="price"><?php echo get_field("price") ?></p>
             </div>

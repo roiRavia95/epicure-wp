@@ -105,6 +105,50 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+body.home section ul {
+  display: flex;
+  margin-left: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+@media (min-width: $tabletWidth) {
+  body.home section ul {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+body.home section h1 {
+  font-size: 14px;
+  font-weight: 100;
+  font-family: $secondaryFont;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  body.home section:not(.about-us) h1 {
+    font-size: 30px;
+    font-family: $mainFont;
+    line-height: 1.33;
+    letter-spacing: 1.25px;
+  }
+}
+
+section:not(.hero,.about-us,.our-icons) {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 //***Global Components***
 //Header
 header.site-header {
@@ -252,8 +296,14 @@ form.search-form {
   border-radius: 4px;
   border: 1px solid $black;
   background-color: rgba(255, 255, 255, 0.11);
-  font-size: 18px;
+  font-size: 13px;
   padding-left: 16px;
+}
+
+@media (min-width: $tabletWidth) {
+  .search-input {
+    font-size: 18px;
+  }
 }
 
 .menu-items img {
@@ -275,60 +325,800 @@ li.current-menu-item {
 //Pages
 
 //***Front Page***
+
+//Hero - Section
 section.hero {
-  height: 696px;
+  height: 269px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.hero {
+    height: 696px;
+    margin-bottom: 140px;
+  }
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 div.hero-content {
-  width: 781px;
-  height: 222px;
+  width: 335px;
+  height: 125px;
   background-color: rgba(255, 255, 255, 0.88);
   margin: 0 auto;
   position: relative;
-  top: 234px;
+  top: 73px;
+}
+
+@media (min-width: $tabletWidth) {
+  div.hero-content {
+    width: 781px;
+    height: 266px;
+    top: 234px;
+  }
 }
 
 
 div.hero-content form {
   margin: 0 auto;
-  width: 511px;
-  height: 48px;
+  width: 269px;
+  height: 33px;
 }
 
 div.hero-content form input {
   width: 100%;
   height: 100%;
-  padding-left: 71px;
+  padding-left: 33px;
 }
 
 div.hero-content form button {
   position: absolute;
-  left: 20px;
-  bottom: 8px;
+  left: 0;
+  bottom: 6px;
   background: none;
 }
 
-h2.hero-content-text {
-  padding: 41px 0 18px 0;
+div.hero-content form button img {
+  height: 20px;
+}
+
+@media (min-width: $tabletWidth) {
+  div.hero-content form {
+    margin: 0 auto;
+    width: 511px;
+    height: 48px;
+  }
+
+  div.hero-content form input {
+    padding-left: 71px;
+  }
+
+  div.hero-content form button {
+    left: 20px;
+    bottom: 8px;
+  }
+  div.hero-content form button img {
+    height: 31px;
+  }
+}
+
+h1.hero-content-text {
+  padding-top: 18px;
+  padding-bottom: 13px;
   margin: auto;
-  width: 437px;
-  font-size: 35px;
+  width: 202px;
+  font-size: 16px;
   font-weight: 100;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1;
-  letter-spacing: 1.97px;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+@media (min-width: $tabletWidth) {
+  h1.hero-content-text {
+    padding-top: 41px;
+    padding-bottom: 18px;
+    width: 500px;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: 1.97px;
+  }
+}
+
+//front-page menu - Section
+section.front-page-menu {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  margin-bottom: 51px;
+}
+
+section.front-page-menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.front-page-menu ul li:first-of-type {
+  margin-right: 17px;
+}
+
+section.front-page-menu ul li {
+  padding: 15px;
+  background-color: rgba(232, 196, 122, 0.8);
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+}
+
+@media (min-width: $tabletWidth) {
+  section.front-page-menu {
+    display: none;
+  }
+}
+
+//Popular Restaurants - Section
+section.popular-restaurants {
+  margin-bottom: 100px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants {
+    margin-bottom: 153px;
+  }
+}
+
+section.popular-restaurants h1 {
+  margin-bottom: 13px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants h1 {
+    margin-bottom: 42px;
+  }
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul {
+    margin: 0;
+  }
 }
 
 
-// *** Restaurants ***
+section.popular-restaurants ul li {
+  margin-right: 14px;
+  background-color: #f9f4ea;
+  height: 357px;
+  transition: background-color .3s ease;
+}
 
+section.popular-restaurants ul li:hover {
+  background-color: #f7e0b2
+}
+
+section.popular-restaurants ul li img {
+  width: 206px;
+  height: 224px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul li img {
+    width: 360px;
+  }
+}
+
+section.popular-restaurants ul li h2 {
+  font-size: 25px;
+  letter-spacing: 1.67px;
+  margin-top: 25px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul li h2 {
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2.67px;
+  }
+}
+
+
+section.popular-restaurants ul li h3 {
+  font-size: 20px;
+  letter-spacing: 1.33px;
+  margin-top: 4px;
+  margin-bottom: 33px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul li h3 {
+    font-size: 25px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.67px;
+  }
+}
+
+
+section.popular-restaurants a.all-restaurants {
+  display: none;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants a.all-restaurants {
+    display: block;
+    text-align: right;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    margin-top: 31px;
+  }
+}
+
+//Signature Dishes - Section
+section.signature-dishes {
+  margin-bottom: 95px;
+}
+
+section.signature-dishes h1 {
+  text-transform: uppercase;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes h1 {
+    margin-bottom: 42px;
+  }
+}
+
+section.signature-dishes ul li {
+  width: 259px;
+  height: 516px;
+  margin-right: 14px;
+  text-align: center;
+  background-color: #f9f4ea;
+  white-space: normal;
+  position: relative;
+  transition: background-color .3s ease;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes ul li {
+    width: 360px;
+    height: 654px;
+    margin-right: 11px;
+  }
+  section.signature-dishes ul li:hover {
+    background-color: #f7e0b2;
+  }
+}
+
+
+section.signature-dishes ul h2.restaurant {
+  font-size: 16px;
+  text-transform: none;
+  font-weight: 400;
+  background-color: #ffffff;
+  padding: 14px 0;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes ul h2.restaurant {
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.77px;
+    padding: 0 0 23px 0
+  }
+}
+
+section.signature-dishes ul img {
+  width: 259px;
+  height: 208px;
+  object-fit: cover;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes ul img {
+    width: 360px;
+    height: 290px;
+  }
+}
+
+section.signature-dishes h2:not(.restaurant) {
+  font-size: 27.6px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: 1.84px;
+  margin: 11px auto;
+  width: 50%;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes h2:not(.restaurant) {
+    font-size: 38.4px;
+    letter-spacing: 2.56px;
+  }
+}
+
+section.signature-dishes p {
+  font-size: 17.3px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 1.15px;
+  width: 80%;
+  margin: auto;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes p {
+    font-size: 24px;
+    letter-spacing: 1.6px;
+  }
+}
+
+section.signature-dishes div.extra-info {
+  position: relative;
+  z-index: 2;
+  margin: 15% auto;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes div.extra-info {
+    margin: 5% auto;
+  }
+}
+
+section.signature-dishes div.extra-info img.info-icon {
+  width: 40px;
+  height: 30px;
+
+}
+
+section.signature-dishes div.price-line p {
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.67px;
+  background-color: #f9f4ea;
+  padding: 0 4px;
+  transition: background-color .3s ease;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes div.price-line p {
+    font-family: $mainFont;
+  }
+  section.signature-dishes li:hover div.price-line p {
+    background-color: #f7e0b2;
+  }
+}
+
+section.signature-dishes div.price-line p:before {
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+
+//Our Icons - Section
+
+section.our-icons {
+  background: #fafafa;
+  text-align: center;
+  padding: 14px 0;
+  margin-bottom: 71px;
+}
+
+section.our-icons h1 {
+  padding-top: 16px;
+  padding-bottom: 22px;
+}
+
+section.our-icons div.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container {
+    justify-content: center;
+  }
+}
+
+section.our-icons div.icons-container div {
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container div {
+    margin-right: 85px;
+  }
+  section.our-icons div.icons-container div:last-of-type {
+    margin-right: 0;
+  }
+}
+
+section.our-icons div.icons-container img {
+  width: 44px;
+  height: 34px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container img {
+    width: 80px;
+    height: 61px;
+    margin-bottom: 29px;
+  }
+}
+
+
+section.our-icons div.icons-container h2 {
+  font-size: 14px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container h2 {
+    font-size: 25.2px;
+    letter-spacing: 1.94px;
+  }
+}
+
+//Chef of the week - Section
+
+section.chef {
+  text-align: center;
+  margin-bottom: 98px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef {
+    text-align: initial;
+    margin-bottom: 117px;
+  }
+}
+
+section.chef h1 {
+  margin-bottom: 16px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef h1 {
+    margin-bottom: 42px;
+  }
+}
+
+section.chef div.chef-profile {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-profile {
+    position: relative;
+    margin-bottom: 59px;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+section.chef div.chef-profile img {
+  width: 334px;
+  height: 239.4px;
+  object-fit: cover;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-profile img {
+    width: 433px;
+    height: 338px;
+  }
+}
+
+section.chef div.chef-profile h2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-profile h2 {
+    padding: 15px 0;
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.43px;
+  }
+}
+
+section.chef p {
+  margin: 0 20px 30px 20px;
+  font-size: 13.5px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.04px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-info {
+    display: flex;
+  }
+  section.chef p {
+    margin-left: 69px;
+    font-size: 25px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 1.08px;
+    text-align: justify;
+  }
+}
+
+section.chef h2.chef-restaurants {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: $secondaryFont;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.88px;
+  margin: 0 20px 19px 20px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef h2.chef-restaurants {
+    font-size: 30px;
+    line-height: 1;
+    font-family: $mainFont;
+    letter-spacing: 1.29px;
+  }
+}
+
+
+section.chef ul li {
+  margin-right: 14px;
+  height: 237px;
+  width: 153px;
+  background-color: #f9f4ea;
+  transition: background-color .3s ease;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef ul.chef-restaurants-ul {
+    justify-content: flex-start;
+  }
+  section.chef ul li {
+    margin-right: 20px;
+    height: 224px;
+    width: 231px;
+  }
+  section.chef ul li:hover {
+    background-color: #f7e0b2;
+  }
+
+}
+
+section.chef img {
+  width: 100%;
+  object-fit: cover;
+  height: 149px;
+}
+
+section.chef ul li h3 {
+  font-family: $secondaryFont;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.33px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef ul li h3 {
+    font-family: $secondaryFont;
+    font-size: 30px;
+    letter-spacing: 2px;
+
+  }
+}
+
+
+//About us - Section
+
+section#about-us {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us {
+    text-align: left;
+  }
+}
+
+@media (min-width: $tabletWidth) {
+  div.about-us-div {
+    max-width: 1100px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+section#about-us h1 {
+  margin-bottom: 7px;
+  padding-top: 28px;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us h1 {
+    font-size: 30px;
+    font-family: $mainFont;
+    line-height: 1.33;
+    letter-spacing: 1.25px;
+    margin-bottom: 20px;
+    padding-top: 65px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+
+
+section#about-us p {
+  font-size: 14px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  text-align: center;
+  margin: 0 35px;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us p {
+    font-size: 22px;
+    width: 567px;
+    letter-spacing: 1.69px;
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+section#about-us img {
+  width: 135px;
+  height: 126px;
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+
+@media (min-width: $tabletWidth) {
+  section#about-us img {
+    width: 178px;
+    height: 166px;
+    margin: 0 0 0 182px;
+  }
+}
+
+//Download Buttons
+section#about-us div.download-buttons {
+  margin: 34px auto 0 auto;
+  padding-bottom: 63px;
+}
+
+section#about-us div.download-buttons button {
+  width: 127px;
+  height: 37px;
+  font-size: 9.2px;
+  font-family: $mainFont;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-align: center;
+  background: white;
+  border-radius: 9.6px;
+  border: solid 0.6px #000000;
+  padding-left: 26px;
+  position: relative;
+  margin-right: 10px;
+}
+
+section#about-us div.download-buttons button span {
+  font-size: 12px;
+  display: block;
+  font-family: $secondaryFont;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.29px;
+}
+
+section#about-us div.download-buttons button img {
+  width: 18px;
+  height: 20px;
+  position: absolute;
+  left: 7px;
+  bottom: 8px;
+  margin: 0;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us div.download-buttons {
+    max-width: 1100px;
+    margin: 23px auto 0 auto;
+  }
+
+  section#about-us div.download-buttons button {
+    width: 181px;
+    height: 52px;
+    font-size: 13.2px;
+    letter-spacing: 1.29px;
+    padding-left: 40px;
+    margin-right: 15px;
+  }
+
+  section#about-us div.download-buttons button span {
+    font-size: 16px;
+  }
+
+  section#about-us div.download-buttons button img {
+    width: 20px;
+    height: 26px;
+    left: 11px;
+    bottom: 13px;
+  }
+}
+
+// *** Restaurants ***
 main.restaurants h1.title {
   display: block;
   margin-bottom: 0;
@@ -401,25 +1191,25 @@ main.restaurants ul.restaurant-list {
   }
 }
 
-main.restaurants ul.restaurant-list li {
+ul.restaurant-list li {
   text-align: center;
   background-color: $cardBackground;
 }
 
-main.restaurants ul.restaurant-list li img {
+ul.restaurant-list li img {
   width: 162px;
   height: 124px;
   object-fit: cover;
 }
 
 @media (min-width: $tabletWidth) {
-  main.restaurants ul.restaurant-list li img {
+  ul.restaurant-list li img {
     width: 100%;
     height: 212px;
   }
 }
 
-main.restaurants ul.restaurant-list li h2 {
+ul.restaurant-list li h2 {
   margin-top: 11px;
   margin-bottom: 0;
   font-size: 17.2px;
@@ -432,7 +1222,7 @@ main.restaurants ul.restaurant-list li h2 {
 }
 
 @media (min-width: $tabletWidth) {
-  main.restaurants ul.restaurant-list li h2 {
+  ul.restaurant-list li h2 {
     margin-top: 26px;
     margin-bottom: 0;
     font-size: 38px;
@@ -440,7 +1230,7 @@ main.restaurants ul.restaurant-list li h2 {
   }
 }
 
-main.restaurants ul.restaurant-list li h3 {
+ul.restaurant-list li h3 {
   margin-bottom: 13px;
   margin-top: 6px;
   font-size: 13.3px;
@@ -452,7 +1242,7 @@ main.restaurants ul.restaurant-list li h3 {
 }
 
 @media (min-width: $tabletWidth) {
-  main.restaurants ul.restaurant-list li h3 {
+  ul.restaurant-list li h3 {
     margin-bottom: 24px;
     margin-top: 4px;
     font-size: 23.8px;
@@ -652,7 +1442,8 @@ ul.meals {
 ul.meals li.meal {
   background-color: $cardBackground;
   position: relative;
-  height: 274px;
+  //This is in case of long ingredients
+  height: 310px;
 }
 
 @media (min-width: $tabletWidth) {
@@ -664,6 +1455,7 @@ ul.meals li.meal {
 ul.meals li.meal a img {
   height: 100px;
   width: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: $tabletWidth) {
@@ -716,7 +1508,22 @@ ul.meals li.meal p:not(.price) {
   }
 }
 
-ul.meals li.meal div.price-line {
+
+div.extra-info {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 5px auto;
+  align-items: center;
+  width: 80%;
+}
+
+ul.meals li.meal div.extra-info img.info-icon {
+  width: 20px;
+  height: 16px;
+}
+
+
+div.price-line {
   position: absolute;
   bottom: 17px;
   width: 80%;
@@ -726,7 +1533,7 @@ ul.meals li.meal div.price-line {
   border-bottom: 1px solid #979797;
 }
 
-ul.meals li.meal div.price-line p.price {
+div.price-line p.price {
   position: relative;
   font-size: 14px;
   font-weight: normal;
@@ -741,25 +1548,25 @@ ul.meals li.meal div.price-line p.price {
   background-color: $cardBackground;
 }
 
-ul.meals li.meal div.price-line p.price:before {
+div.price-line p.price:before {
   content: "₪";
   font-size: 10px;
 }
 
 @media (min-width: $tabletWidth) {
-  ul.meals li.meal div.price-line {
+  div.price-line {
     bottom: 26px;
   }
 
 
-  ul.meals li.meal div.price-line p.price {
+  div.price-line p.price {
     font-size: 21px;
     letter-spacing: 0.9px;
     top: 13px;
     padding: 0 10px;
   }
 
-  ul.meals li.meal div.price-line p.price:before {
+  div.price-line p.price:before {
     font-size: 14px;
   }
 }
@@ -818,7 +1625,6 @@ div.ui-dialog.ui-widget {
 //Footer
 footer {
   display: block;
-  margin-top: 21px;
   width: 100%;
   text-align: center;
   border-top: 1px solid rgba(151, 151, 151, 0.2);
@@ -826,7 +1632,6 @@ footer {
 
 @media (min-width: $tabletWidth) {
   footer {
-    margin-top: 24px;
     display: flex;
     justify-content: center;
   }
