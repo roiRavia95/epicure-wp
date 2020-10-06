@@ -49,7 +49,7 @@ $(document).ready(() => {
         //present the number change
         $("div.item-badge").text(window.sessionStorage.length).show()
 
-        hideDialog(true)
+        hideDialog(true, meal.title.innerText)
 
 
     })
@@ -62,18 +62,19 @@ $(document).ready(() => {
 
 })
 
-function hideDialog(submitted) {
+function hideDialog(submitted, name) {
 
     $("body").css("overflow", "")
     $("div.overlay").fadeOut("fast", "linear", () => {
         $("div.dialog div.meal-content").empty();
-        $("div.quantity input#quantity").val(1)
+        $("div input.checkbox").prop("checked", false);
+        $("input#quantity").val(1);
         console.log($("div.quantity input#quantity").val())
     })
     if (submitted) {
         swal(
             "Yay!",
-            "This meal has been added to your bag!",
+            `${name} has been added to your bag!`,
             "success",
         )
     }

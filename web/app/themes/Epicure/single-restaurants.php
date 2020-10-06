@@ -96,21 +96,23 @@ if (have_posts()) {
                             <form method="POST">
                                 <h3>Choose a side</h3>
                                 <div class="side">
-                                    <input id="side-1" type="checkbox" name="side-1" value="<?php echo $side_1 ?>">
+                                    <input id="side-1" class="checkbox" type="checkbox" name="side-1"
+                                           value="<?php echo $side_1 ?>">
                                     <label for="side-1"><?php echo $side_1 ?></label>
                                 </div>
                                 <div class="side">
-                                    <input id="side-2" type="checkbox" name="side-2" value="<?php echo $side_2 ?>">
+                                    <input id="side-2" class="checkbox" type="checkbox" name="side-2"
+                                           value="<?php echo $side_2 ?>">
                                     <label for="side-2"><?php echo $side_2 ?></label>
                                 </div>
                                 <h3>Changes</h3>
                                 <div class="change">
-                                    <input id="change-1" type="checkbox" name="change-1"
+                                    <input id="change-1" class="checkbox" type="checkbox" name="change-1"
                                            value="<?php echo $change_1 ?>">
                                     <label for="change-1"><?php echo $change_1 ?></label>
                                 </div>
                                 <div class="change">
-                                    <input id="change-2" type="checkbox" name="change-2"
+                                    <input id="change-2" class="checkbox" type="checkbox" name="change-2"
                                            value="<?php echo $change_2 ?>">
                                     <label for="change-2"><?php echo $change_2 ?></label>
                                 </div>
