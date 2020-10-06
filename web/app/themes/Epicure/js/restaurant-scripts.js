@@ -50,31 +50,44 @@ $(document).ready(() => {
                 $("a#dinner").removeClass("current-menu");
             }
             if (offset >= dinner) {
-                console.log(offset, dinner)
                 $("a#breakfast").removeClass("current-menu");
                 $("a#lunch").removeClass("current-menu")
                 $("a#dinner").addClass("current-menu");
             }
         }
+
+        //Meal Dialog
         $("li.meal").on("click", function (e) {
             e.preventDefault();
+            let id = $("p#meal-id").innerText;
             let mealContent = e.currentTarget.children[0].children;
-            //Because of random class p1
-            let ingredients = mealContent[2].innerText === "" ? mealContent[3] : mealContent[2];
 
-            mealContent = {
-                imageUrl: mealContent[0].currentSrc,
-                title: mealContent[1].innerText,
-                ingridients: ingredients.innerText,
-                price: mealContent[5].innerText,
-
+            $(mealContent).clone().prependTo("div.dialog div.meal-content");
+            //Only on desktop show extra info next to the header
+            if ($(window).width() > 768) {
+                $("div.dialog div.meal-content div.extra-info").prependTo("div.dialog h2");
             }
-            console.log(mealContent);
-            $("div#dialog").dialog({
-                modal: true,
-                title: false
+            $("body").css("overflow", "hidden")
+            $("div.overlay").show()
 
-            });
+            $("a.exit-button").on("click", function (e) {
+                e.preventDefault();
+                hideDialog();
+            })
         })
+
+        //Manage incrementing and decrementing quantity of meal items
+        $("div.quantity button").on("click", (e) => {
+            let value = $("div.quantity input#quantity").val()
+            if (e.currentTarget.className === "plus") {
+                value++;
+                $("div.quantity input#quantity").val(value);
+            } else if (value > 1) {
+                value--;
+                $("div.quantity input#quantity").val(value);
+            }
+        })
+
+
     }
 )

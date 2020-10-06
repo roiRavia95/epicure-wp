@@ -8,13 +8,25 @@ function epicure_scripts()
 
 
     //Scripts
+    //Mix
+    wp_enqueue_script("app", get_template_directory_uri() . "/js/app.js", array(""), "1.0.0", true);
+
+    //Mobile menu script
+    wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/js/mobile-menu.js", array("jquery"), "1.0.0", true);
+
+    //Session script
+    wp_enqueue_script("session", get_template_directory_uri() . "/js/session.js", array("jquery"), "1.0.0", true);
 
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
         wp_enqueue_style('jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
 
 //        wp_enqueue_script('jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.12.1');
-        wp_enqueue_script("scripts", get_template_directory_uri() . "/js/restaurant-scripts.js", array("jquery"), "1.0.0", true);
+        wp_enqueue_script("restaurant-script", get_template_directory_uri() . "/js/restaurant-scripts.js", array("jquery"), "1.0.0", true);
+
+        //Sweet Alert 2
+        wp_enqueue_style("sweetalertcss", get_template_directory_uri() . "/css/sweetalert2.min.css");
+        wp_enqueue_script("sweetalertjs", get_template_directory_uri() . "/js/sweetalert2.min.js", array("jquery"), "5.5.1");
 
         //Jquery-ui
         wp_enqueue_script('jquery-ui-core');
@@ -47,7 +59,9 @@ function epicure_menu()
 {
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'epicure'),
-        'mobile-menu-front' => __('Mobile Menu Front', 'epicure')
+        'restaurants-tabs' => __('Restaurants Tabs', 'epicure'),
+        'mobile-menu-front' => __('Mobile Menu Front', 'epicure'),
+        'footer-menu' => __('Footer', 'epicure')
     ));
 }
 

@@ -64,13 +64,73 @@ if (have_posts()) {
             //This function gets the meals of the specific meal time
             if ($mealTimes) {
                 ?>
-                <div id="dialog" style="display:none">
-                    <dialog>yo</dialog>
-                </div>
                 <?php
                 foreach ($mealTimes as $time) {
-                    get_meals($time->slug);
+                    $meals = get_meals($time->slug);
                 }
+                ?>
+                <div class="overlay">
+                    <div class="dialog-wrapper">
+                        <a class="exit-button" href="#"><img
+                                    src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.svg" alt=""></a>
+                        <div class="dialog">
+                            <div class="meal-content">
+                                <!--Content injected by JS-->
+                            </div>
+                            <?php
+                            //Get options for meal
+                            while ($meals->have_posts()):$meals->the_post();
+                                //Add logic to make specific for each meal
+                                $side_1 = get_field("side_1");
+                                $side_2 = get_field("side_2");
+
+                                $change_1 = get_field("change_1");
+                                $change_2 = get_field("change_2");
+
+                                $quantity = get_field("quantity");
+                                $quantity = 1;
+                                break;
+                            endwhile;
+                            wp_reset_postdata();
+                            ?>
+                            <form method="POST">
+                                <h3>Choose a side</h3>
+                                <div class="side">
+                                    <input id="side-1" type="checkbox" name="side-1" value="<?php echo $side_1 ?>">
+                                    <label for="side-1"><?php echo $side_1 ?></label>
+                                </div>
+                                <div class="side">
+                                    <input id="side-2" type="checkbox" name="side-2" value="<?php echo $side_2 ?>">
+                                    <label for="side-2"><?php echo $side_2 ?></label>
+                                </div>
+                                <h3>Changes</h3>
+                                <div class="change">
+                                    <input id="change-1" type="checkbox" name="change-1"
+                                           value="<?php echo $change_1 ?>">
+                                    <label for="change-1"><?php echo $change_1 ?></label>
+                                </div>
+                                <div class="change">
+                                    <input id="change-2" type="checkbox" name="change-2"
+                                           value="<?php echo $change_2 ?>">
+                                    <label for="change-2"><?php echo $change_2 ?></label>
+                                </div>
+                                <h3>Quantity</h3>
+                                <div class="quantity">
+                                    <button type="button" class="minus"><img
+                                                src="<?php echo get_template_directory_uri() ?>/images/quantity/minus.png"
+                                                alt="-"></button>
+                                    <input id="quantity" type="number" name="quantity" value="<?php echo $quantity ?>"
+                                           min="1">
+                                    <button type="button" class="plus"><img
+                                                src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
+                                                alt="+"></button>
+                                </div>
+                                <button id="submit" type="submit"> ADD TO BAG</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <?php
             } else {
                 ?>
                 <div class="no-meals">

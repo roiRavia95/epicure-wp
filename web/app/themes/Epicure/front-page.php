@@ -24,7 +24,7 @@ while (have_posts()):
         <section class="front-page-menu">
             <?php
             $args = array(
-                'theme-location' => 'mobile-menu-front',
+                'theme-location' => 'main-menu',
                 'container' => 'nav',
                 'container_class' => 'main-nav',
             );

@@ -14,6 +14,14 @@
         <a href="#" class="menu-button">
             <img src="<?php echo get_template_directory_uri() ?>/images/hamburger/group-13@3x.png" alt="hamburger">
         </a>
+        <div class="mobile-hamburger-menu">
+            <div>
+                <img class="exit-button" src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.png" alt="">
+            </div>
+            <hr>
+            <?php wp_nav_menu(array("theme_location" => "main-menu")); ?>
+            <?php wp_nav_menu(array("theme_location" => "footer-menu")); ?>
+        </div>
         <div class="menu-pages">
             <a href="<?php echo esc_html(home_url()) ?>">
                 <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/logo/logo@3x.png" alt="logo">
@@ -37,10 +45,18 @@
             <a href="">
                 <img src="<?php echo get_template_directory_uri() ?>/images/user-icon/user-icon@2x.png" alt="user">
             </a>
-            <a href="">
+            <a class="item-bag" href="">
+                <div class="item-badge">
+                </div>
+                <div class="bag-items">
+
+                </div>
                 <img src="<?php echo get_template_directory_uri() ?>/images/bag-icon/bag-icon@2x.png" alt="bag">
             </a>
         </div>
+    </div>
+    <div class="mobile-search">
+        <?php echo get_template_part("templates/searchbar") ?>
     </div>
 
 </header>

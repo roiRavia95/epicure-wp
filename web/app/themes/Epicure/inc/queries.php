@@ -33,6 +33,9 @@ function get_meals($mealTime)
             while ($meals->have_posts()):$meals->the_post();
                 ?>
                 <li class="meal">
+                    <!--Meal ID for connecting meal to dialog-->
+                    <!--                    <p id="meal-id" style="display: none">--><?php //the_ID()
+                    ?><!--</p>-->
                     <a href="<?php esc_html(the_permalink()) ?>">
                         <?php the_post_thumbnail('full'); ?>
 
@@ -71,6 +74,7 @@ function get_meals($mealTime)
         </ul>
     </section>
     <?php
+    return $meals;
 }
 
 function get_signature_meal($restaurant)
