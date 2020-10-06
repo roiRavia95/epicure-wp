@@ -1,26 +1,46 @@
 <?php get_header();
 
 ?>
-    <div class='hero search' style='background-image:url(<?php echo get_template_directory_uri() ?>/Images/search.jpg)'
-         alt='hero'></div>
-    <h2 class="search-title"><?php echo sprintf(__('%s Search result for "%s": ', 'html5bank'), $wp_query->found_posts, $_GET["s"]) ?></h2>
-    <a href="<?php the_permalink(); ?>">
-        <?php get_template_part('templates/page', 'loop'); ?>
-    </a>
-<?php
-while (have_posts()):the_post();
+    <main class="search">
+        <h2 class="search-title"><?php echo sprintf(__('%s Search result for "%s": ', 'html5bank'), $wp_query->found_posts, $_GET["s"]) ?></h2>
+        <div class="search-results">
+            <?php
+            while (have_posts()):
+                the_post();
+                //Send user to the restaurant page of the selected meal.
+                $link = get_permalink();
+                if (get_post_type() === "meals") {
+                    $restaurant_name = get_the_terms(get_post(), 'restaurants')[0]->slug;
+                    $restaurant_page = get_page_by_title("restaurants");
 
-    the_title();
-    the_post_thumbnail('medium');
-    echo "<hr>";
+                    $link = get_permalink($restaurant_page->ID) . $restaurant_name;
+                }
+                ?>
 
-endwhile;
-wp_reset_postdata();
+                <a href="<?php echo $link; ?>">
+                    <div class="result-card">
+                        <?php
+                        if (has_post_thumbnail()) {
+                            the_post_thumbnail('medium');
+                        } else {
+                            ?>
+                            <img src="<?php echo get_template_directory_uri() ?>/images/hero/hero-picture.png"
+                                 alt="img">
+                            <?php
+                        }
+                        ?>
+                        <h3><?php the_title(); ?></h3>
+                    </div>
+                </a>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+        </div>
+        <div class="pagination">
+            <?php echo paginate_links() ?>
+        </div>
+    </main>
 
-?>
-    <div class="pagination">
-
-        <?php echo paginate_links() ?>
-    </div>
 
 <?php get_footer(); ?>

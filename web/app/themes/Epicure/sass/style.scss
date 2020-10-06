@@ -1243,8 +1243,7 @@ main.restaurants h1.title {
   letter-spacing: 1.54px;
 }
 
-@media (min-width: $tabletWidth) {
-
+@media (min-width: 990px) {
   main.restaurants h1.title {
     display: none;
   }
@@ -1292,7 +1291,7 @@ main.restaurants ul.category-filter li:last-of-type {
   margin: 0;
 }
 
-main.restaurants ul.category-filter li a.all-restuarants-page {
+main.restaurants ul.category-filter li a.all-restaurants-page {
   font-family: $secondaryFont;
 }
 
@@ -1309,7 +1308,7 @@ main.restaurants ul.restaurant-list {
   padding: 0;
 }
 
-@media (min-width: $tabletWidth) {
+@media (min-width: 1103px) {
   main.restaurants ul.restaurant-list {
     grid-template-columns: repeat(3, 342px);
     gap: 38px;
@@ -1329,7 +1328,7 @@ ul.restaurant-list li img {
   object-fit: cover;
 }
 
-@media (min-width: $tabletWidth) {
+@media (min-width: 1103px) {
   ul.restaurant-list li img {
     width: 100%;
     height: 212px;
@@ -1348,7 +1347,7 @@ ul.restaurant-list li h2 {
   letter-spacing: 1.15px;
 }
 
-@media (min-width: $tabletWidth) {
+@media (min-width: 1103px) {
   ul.restaurant-list li h2 {
     margin-top: 26px;
     margin-bottom: 0;
@@ -1368,7 +1367,7 @@ ul.restaurant-list li h3 {
   letter-spacing: 0.89px;
 }
 
-@media (min-width: $tabletWidth) {
+@media (min-width: 1103px) {
   ul.restaurant-list li h3 {
     margin-bottom: 24px;
     margin-top: 4px;
@@ -2128,6 +2127,68 @@ div.no-meals a {
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.21px;
+}
+
+//Search Results Page
+main.search {
+  text-align: center;
+  margin-top: 100px;
+
+  h2.search-title {
+    margin-bottom: 50px;
+    font-size: 28.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.63px;
+    font-family: $secondaryFont;
+  }
+
+  div.search-results {
+    display: grid;
+    grid-template-columns: repeat(4, 236px);
+    gap: 53px;
+    justify-content: center;
+  }
+
+  div.result-card {
+    background-color: #f9f4ea;
+    height: 325px;
+    transition: background-color .3s ease;
+  }
+
+  div.result-card:hover {
+    background-color: #f7e0b2;
+  }
+
+  img {
+    width: 100%;
+    height: 191px;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  div.pagination {
+    margin: 20px auto;
+    width: 50%;
+    font-size: 18.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.13px;
+    font-family: $mainFont;
+
+    .current {
+      font-weight: 700;
+    }
+  }
+
+
 }
 
 

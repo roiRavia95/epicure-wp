@@ -15,7 +15,7 @@ function epicure_scripts()
     wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/js/mobile-menu.js", array("jquery"), "1.0.0", true);
 
     //Session script
-    wp_enqueue_script("session", get_template_directory_uri() . "/js/session.js", array("jquery"), "1.0.0", true);
+    wp_enqueue_script("session", get_template_directory_uri() . "/js/session.js", array("jquery"), "1.0.0", false);
 
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
