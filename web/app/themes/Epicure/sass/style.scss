@@ -2102,7 +2102,6 @@ div.dialog {
     form button#submit {
       margin-top: 50px;
     }
-
   }
 }
 
@@ -2145,12 +2144,20 @@ main.search {
     font-family: $secondaryFont;
   }
 
-  div.search-results {
+  .search-results {
     display: grid;
-    grid-template-columns: repeat(4, 236px);
-    gap: 53px;
     justify-content: center;
+    grid-template-columns: repeat(2, 157px);
+    gap: 14px
   }
+
+  @media (min-width: 1103px) {
+    .search-results {
+      grid-template-columns: repeat(4, 236px);
+      gap: 53px;
+    }
+  }
+
 
   div.result-card {
     background-color: #f9f4ea;
