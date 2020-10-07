@@ -36,7 +36,7 @@ function get_meals($mealTime)
                     <!--Meal ID for connecting meal to dialog-->
                     <!--                    <p id="meal-id" style="display: none">--><?php //the_ID()
                     ?><!--</p>-->
-                    <a href="<?php esc_html(the_permalink()) ?>">
+                    <a href="<?php the_permalink() ?>">
                         <?php the_post_thumbnail('full'); ?>
 
                         <h2><?php the_title() ?></h2>
@@ -92,8 +92,18 @@ function get_signature_meal($restaurant)
     );
     $meals = new WP_query($args);
 
-    while ($meals->have_posts()):$meals->the_post(); ?>
-        <a href="<?php esc_html(the_permalink()) ?>">
+
+    while ($meals->have_posts()):$meals->the_post();
+        //Send user to the restaurant page of the selected meal.
+        $link = get_permalink();
+        $restaurant_name = get_the_terms(get_post(), 'restaurants')[0]->slug;
+        $restaurant_page = get_page_by_title("restaurants");
+
+        $link = get_permalink($restaurant_page->ID) . $restaurant_name;
+        ?>
+
+
+        <a href="<?php echo esc_html($link) ?>">
             <?php the_post_thumbnail('full'); ?>
             <h2><?php the_title() ?></h2>
             <p class="ingredients"> <?php the_content() ?></p>
