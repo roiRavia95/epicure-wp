@@ -114,9 +114,8 @@ body.home section ul {
   white-space: nowrap;
 }
 
-@media (min-width: $tabletWidth) {
+@media (min-width: 1103px) {
   body.home section ul {
-    display: flex;
     justify-content: center;
   }
 }
@@ -434,10 +433,20 @@ nav.main-nav li.current-menu-item {
   border-bottom: 2px solid $activeColor;
 }
 
+body.category-new,
+body.category-most-popular,
+body.category-open-now, {
+
+  nav.main-nav li:first-of-type {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $activeColor;
+  }
+
+}
+
+
 //Pages
-
 //***Front Page***
-
 //Hero - Section
 section.hero {
   height: 269px;
@@ -1320,6 +1329,11 @@ main.restaurants ul.restaurant-list {
 ul.restaurant-list li {
   text-align: center;
   background-color: $cardBackground;
+  transition: background-color .3s ease;
+}
+
+ul.restaurant-list li:hover {
+  background-color: #f7e0b2
 }
 
 ul.restaurant-list li img {
@@ -1532,13 +1546,13 @@ nav.meal-nav li a {
   }
 }
 
-nav.meal-nav.fixed-nav {
+nav.meal-nav.sticky-nav {
   position: sticky;
   display: flex;
   justify-content: space-evenly;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100.3%;
   background-color: #ffffff;
   z-index: 2;
 }
@@ -1569,6 +1583,11 @@ ul.meals li.meal {
   background-color: $cardBackground;
   position: relative;
   height: 310px; //This is in case of long ingredients
+  transition: background-color .3s ease;
+}
+
+ul.meals li.meal:hover {
+  background-color: #f7e0b2
 }
 
 @media (min-width: $tabletWidth) {
@@ -1676,6 +1695,11 @@ div.price-line p.price {
   padding: 0 15px;
   display: inline;
   background-color: $cardBackground;
+  transition: background-color .3s ease;
+}
+
+li:hover div.price-line p.price {
+  background-color: #f7e0b2
 }
 
 div.price-line p.price:before {
@@ -1806,7 +1830,7 @@ div.dialog {
   text-align: center;
 
   img.wp-post-image {
-    width: 100%;
+    width: 100.3%;
     object-fit: cover;
   }
 
@@ -2111,6 +2135,15 @@ div.dialog {
 div.swal2-popup {
   font-size: 20px;
 }
+
+//Item Bag Page
+main.bag {
+  ul li {
+    display: flex;
+    align-items: center;
+  }
+}
+
 
 //Restaurant page without meals
 div.no-meals {
