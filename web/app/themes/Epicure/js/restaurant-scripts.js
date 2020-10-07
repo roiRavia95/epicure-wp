@@ -20,24 +20,17 @@ $(document).ready(() => {
             let objKey = $(section).attr("id")
             sectionsY[objKey] = section.getBoundingClientRect().y;
         })
-        let breakfast = sectionsY.breakfast;
-        let lunch = sectionsY.lunch;
-        let dinner = sectionsY.dinner;
 
-        //Get nav location - 680
-        let menuNav = $("nav.meal-nav").get(0);
-        let menuNavY = menuNav.getBoundingClientRect().y;
+        let offset = window.scrollY;
+        //Give the sections the right offset for the current menu to change accurately
+        let breakfast = sectionsY.breakfast + offset - 160;
+        let lunch = sectionsY.lunch + offset - 160;
+        let dinner = sectionsY.dinner + offset - 160;
 
 
         //Add listener for scroll
         window.onscroll = () => {
-            let offset = window.scrollY;
-            //Use static number because the position of the menuNavY is dynamic
-            if (offset > menuNavY) {
-                $("nav.meal-nav").addClass("fixed-nav")
-            } else {
-                $("nav.meal-nav").removeClass("fixed-nav")
-            }
+            offset = window.scrollY;
 
             //Add logic to change nav underline accordingly
             if (offset >= breakfast && offset <= lunch) {
