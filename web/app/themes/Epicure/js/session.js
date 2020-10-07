@@ -15,11 +15,12 @@ $(document).ready(() => {
         meal["ingredients"] = "";
         //Validate by tags and make sure to always get the correct data
         for (let element of mealContent) {
+            console.log(element.innerText)
             let tag = element.tagName.toLowerCase();
-            if (tag === "img") meal["image"] = element;
-            if (tag === "h2") meal["title"] = element;
+            if (tag === "img") meal["image"] = element.src;
+            if (tag === "h2") meal["title"] = element.innerText;
             if (tag === "p") meal["ingredients"] += element.innerText;
-            if (tag === "div") meal["price"] = element;
+            if (tag === "div") meal["price"] = element.innerText;
         }
         //Initial quantity
         let quantity = 1;
@@ -43,15 +44,13 @@ $(document).ready(() => {
 
         //Add meals to session storage
         for (let i = 0; i < quantity; i++) {
-            window.sessionStorage.setItem(meal.title.innerText + window.sessionStorage.length, mealString);
+            window.sessionStorage.setItem(meal.title + window.sessionStorage.length, mealString);
             console.log("meal has been added to session storage")
         }
         //present the number change
         $("div.item-badge").text(window.sessionStorage.length).show()
 
-        hideDialog(true, meal.title.innerText)
-
-
+        hideDialog(true, meal.title)
     })
     //If there are no meals - hide the badge.
     if (!window.sessionStorage.length) {
@@ -61,21 +60,3 @@ $(document).ready(() => {
     }
 
 })
-
-function hideDialog(submitted, name) {
-
-    $("body").css("overflow", "")
-    $("div.overlay").fadeOut("fast", "linear", () => {
-        $("div.dialog div.meal-content").empty();
-        $("div input.checkbox").prop("checked", false);
-        $("input#quantity").val(1);
-        console.log($("div.quantity input#quantity").val())
-    })
-    if (submitted) {
-        swal(
-            "Yay!",
-            `${name} has been added to your bag!`,
-            "success",
-        )
-    }
-}

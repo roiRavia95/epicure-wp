@@ -45,7 +45,7 @@
             <a href="">
                 <img src="<?php echo get_template_directory_uri() ?>/images/user-icon/user-icon@2x.png" alt="user">
             </a>
-            <a class="item-bag" href="">
+            <a class="item-bag" href="<?php the_permalink(get_page_by_title('bag')->ID) ?>">
                 <div class="item-badge">
                 </div>
                 <div class="bag-items">

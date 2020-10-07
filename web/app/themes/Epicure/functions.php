@@ -11,17 +11,25 @@ function epicure_scripts()
     //Mix
     wp_enqueue_script("app", get_template_directory_uri() . "/js/app.js", array(""), "1.0.0", true);
 
+
     //Mobile menu script
     wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/js/mobile-menu.js", array("jquery"), "1.0.0", true);
 
     //Session script
     wp_enqueue_script("session", get_template_directory_uri() . "/js/session.js", array("jquery"), "1.0.0", false);
 
+    //bag script
+    wp_enqueue_script("bag", get_template_directory_uri() . "/js/bag.js", array("jquery"), "1.0.0", false);
+
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
         wp_enqueue_style('jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
 
-//        wp_enqueue_script('jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.12.1');
+        //Dialog
+        wp_enqueue_script("dialog", get_template_directory_uri() . "/js/dialog.js", array("jquery"), "1.0.0", true);
+
+        //Restaurant Menu
+        wp_enqueue_script("restaurant-meal-menu", get_template_directory_uri() . "/js/restaurant-meal-menu.js", array("jquery"), "1.0.0", true);
         wp_enqueue_script("restaurant-script", get_template_directory_uri() . "/js/restaurant-scripts.js", array("jquery"), "1.0.0", true);
 
         //Sweet Alert 2
