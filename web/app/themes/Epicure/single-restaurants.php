@@ -30,15 +30,15 @@ if (have_posts()) {
 
             <?php
             //Print relevant navigation menu for the menu
-            $mealTimes = get_field("meal_times");
+            $meal_times = get_field("meal_times");
             ?>
-            <nav class="meal-nav">
+            <nav class="meal-nav sticky-nav">
                 <?php
-                if ($mealTimes && count($mealTimes) > 1) {
+                if ($meal_times && count($meal_times) > 1) {
                     ?>
                     <ul>
                         <?php
-                        foreach ($mealTimes as $i => $time) {
+                        foreach ($meal_times as $i => $time) {
                             if ($i === 0) {
                                 ?>
                                 <li>
@@ -62,11 +62,15 @@ if (have_posts()) {
             </nav>
             <?php
             //This function gets the meals of the specific meal time
-            if ($mealTimes) {
+            if ($meal_times) {
                 ?>
                 <?php
-                foreach ($mealTimes as $time) {
+                foreach ($meal_times as $time) {
                     $meals = get_meals($time->slug);
+                    //Only if mealtime has meals, use it for getting data from fields in the dialog
+                    if ($meals->found_posts) {
+                        $meal_with_posts = $meals;
+                    }
                 }
                 ?>
                 <div class="overlay">
@@ -78,8 +82,8 @@ if (have_posts()) {
                                 <!--Content injected by JS-->
                             </div>
                             <?php
-                            //Get options for meal
-                            while ($meals->have_posts()):$meals->the_post();
+                            //Make sure to loop only over mealtimes with meals to avoid bugs
+                            while ($meal_with_posts->have_posts()):$meal_with_posts->the_post();
                                 //Add logic to make specific for each meal
                                 $side_1 = get_field("side_1");
                                 $side_2 = get_field("side_2");
