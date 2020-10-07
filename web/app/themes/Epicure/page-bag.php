@@ -7,6 +7,10 @@
         <ul class="my-meals">
             <!--Inject content with JS-->
         </ul>
+        <hr>
+        <div class="total">
+            <h1>Total: </h1>
+        </div>
     <?php
     endwhile;
     wp_reset_postdata();

@@ -39,7 +39,7 @@ $secondaryFont: HelveticaNeue;
 
 //Colors
 $black: #000;
-$activeColor: rgba(222, 146, 0, 0.9);
+$activeColor: rgba(222, 146, 0, 0.5);
 $cardBackground: #f9f4ea;
 
 //Widths
@@ -84,7 +84,7 @@ a {
   color: $black;
 }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: none;
   color: $black;
 }
@@ -168,6 +168,9 @@ div.navigation-menu {
   div.navigation-menu {
     margin: 0 auto;
     width: 82%;
+    padding: 5px 0 7px;
+  }
+  body.home div.navigation-menu {
     padding: 15px 0;
   }
 }
@@ -213,6 +216,7 @@ div.menu-titles {
   header.site-header div.menu-pages nav ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
     margin: 0;
   }
@@ -424,21 +428,23 @@ div.mobile-search {
 
 form.search-form button {
   border: none;
-  background: white;
+  background: transparent;
 }
 
 
 nav.main-nav li.current-menu-item {
-  padding-bottom: 10px;
+  padding: 10px 0;
+  margin-bottom: 2px;
   border-bottom: 2px solid $activeColor;
 }
 
 body.category-new,
 body.category-most-popular,
-body.category-open-now, {
+body.category-open-now,
+body.single-restaurants, {
 
   nav.main-nav li:first-of-type {
-    padding-bottom: 10px;
+    padding: 10px 0;
     border-bottom: 2px solid $activeColor;
   }
 
@@ -1702,7 +1708,7 @@ li:hover div.price-line p.price {
   background-color: #f7e0b2
 }
 
-div.price-line p.price:before {
+p.price:before {
   content: "₪";
   font-size: 10px;
 }
@@ -2137,11 +2143,172 @@ div.swal2-popup {
 }
 
 //Item Bag Page
+
 main.bag {
-  ul li {
-    display: flex;
-    align-items: center;
+  font-family: $mainFont;
+
+  h1 {
+    margin: 50px 0;
   }
+
+  @media(min-width: $tabletWidth) {
+    ul li {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  li {
+    margin: 20px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 3px;
+  }
+
+  @media (min-width: $tabletWidth) {
+    img {
+      height: 220px;
+      width: 346px;
+    }
+  }
+
+  div.meal-content {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.meal-content {
+      display: flex;
+      flex-direction: column;
+      width: 65%;
+    }
+  }
+
+  h2 {
+    font-family: $secondaryFont;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1.8px;
+  }
+
+  @media (min-width: $tabletWidth) {
+    h2 {
+      font-size: 32.5px;
+    }
+  }
+
+
+  p.ingredients {
+    width: 80%;
+  }
+
+  @media (min-width: $tabletWidth) {
+    p.ingredients {
+      width: 50%;
+      font-size: 18.5px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  div.extra-info-bag {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  div.extra-info-bag h3 {
+    font-family: $secondaryFont;
+    font-size: 14.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.extra-info-bag h3 {
+      font-family: $secondaryFont;
+      font-size: 16.5px;
+    }
+  }
+
+  div.extra-info-bag div:first-of-type {
+    margin: 0 15px 0 0;
+  }
+
+  div.extra-info-bag div:last-of-type {
+    margin-top: 0;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.extra-info-bag div:first-of-type {
+      margin: 10px 30px 0 0;
+    }
+
+    div.extra-info-bag div:last-of-type {
+      margin-top: 10px;
+    }
+  }
+
+  div.meal-content p.price {
+    margin: 0 0 0 auto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1.5px;
+    align-self: center;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.meal-content p.price {
+      position: absolute;
+      right: 10%;
+      bottom: 50%;
+      font-size: 22.5px;
+    }
+  }
+
+  p.price:before {
+    font-size: 14.5px;
+  }
+
+}
+
+div.total {
+  display: flex;
+  margin: 20px;
+  justify-content: flex-end;
+  width: 88%;
+  align-items: center;
+}
+
+div.total p {
+  margin: 0 0 0 20px;
+  font-size: 22.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 1.5px;
 }
 
 
