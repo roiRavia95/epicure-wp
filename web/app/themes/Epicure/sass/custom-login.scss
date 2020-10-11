@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'helveticaneueregular';
+  src: url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
+  url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'helveticaneuethin';
+  src: url('../fonts/vendor/helveticaneue/helveticaneue_thin-webfont.woff2') format('woff2'),
+  url('../fonts/vendor/helveticaneue/helveticaneue_thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Font
+$mainFont: HelveticaNeue-thin;
+$secondaryFont: HelveticaNeue;
+
+body.login {
+  background-color: white;
+  font-family: $mainFont;
+}
+
+body.login form#loginform {
+  border: none;
+}
+
+body.login label {
+  font-size: 18px;
+}
+
