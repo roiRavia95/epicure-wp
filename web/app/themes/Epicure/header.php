@@ -41,8 +41,18 @@
             </div>
         </div>
         <div class="menu-items">
-            <?php echo get_template_part("templates/searchbar") ?>
-            <a href="">
+            <?php echo get_template_part("templates/searchbar");
+            $userPage = home_url();
+            if (is_user_logged_in()) {
+                $userPage .= "/user/" . wp_get_current_user()->user_nicename;
+            } else {
+                $userPage .= "/login";
+            }
+            //Save user id and pass it to js
+            $current_user_id =  get_current_user_id();
+            ?>
+            <p id="current-user-id" style="display:none;"><?php echo $current_user_id ?></p>
+            <a href="<?php echo $userPage ?>">
                 <img src="<?php echo get_template_directory_uri() ?>/images/user-icon/user-icon@2x.png" alt="user">
             </a>
             <a class="item-bag" href="<?php the_permalink(get_page_by_title('bag')->ID) ?>">

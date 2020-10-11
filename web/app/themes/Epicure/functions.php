@@ -63,9 +63,90 @@ function epicure_menu()
 ;
 add_action('init', 'epicure_menu');
 
+
 //Requiring other php files with functions
 
 // require the queries file
 require get_template_directory() . "/inc/queries.php";
 //require the get_restaurants function from the file
 require get_template_directory() . "/inc/restaurants.php";
+
+require get_template_directory() . "/inc/register.php";
+
+
+//Custom Login page functions
+
+//Change to epicure logo
+function modify_logo()
+{
+    $logo_style = '<style type="text/css">';
+    $logo_style .= 'h1 a {background-image: url(' . get_template_directory_uri() . '/images/logo/login-logo.png) !important;}';
+    $logo_style .= '</style>';
+    echo $logo_style;
+}
+
+add_action('login_head', 'modify_logo');
+//Change the Logo's URL
+function custom_login_url()
+{
+    return home_url();
+}
+
+add_filter('login_headerurl', 'custom_login_url');
+
+//Add stylesheet to the login page
+function custom_login_css()
+{
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/custom-login.css');
+}
+
+add_action('login_enqueue_scripts', 'custom_login_css');
+
+//Add stylesheet to the login page
+function custom_register_css()
+{
+    wp_enqueue_style('register-styles', get_template_directory_uri() . '/css/custom-register.css');
+}
+
+add_action('wp_enqueue_scripts', 'custom_register_css');
+
+function login_redirect_to_home()
+{
+    wp_redirect(home_url());
+//    wp_set_auth_cookie(get_current_user_id());
+    exit;
+}
+
+add_action('wp_login', 'login_redirect_to_home');
+
+
+function logout_redirect_to_home()
+{
+    wp_redirect(home_url() . "/login");
+    exit;
+}
+
+add_action('wp_logout', 'login_redirect_to_home');
+
+function auto_login_new_user($user_id)
+{
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id);
+    $user = get_user_by('id', $user_id);
+    do_action('wp_login', $user->user_login);
+    wp_redirect(home_url());
+    exit;
+}
+
+add_action('user_register', 'auto_login_new_user');
+
+//checkout page only for logged in users
+function redirect_to_specific_page()
+{
+    if (is_page('checkout') && !is_user_logged_in()) {
+        wp_redirect(home_url(), 301);
+        exit;
+    }
+}
+
+add_action('template_redirect', 'redirect_to_specific_page');

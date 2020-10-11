@@ -131,6 +131,7 @@ if (have_posts()) {
                                                 src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
                                                 alt="+"></button>
                                 </div>
+                                <input type="hidden" value=<?php echo get_current_user_id() ?> name='id'>
                                 <button id="submit" type="submit"> ADD TO BAG</button>
                             </form>
                         </div>

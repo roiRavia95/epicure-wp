@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/single.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/user.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/roots/wp-password-bcrypt" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/roots/bedrock-autoloader" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/roots/wp-config" />
+      <path value="$PROJECT_DIR$/vendor/oscarotero/env" />
+      <path value="$PROJECT_DIR$/vendor/roots/wordpress-core-installer" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ij5mmD44cXAKywZ7mEzAvaXRVL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/app/themes/Epicure/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.watch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="" />
+      <created>1602408321587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602408321587</updated>
+      <workItem from="1602408322665" duration="4525000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1500" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602409045269">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state x="-1500" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602409045269" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom" timestamp="1602409116123">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602409116123" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center" timestamp="1602409116122">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602409116122" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left" timestamp="1602409116121">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602409116121" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right" timestamp="1602409116123">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602409116123" />
+    <state x="-1327" y="-56" key="RollbackChangesDialog" timestamp="1602411387818">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state x="-1327" y="-56" key="RollbackChangesDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602411387818" />
+  </component>
+</project>
