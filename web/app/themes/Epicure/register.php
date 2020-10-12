@@ -2,8 +2,8 @@
 /*
  * Template Name: Register Page
  * */
-wp_head() ?>
-<body class="register">
+get_header() ?>
+<main class="register">
 <div class="form-container">
     <div class="logo">
         <img src="<?php echo get_template_directory_uri() ?>/images/logo/login-logo.png" alt="logo">
@@ -32,4 +32,6 @@ wp_head() ?>
     <a href="<?php home_url() ?>/login">Login</a>
     <a href="/">Back to Epicure</a>
 </div>
-</body>
+</main>
+
+<?php get_footer();

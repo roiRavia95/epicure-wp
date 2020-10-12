@@ -18,16 +18,80 @@
 $mainFont: HelveticaNeue-thin;
 $secondaryFont: HelveticaNeue;
 
-body.login {
+main.login {
   background-color: white;
   font-family: $mainFont;
 }
 
-body.login form#loginform {
+main.login form#loginform {
   border: none;
 }
 
-body.login label {
+main.login label {
   font-size: 18px;
+}
+main.login div.form-container {
+  width: 320px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+div.logo {
+  text-align: center;
+}
+
+div.logo img {
+  height: 84px;
+  width: 84px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+
+div.form-container form {
+  padding: 26px 24px 46px;
+  margin-top: 20px;
+}
+
+main.login div.form-container div input {
+  display: block;
+  font-size: 24px;
+  line-height: 1.33333333;
+  width: 100%;
+  border-width: 0.0625rem;
+  padding: 0.1875rem 0.3125rem;
+  margin: 0 6px 16px 0;
+  min-height: 40px;
+  max-height: none;
+  border-radius: 4px;
+}
+
+main.login label {
+  line-height: 1.5;
+  display: inline-block;
+  margin-bottom: 3px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+div.submit {
+  text-align: right;
+}
+
+div.submit button {
+  background: #007cba;
+  border-color: #007cba;
+  border-style: none;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+div.form-container a {
+  display: block;
+  margin: 10px 24px;
+
 }
 

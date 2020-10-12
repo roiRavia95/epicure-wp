@@ -18,17 +18,17 @@
 $mainFont: HelveticaNeue-thin;
 $secondaryFont: HelveticaNeue;
 
-body.register {
+main.register {
   background-color: white;
   font-family: $mainFont;
 }
 
 
-body.register label {
+main.register label {
   font-size: 18px;
 }
 
-body.register div.form-container {
+main.register div.form-container {
   width: 320px;
   padding: 8% 0 0;
   margin: auto;
@@ -51,7 +51,7 @@ div.form-container form {
   margin-top: 20px;
 }
 
-body.register div.form-container div input {
+main.register div.form-container div input {
   display: block;
   font-size: 24px;
   line-height: 1.33333333;
@@ -64,7 +64,7 @@ body.register div.form-container div input {
   border-radius: 4px;
 }
 
-body.register label {
+main.register label {
   line-height: 1.5;
   display: inline-block;
   margin-bottom: 3px;
