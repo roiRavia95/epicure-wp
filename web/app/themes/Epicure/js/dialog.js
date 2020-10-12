@@ -5,6 +5,12 @@ function showDialog() {
         let mealContent = e.currentTarget.children[0].children;
 
         $(mealContent).clone().prependTo("div.dialog div.meal-content");
+
+        //Add meal id to each meal when the dialog is opened
+        let mealID = $('div.meal-content span.meal_id')[0].innerText;
+        console.log(mealID);
+        $('input#meal_id').val(mealID);
+
         //Only on desktop show extra info next to the header
         if ($(window).width() > 768) {
             $("div.dialog div.meal-content div.extra-info").prependTo("div.dialog h2");

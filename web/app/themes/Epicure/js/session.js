@@ -13,8 +13,10 @@ $(document).ready(() => {
 
         //Validate by tags and make sure to always get the correct data
         for (let element of mealContent) {
-            console.log(element.innerText)
             let tag = element.tagName.toLowerCase();
+            if (element.className === "meal_id") {
+                meal["meal_id"] = element.innerText;
+            }
             if (tag === "img") {
                 meal["image"] = element.src;
             }
@@ -38,7 +40,6 @@ $(document).ready(() => {
             //Get the quantity for adjusting the number of objects to put into session storage
             if (item["name"] === "quantity") {
                 quantity = item["value"];
-                console.log(quantity)
             } else {
                 //Append the form data to the meal object
                 meal[item["name"]] = item["value"];
@@ -53,8 +54,7 @@ $(document).ready(() => {
             window.sessionStorage.setItem(meal.title + window.sessionStorage.length, mealString);
             console.log("meal has been added to session storage")
         }
+        hideDialog(true, meal.title);
 
-
-        hideDialog(true, meal.title)
     })
 })

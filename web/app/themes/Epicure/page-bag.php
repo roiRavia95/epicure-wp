@@ -3,10 +3,16 @@ get_header(); ?>
 
 <main class="bag">
     <?php
-    while (have_posts()):the_post(); ?>
+    while (have_posts()) :
+        the_post();
+        ?>
+
         <h1 class="title text-center">My <?php the_title() ?></h1>
-        
         <ul class="my-meals">
+            <?php
+            //TODO:-> IN PROGRESS
+            get_selected_meals(wp_get_current_user()->ID);
+            ?>
             <!--Inject content with JS-->
         </ul>
         <hr>
@@ -18,13 +24,12 @@ get_header(); ?>
         $checkoutLink = home_url();
         if (is_user_logged_in()) {
             $checkoutLink .= "/checkout";
-
         } else {
             $checkoutLink .= "/login";
         }
         ?>
         <a class="button checkout" href="<?php echo $checkoutLink ?>"> Finish Order</a>
-    <?php
+        <?php
     endwhile;
     wp_reset_postdata();
     ?>

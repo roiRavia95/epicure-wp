@@ -1,5 +1,22 @@
 <?php
 
+//Requiring other php files with functions
+// require the queries file
+require get_template_directory() . "/inc/queries.php";
+//require the get_restaurants function from the file
+require get_template_directory() . "/inc/restaurants.php";
+//Require the register form handler
+require get_template_directory() . "/inc/register.php";
+//Require the login form handler
+require get_template_directory() . "/inc/login.php";
+//require the db initiating function
+require get_template_directory() . "/inc/database.php";
+//Require the meal form handler
+require get_template_directory() . "/inc/meal-submit.php";
+//Require the selected meals function
+require get_template_directory() . "/inc/get-selected-meals.php";
+
+
 //Set up scripts
 function epicure_scripts()
 {
@@ -15,6 +32,8 @@ function epicure_scripts()
     wp_enqueue_script("session", get_template_directory_uri() . "/js/session.js", array("jquery"), "1.0.0", false);
     //Bag script
     wp_enqueue_script("bag", get_template_directory_uri() . "/js/bag.js", array("jquery"), "1.0.0", false);
+
+    wp_enqueue_script("meal-submit", get_template_directory_uri() . "/js/meal-submit.js", array("jquery"), "1.0.0", false);
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
         //Jquery-ui style
@@ -63,17 +82,6 @@ function epicure_menu()
 ;
 add_action('init', 'epicure_menu');
 
-
-//Requiring other php files with functions
-
-// require the queries file
-require get_template_directory() . "/inc/queries.php";
-//require the get_restaurants function from the file
-require get_template_directory() . "/inc/restaurants.php";
-
-require get_template_directory() . "/inc/register.php";
-
-
 //Custom Login page functions
 
 //Change to epicure logo
@@ -100,9 +108,9 @@ function custom_login_css()
     wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/custom-login.css');
 }
 
-add_action('login_enqueue_scripts', 'custom_login_css');
+add_action('wp_enqueue_scripts', 'custom_login_css');
 
-//Add stylesheet to the login page
+//Add stylesheet to the register page
 function custom_register_css()
 {
     wp_enqueue_style('register-styles', get_template_directory_uri() . '/css/custom-register.css');
@@ -150,3 +158,13 @@ function redirect_to_specific_page()
 }
 
 add_action('template_redirect', 'redirect_to_specific_page');
+
+//add selected meals to user meta
+
+function user_meta_on_register($user_id)
+{
+    update_user_meta($user_id, 'selected_meals', array());
+}
+add_action('user_register', 'user_meta_on_register');
+add_action('personal_options_update', 'user_meta_on_register');
+add_action('edit_user_profile_update', 'user_meta_on_register');

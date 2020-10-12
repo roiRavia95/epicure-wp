@@ -4,6 +4,6 @@
  * */
 get_header();
 ?>
-<h1>user.php</h1>
+<h1>author</h1>
 <?php
 get_footer();

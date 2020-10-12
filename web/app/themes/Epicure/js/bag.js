@@ -9,11 +9,12 @@ $(document).ready(() => {
 
     //initialize total price
     let total = 0;
+
     //initialize bag length
-    let bagLength = 0
+    let bagLength = 0;
     keys.forEach(key => {
         meals[key] = JSON.parse(window.sessionStorage.getItem(key))
-        if (meals[key].id == currentID) {
+        if (meals[key].user_id == currentID) {
             bagLength++;
         //Create a html string with the data from the session storage
         //NOTICE - <li> and <div> are still open! (to add additional data later on)
@@ -56,15 +57,16 @@ $(document).ready(() => {
 
     $("div.item-badge").text(bagLength);
     //If there are no meals - hide the badge.
-if (!bagLength) {
-    $("a.item-bag div.item-badge").hide();
-} else {
-    $("a.item-bag div.item-badge").show();
-}
+    if (!bagLength) {
+        $("a.item-bag div.item-badge").hide();
+    } else {
+        $("a.item-bag div.item-badge").show();
+    }
 
     //If a meal has been added, update the badge ui
     $("div.dialog form").submit(function (e) {
-        bagLength++;
+        let quantity = $('#quantity').val();
+        bagLength = bagLength + parseInt(quantity);
         $("div.item-badge").text(bagLength);
         $("a.item-bag div.item-badge").show();
     })
@@ -73,5 +75,7 @@ if (!bagLength) {
     let totalHTML = `<p class='total price'>${total}</p>`;
 
     $("main.bag div.total").append(totalHTML);
+
+    $.ajax()
 
 })

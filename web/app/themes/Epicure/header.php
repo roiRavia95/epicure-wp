@@ -5,7 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php wp_head() ?>
+    <?php
+    wp_head()?>
+    <!--Get WP_Ajax url and nonce for every file.-->
+    <script type="text/javascript">
+        let ajaxURL = "<?php echo admin_url('admin-ajax.php'); ?>";
+        let nonce = "<?php echo wp_create_nonce('nonce_name')?>"
+    </script>
 </head>
 <body <?php body_class(); ?>>
 
@@ -45,6 +51,9 @@
             $userPage = home_url();
             if (is_user_logged_in()) {
                 $userPage .= "/user/" . wp_get_current_user()->user_nicename;
+                ?>
+                <a class="logout" href="<?php echo wp_logout_url() ?>" >Logout</a>
+                <?php
             } else {
                 $userPage .= "/login";
             }

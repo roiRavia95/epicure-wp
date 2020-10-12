@@ -2,6 +2,7 @@
 //Dynamically get posts from the "meals" by their "meal time" taxonomy
 function get_meals($mealTime)
 {
+    //Set the arguments for the query to get relevant meals
     $args = array(
         "post_type" => "meals",
         "tax_query" => array(
@@ -30,13 +31,13 @@ function get_meals($mealTime)
         <?php } ?>
         <ul class="meals">
             <?php
-            while ($meals->have_posts()):$meals->the_post();
+            while ($meals->have_posts()) :
+                $meals->the_post();
                 ?>
                 <li class="meal">
                     <!--Meal ID for connecting meal to dialog-->
-                    <!--                    <p id="meal-id" style="display: none">--><?php //the_ID()
-                    ?><!--</p>-->
                     <a href="<?php the_permalink() ?>">
+                    <span class="meal_id" style="display: none"><?php echo get_the_ID(); ?></span>
                         <?php the_post_thumbnail('full'); ?>
 
                         <h2><?php the_title() ?></h2>
@@ -67,7 +68,7 @@ function get_meals($mealTime)
                         </div>
                     </a>
                 </li>
-            <?php
+                <?php
             endwhile;
             wp_reset_postdata();
             ?>
@@ -93,7 +94,8 @@ function get_signature_meal($restaurant)
     $meals = new WP_query($args);
 
 
-    while ($meals->have_posts()):$meals->the_post();
+    while ($meals->have_posts()) :
+        $meals->the_post();
         //Send user to the restaurant page of the selected meal.
         $link = get_permalink();
         $restaurant_name = get_the_terms(get_post(), 'restaurants')[0]->slug;
@@ -130,10 +132,9 @@ function get_signature_meal($restaurant)
                 <p class="price"><?php echo get_field("price") ?></p>
             </div>
         </a>
-    <?php
+        <?php
     endwhile;
     wp_reset_postdata();
-
 }
 
 ;

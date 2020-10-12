@@ -83,7 +83,8 @@ if (have_posts()) {
                             </div>
                             <?php
                             //Make sure to loop only over mealtimes with meals to avoid bugs
-                            while ($meal_with_posts->have_posts()):$meal_with_posts->the_post();
+                            while ($meal_with_posts->have_posts()) :
+                                $meal_with_posts->the_post();
                                 //Add logic to make specific for each meal
                                 $side_1 = get_field("side_1");
                                 $side_2 = get_field("side_2");
@@ -97,7 +98,7 @@ if (have_posts()) {
                             endwhile;
                             wp_reset_postdata();
                             ?>
-                            <form method="POST">
+                            <form method="post">
                                 <h3>Choose a side</h3>
                                 <div class="side">
                                     <input id="side-1" class="checkbox" type="checkbox" name="side-1"
@@ -131,8 +132,10 @@ if (have_posts()) {
                                                 src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
                                                 alt="+"></button>
                                 </div>
-                                <input type="hidden" value=<?php echo get_current_user_id() ?> name='id'>
-                                <button id="submit" type="submit"> ADD TO BAG</button>
+                                <?php echo get_current_user_id()?>
+                                <input type="hidden" name='user_id' value='<?php echo get_current_user_id()?>' >
+                                <input type="hidden" id='meal_id' name='meal_id' value='' >
+                                <button type="submit" id="submit" name="mealSubmit" > ADD TO BAG</button>
                             </form>
                         </div>
                     </div>
@@ -148,7 +151,8 @@ if (have_posts()) {
             }
             ?>
         </main>
-    <?php
+        <?php
     endwhile;
+    wp_reset_postdata();
 }
 get_footer() ?>
