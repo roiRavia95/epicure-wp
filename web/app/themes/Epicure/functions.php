@@ -29,7 +29,7 @@ function epicure_scripts()
     //Mobile menu script
     wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/js/mobile-menu.js", array("jquery"), "1.0.0", true);
     //Session script
-    wp_enqueue_script("session", get_template_directory_uri() . "/js/session.js", array("jquery"), "1.0.0", false);
+    wp_enqueue_script("session-storage", get_template_directory_uri() . "/js/session-storage.js", array("jquery"), "1.0.0", false);
     //Bag script
     wp_enqueue_script("bag", get_template_directory_uri() . "/js/bag.js", array("jquery"), "1.0.0", false);
 

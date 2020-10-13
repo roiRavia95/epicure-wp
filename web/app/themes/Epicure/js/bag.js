@@ -12,6 +12,8 @@ $(document).ready(() => {
 
     //initialize bag length
     let bagLength = 0;
+
+    //Loop over the session storage
     keys.forEach(key => {
         meals[key] = JSON.parse(window.sessionStorage.getItem(key))
         if (meals[key].user_id == currentID) {
@@ -41,7 +43,7 @@ $(document).ready(() => {
                 meals[key]["side-1"] ? mealHTML += `<p>${meals[key]["side-1"]}</p>` : null
                 meals[key]["side-2"] ? mealHTML += `<p>${meals[key]["side-2"]}</p>` : null
                 mealHTML += "</div>"
-            }
+            };
         //Close extra-info-bag div
             mealHTML += "</div>"
 
@@ -62,20 +64,8 @@ $(document).ready(() => {
     } else {
         $("a.item-bag div.item-badge").show();
     }
-
-    //If a meal has been added, update the badge ui
-    $("div.dialog form").submit(function (e) {
-        let quantity = $('#quantity').val();
-        bagLength = bagLength + parseInt(quantity);
-        $("div.item-badge").text(bagLength);
-        $("a.item-bag div.item-badge").show();
-    })
-
     //Total price HTML
     let totalHTML = `<p class='total price'>${total}</p>`;
 
     $("main.bag div.total").append(totalHTML);
-
-    $.ajax()
-
 })

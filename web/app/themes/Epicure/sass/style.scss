@@ -2113,7 +2113,7 @@ div.dialog {
     }
   }
 
-  form button#submit {
+  form button.submit {
     margin-top: 107px;
     padding: 15px 30px;
     background-color: black;
@@ -2129,7 +2129,7 @@ div.dialog {
   }
 
   @media(min-width: $tabletWidth) {
-    form button#submit {
+    form button.submit {
       margin-top: 50px;
     }
   }
