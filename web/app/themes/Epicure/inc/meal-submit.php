@@ -7,16 +7,22 @@ function save_selected_meal()
     if (isset($_POST) && $_SERVER['REQUEST_METHOD']=='POST') {
         $user_id = $_POST["user_id"];
         $meal_id = $_POST["meal_id"];
+        $changes = $_POST["changes"];
+        $sides = $_POST["sides"];
         $quantity = $_POST["quantity"];
 
         $table = $wpdb->prefix . 'selected_meals';
         $data = array(
             'user_id'=>$user_id,
-            'meal_id'=>$meal_id
+            'meal_id'=>$meal_id,
+            'changes'=>json_encode($changes),
+            'sides'=>json_encode($sides)
         );
         $format = array(
             '%d',
-            '%d'
+            '%d',
+            '%s',
+            '%s'
         );
         //Insert according to the quantity the user has selected
         for($i = 0; $i<$quantity;$i++){

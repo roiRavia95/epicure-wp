@@ -11,7 +11,7 @@ get_header(); ?>
         <ul class="my-meals">
             <?php
             //TODO:-> IN PROGRESS
-//            get_selected_meals(wp_get_current_user()->ID);
+            get_selected_meals(wp_get_current_user()->ID);
             ?>
             <!--Inject content with JS-->
         </ul>
@@ -29,7 +29,7 @@ get_header(); ?>
         }
         ?>
         <a class="button checkout" href="<?php echo $checkoutLink ?>"> Finish Order</a>
-        <?php
+    <?php
     endwhile;
     wp_reset_postdata();
     ?>

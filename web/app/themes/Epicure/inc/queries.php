@@ -36,9 +36,9 @@ function get_meals($mealTime)
                 $meals->the_post();
                 ?>
                 <li class="meal">
-                    <!--Meal ID for connecting meal to dialog-->
                     <a href="#">
-                    <span class="meal_id" style="display: none"><?php echo get_the_ID(); ?></span>
+                        <!--Meal ID for connecting meal to dialog-->
+                        <span class="meal_id" style="display: none"><?php echo get_the_ID(); ?></span>
                         <?php the_post_thumbnail('full'); ?>
 
                         <h2><?php the_title() ?></h2>
@@ -114,13 +114,13 @@ function get_meals($mealTime)
                                             src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
                                             alt="+"></button>
                             </div>
-                            <input type="hidden" name='user_id' value='<?php echo get_current_user_id()?>' >
-                            <input type="hidden" class="meal_id" name='meal_id' value='<?php echo get_the_ID() ?>' >
-                            <button type="submit" class="submit" name="mealSubmit" > ADD TO BAG</button>
+                            <input type="hidden" name='user_id' value='<?php echo get_current_user_id() ?>'>
+                            <input type="hidden" class="meal_id" name='meal_id' value='<?php echo get_the_ID() ?>'>
+                            <button type="submit" class="submit" name="mealSubmit"> ADD TO BAG</button>
                         </form>
                     </a>
                 </li>
-                <?php
+            <?php
             endwhile;
             wp_reset_postdata();
             ?>
@@ -184,20 +184,55 @@ function get_signature_meal($restaurant)
                 <p class="price"><?php echo get_field("price") ?></p>
             </div>
         </a>
-        <?php
+    <?php
     endwhile;
     wp_reset_postdata();
 }
 
 ;
 
-function get_meal_by_id($id){
+function get_meal_by_id($id, $changes=array(), $sides=array())
+{
     $args = array(
-        "post_type"=>"meals",
-        "p"=>$id
+        "post_type" => "meals",
+        "p" => $id
     );
     $meal = new WP_Query($args);
-    if($meal->have_posts()):$meal->the_post();
-    the_ID();
+    if ($meal->have_posts()):$meal->the_post();
+        ?>
+        <li class='meal'>
+            <?php the_post_thumbnail('full'); ?>
+            <div class="meal-content">
+                <div class="main-content">
+                    <h2><?php the_title() ?></h2>
+                    <p class="ingredients"> <?php the_content() ?></p>
+                </div>
+                <div class="extra-info-bag">
+                    <div class='changes'>
+                        <h3>Changes: </h3>
+                        <?php
+                       foreach($changes as $change){
+                           ?>
+                           <p><?php echo $change ?></p>
+                               <?php
+                       }
+                        ?>
+                    </div>
+                    <div class='sides'>
+                        <h3>Sides: </h3>
+                        <?php
+                        foreach($sides as $side){
+                            ?>
+                            <p><?php echo $side ?></p>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <p class="price"><?php echo get_field("price") ?></p>
+            </div>
+        </li>
+    <?php
     endif;
 }

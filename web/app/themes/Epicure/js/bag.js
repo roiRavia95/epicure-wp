@@ -14,12 +14,13 @@ $(document).ready(() => {
     let bagLength = 0;
 
     //Loop over the session storage
-    keys.forEach(key => {
+    keys.forEach((key,index) => {
         meals[key] = JSON.parse(window.sessionStorage.getItem(key))
-        if (meals[key].user_id == currentID) {
+        //Show the meals FROM SESSION before and after user logged in
+        if (meals[key].user_id == currentID || meals[key].user_id == 0) {
             bagLength++;
-        //Create a html string with the data from the session storage
-        //NOTICE - <li> and <div> are still open! (to add additional data later on)
+            //Create a html string with the data from the session storage
+            //NOTICE - <li> and <div> are still open! (to add additional data later on)
             let mealHTML = `
             <li class='meal'>
             <img src='${meals[key].image}' alt=''>
@@ -30,31 +31,34 @@ $(document).ready(() => {
             </div>
             <div class="extra-info-bag">`;
 
-        //Check if has any extra inputs - Changes
+            //Check if has any extra inputs - Changes
             if (meals[key]["change-1"] || meals[key]["change-2"]) {
                 mealHTML += "<div class='changes'><h3>Changes: </h3>"
                 meals[key]["change-1"] ? mealHTML += `<p>${meals[key]["change-1"]}</p>` : null
                 meals[key]["change-2"] ? mealHTML += `<p>${meals[key]["change-2"]}</p>` : null
                 mealHTML += "</div>"
-            };
-        //Check if has any extra inputs - Sides
+            }
+            ;
+            //Check if has any extra inputs - Sides
             if (meals[key]["side-1"] || meals[key]["side-2"]) {
                 mealHTML += "<div class='sides'><h3>Sides: </h3>"
                 meals[key]["side-1"] ? mealHTML += `<p>${meals[key]["side-1"]}</p>` : null
                 meals[key]["side-2"] ? mealHTML += `<p>${meals[key]["side-2"]}</p>` : null
                 mealHTML += "</div>"
-            };
-        //Close extra-info-bag div
+            }
+            ;
+            //Close extra-info-bag div
             mealHTML += "</div>"
 
-        //Add price in the end of the container
+            //Add price in the end of the container
             mealHTML += `<p class="price">${meals[key].price}</p>`
-        //Close the meal-content div and meal li
+            //Close the meal-content div and meal li
             mealHTML += "</div></li>"
 
             $("ul.my-meals").append(mealHTML);
             total += parseInt(meals[key].price);
-        };
+        }
+        ;
     })
 
     $("div.item-badge").text(bagLength);

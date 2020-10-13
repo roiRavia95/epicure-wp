@@ -17,6 +17,8 @@ function epicure_database(){
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         user_id varchar(50) NOT NULL,
         meal_id varchar(50) NOT NULL,
+        changes varchar(255) NOT NULL,
+        sides varchar(255) NOT NULL,
         PRIMARY KEY (id)
     ) $charset_collate;";
 

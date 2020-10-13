@@ -1,4 +1,6 @@
 $ = jQuery.noConflict();
+//Create a function to submit the data to the session storage and pass it to the showDialog function
+//(because it is relevant only when a dialog is opened)
 function submitDataToSession(event)
 {
         event.preventDefault()
