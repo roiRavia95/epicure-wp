@@ -63,80 +63,18 @@ if (have_posts()) {
             <?php
             //This function gets the meals of the specific meal time
             if ($meal_times) {
-                ?>
-                <?php
                 foreach ($meal_times as $time) {
                     $meals = get_meals($time->slug);
-                    //Only if mealtime has meals, use it for getting data from fields in the dialog
-                    if ($meals->found_posts) {
-                        $meal_with_posts = $meals;
-                    }
                 }
                 ?>
                 <div class="overlay">
                     <div class="dialog-wrapper">
                         <a class="exit-button" href="#"><img
-                                    src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.svg" alt=""></a>
+                                    src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.svg" alt="exit"></a>
                         <div class="dialog">
                             <div class="meal-content">
                                 <!--Content injected by JS-->
                             </div>
-                            <?php
-                            //Make sure to loop only over mealtimes with meals to avoid bugs
-                            while ($meal_with_posts->have_posts()) :
-                                $meal_with_posts->the_post();
-                                //Add logic to make specific for each meal
-                                $side_1 = get_field("side_1");
-                                $side_2 = get_field("side_2");
-
-                                $change_1 = get_field("change_1");
-                                $change_2 = get_field("change_2");
-
-                                $quantity = get_field("quantity");
-                                $quantity = 1;
-                                break;
-                            endwhile;
-                            wp_reset_postdata();
-                            ?>
-                            <form method="post">
-                                <h3>Choose a side</h3>
-                                <div class="side">
-                                    <input id="side-1" class="checkbox" type="checkbox" name="side-1"
-                                           value="<?php echo $side_1 ?>">
-                                    <label for="side-1"><?php echo $side_1 ?></label>
-                                </div>
-                                <div class="side">
-                                    <input id="side-2" class="checkbox" type="checkbox" name="side-2"
-                                           value="<?php echo $side_2 ?>">
-                                    <label for="side-2"><?php echo $side_2 ?></label>
-                                </div>
-                                <h3>Changes</h3>
-                                <div class="change">
-                                    <input id="change-1" class="checkbox" type="checkbox" name="change-1"
-                                           value="<?php echo $change_1 ?>">
-                                    <label for="change-1"><?php echo $change_1 ?></label>
-                                </div>
-                                <div class="change">
-                                    <input id="change-2" class="checkbox" type="checkbox" name="change-2"
-                                           value="<?php echo $change_2 ?>">
-                                    <label for="change-2"><?php echo $change_2 ?></label>
-                                </div>
-                                <h3>Quantity</h3>
-                                <div class="quantity">
-                                    <button type="button" class="minus"><img
-                                                src="<?php echo get_template_directory_uri() ?>/images/quantity/minus.png"
-                                                alt="-"></button>
-                                    <input id="quantity" type="number" name="quantity" value="<?php echo $quantity ?>"
-                                           min="1">
-                                    <button type="button" class="plus"><img
-                                                src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
-                                                alt="+"></button>
-                                </div>
-                                <?php echo get_current_user_id()?>
-                                <input type="hidden" name='user_id' value='<?php echo get_current_user_id()?>' >
-                                <input type="hidden" id='meal_id' name='meal_id' value='' >
-                                <button type="submit" id="submit" name="mealSubmit" > ADD TO BAG</button>
-                            </form>
                         </div>
                     </div>
                 </div>

@@ -24,6 +24,7 @@ function get_meals($mealTime)
     $meals = new WP_Query($args);
     ?>
     <section class="restaurant-menu" id="<?php echo $mealTime ?>">
+
         <?php if ($mealTime !== "breakfast") { ?>
             <div class="title-line">
                 <h2><?php echo ucfirst($mealTime) ?></h2>
@@ -36,7 +37,7 @@ function get_meals($mealTime)
                 ?>
                 <li class="meal">
                     <!--Meal ID for connecting meal to dialog-->
-                    <a href="<?php the_permalink() ?>">
+                    <a href="#">
                     <span class="meal_id" style="display: none"><?php echo get_the_ID(); ?></span>
                         <?php the_post_thumbnail('full'); ?>
 
@@ -66,6 +67,57 @@ function get_meals($mealTime)
                         <div class="price-line">
                             <p class="price"><?php echo get_field("price") ?></p>
                         </div>
+
+                        <!--Changes and submit form-->
+                        <?php
+                        $side_1 = get_field("side_1");
+                        $side_2 = get_field("side_2");
+
+                        $change_1 = get_field("change_1");
+                        $change_2 = get_field("change_2");
+
+                        $quantity = get_field("quantity");
+                        $quantity = 1;
+                        ?>
+
+                        <form method="post" style="display:none;">
+                            <h3>Choose a side</h3>
+                            <div class="side">
+                                <input class="side-1 checkbox" type="checkbox" name="side-1"
+                                       value="<?php echo $side_1 ?>">
+                                <label for="side-1"><?php echo $side_1 ?></label>
+                            </div>
+                            <div class="side">
+                                <input class="side-2 checkbox" type="checkbox" name="side-2"
+                                       value="<?php echo $side_2 ?>">
+                                <label for="side-2"><?php echo $side_2 ?></label>
+                            </div>
+                            <h3>Changes</h3>
+                            <div class="change">
+                                <input class="change-1 checkbox" type="checkbox" name="change-1"
+                                       value="<?php echo $change_1 ?>">
+                                <label for="change-1"><?php echo $change_1 ?></label>
+                            </div>
+                            <div class="change">
+                                <input class="change-2 checkbox" type="checkbox" name="change-2"
+                                       value="<?php echo $change_2 ?>">
+                                <label for="change-2"><?php echo $change_2 ?></label>
+                            </div>
+                            <h3>Quantity</h3>
+                            <div class="quantity">
+                                <button type="button" class="minus"><img
+                                            src="<?php echo get_template_directory_uri() ?>/images/quantity/minus.png"
+                                            alt="-"></button>
+                                <input class="quantity" type="number" name="quantity" value="<?php echo $quantity ?>"
+                                       min="1">
+                                <button type="button" class="plus"><img
+                                            src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
+                                            alt="+"></button>
+                            </div>
+                            <input type="hidden" name='user_id' value='<?php echo get_current_user_id()?>' >
+                            <input type="hidden" class="meal_id" name='meal_id' value='<?php echo get_the_ID() ?>' >
+                            <button type="submit" class="submit" name="mealSubmit" > ADD TO BAG</button>
+                        </form>
                     </a>
                 </li>
                 <?php
@@ -138,3 +190,14 @@ function get_signature_meal($restaurant)
 }
 
 ;
+
+function get_meal_by_id($id){
+    $args = array(
+        "post_type"=>"meals",
+        "p"=>$id
+    );
+    $meal = new WP_Query($args);
+    if($meal->have_posts()):$meal->the_post();
+    the_ID();
+    endif;
+}
