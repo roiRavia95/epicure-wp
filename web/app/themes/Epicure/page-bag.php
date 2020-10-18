@@ -9,10 +9,6 @@ get_header(); ?>
 
         <h1 class="title text-center">My <?php the_title() ?></h1>
         <ul class="my-meals">
-            <?php
-            //TODO:-> IN PROGRESS
-            get_selected_meals(wp_get_current_user()->ID);
-            ?>
             <!--Inject content with JS-->
         </ul>
         <hr>
@@ -23,13 +19,13 @@ get_header(); ?>
         //Check if user is signed in
         $checkoutLink = home_url();
         if (is_user_logged_in()) {
-            $checkoutLink .= "/checkout";
+            $checkoutLink .= '/author/' . wp_get_current_user()->user_nicename;
         } else {
             $checkoutLink .= "/login";
         }
         ?>
-        <a class="button checkout" href="<?php echo $checkoutLink ?>"> Finish Order</a>
-    <?php
+        <a href="<?php echo $checkoutLink ?>"class="button checkout"> Finish Order</a>
+        <?php
     endwhile;
     wp_reset_postdata();
     ?>

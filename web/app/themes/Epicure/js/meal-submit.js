@@ -12,6 +12,8 @@ function submitDataToDB(event)
     let changes = {};
     let sides = {};
     console.log(form);
+    //Get the order id inorder to pass it to the server
+    let orderID = window.sessionStorage.getItem('order_id')
 
     form.forEach(item => {
         if (item.name === "user_id") {
@@ -42,6 +44,7 @@ function submitDataToDB(event)
             meal_id: mealID,
             changes: changes,
             sides: sides,
+            order_id:orderID
         },
         type: 'POST',
         success: function (response) {

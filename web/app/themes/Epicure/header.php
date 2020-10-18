@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php
     wp_head()?>
+
     <!--Get WP_Ajax url and nonce for every file.-->
     <script type="text/javascript">
+        let isUserLoggedIn = "<?php echo is_user_logged_in() ?>"
         let ajaxURL = "<?php echo admin_url('admin-ajax.php'); ?>";
         let nonce = "<?php echo wp_create_nonce('nonce_name')?>"
     </script>
@@ -50,7 +52,7 @@
             <?php echo get_template_part("templates/searchbar");
             $userPage = home_url();
             if (is_user_logged_in()) {
-                $userPage .= "/user/" . wp_get_current_user()->user_nicename;
+                $userPage .= "/author/" . wp_get_current_user()->user_nicename;
                 ?>
                 <a class="logout" href="<?php echo wp_logout_url() ?>" >Logout</a>
                 <?php

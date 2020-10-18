@@ -130,6 +130,7 @@ function get_meals($mealTime)
     return $meals;
 }
 
+//This function is for the front page meals. presents meals with the category "signature"
 function get_signature_meal($restaurant)
 {
     $args = array(
@@ -190,15 +191,17 @@ function get_signature_meal($restaurant)
 }
 
 ;
-
-function get_meal_by_id($id, $changes=array(), $sides=array())
+//This function retrieves a meal by its id and is used for getting data from the db in "get_selected_meals() function"
+function get_meal_by_id($id, $changes, $sides)
 {
     $args = array(
         "post_type" => "meals",
         "p" => $id
     );
     $meal = new WP_Query($args);
-    if ($meal->have_posts()):$meal->the_post();
+
+    if ($meal->have_posts()) :
+        $meal->the_post();
         ?>
         <li class='meal'>
             <?php the_post_thumbnail('full'); ?>
@@ -208,26 +211,33 @@ function get_meal_by_id($id, $changes=array(), $sides=array())
                     <p class="ingredients"> <?php the_content() ?></p>
                 </div>
                 <div class="extra-info-bag">
-                    <div class='changes'>
-                        <h3>Changes: </h3>
-                        <?php
-                       foreach($changes as $change){
-                           ?>
-                           <p><?php echo $change ?></p>
-                               <?php
-                       }
+                    <?php
+                    if (isset($changes)) {
                         ?>
-                    </div>
+                        <div class='changes'>
+                            <h3>Changes: </h3>
+                            <?php
+                            foreach ($changes as $change) {
+                                ?>
+                                <p><?php echo $change ?></p>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    <?php }
+                    if (isset($sides)) {
+                    ?>
                     <div class='sides'>
                         <h3>Sides: </h3>
                         <?php
-                        foreach($sides as $side){
+                        foreach ($sides as $side) {
                             ?>
                             <p><?php echo $side ?></p>
                             <?php
                         }
                         ?>
                     </div>
+                        <?php }?>
                 </div>
 
                 <p class="price"><?php echo get_field("price") ?></p>

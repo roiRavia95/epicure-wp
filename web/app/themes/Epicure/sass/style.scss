@@ -39,6 +39,7 @@ $secondaryFont: HelveticaNeue;
 $black: #000;
 $activeColor: rgba(222, 146, 0, 0.5);
 $cardBackground: #f9f4ea;
+$borderColor:1px solid rgba(151, 151, 151, 0.2);
 
 //Widths
 $desktopWidth: 1440px;
@@ -150,7 +151,7 @@ section:not(.hero,.about-us,.our-icons) {
 //Header
 header.site-header {
   width: 100%;
-  border-bottom: 0.2px solid rgba(151, 151, 151, 0.2);
+  border-bottom: $borderColor;
 }
 
 div.navigation-menu {
@@ -259,6 +260,7 @@ header.site-header div.menu-items a.item-bag div.item-badge {
   font-size: 11px;
   font-weight: 400;
   border-radius: 50%;
+  display: none;
 }
 
 //Hamburger Menu
@@ -1560,7 +1562,6 @@ nav.meal-nav.sticky-nav {
   background-color: #ffffff;
   z-index: 2;
 }
-
 ul.meals {
   display: grid;
   grid-template-columns: repeat(2, 157px);
@@ -2142,7 +2143,8 @@ div.swal2-popup {
 
 //Item Bag Page
 
-main.bag {
+main.bag,
+div.past-orders{
   font-family: $mainFont;
 
   h1 {
@@ -2397,12 +2399,78 @@ main.search {
 }
 
 
+//User Page
+body.author main{
+  div.past-orders{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  div.title{
+    text-align: center;
+    margin: 100px auto;
+    padding-bottom:50px;
+    border-bottom: $borderColor;
+    width: 30%;
+  }
+  h1{
+    font-size: 36px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.26px;
+  }
+  h2{
+    font-size: 24px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.26px;
+  }
+
+  div.order{
+    margin: 20px auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  @media (min-width: $tabletWidth){
+    div.order{
+      text-align: unset;
+    }
+  }
+
+  div.order div{
+    text-align: left;
+  }
+
+  img{
+    width: 100%;
+  }
+  @media (min-width: $tabletWidth){
+    img{
+      width: 300px;
+    }
+  }
+  li.meal{
+    margin-left: 0;
+    margin-bottom: 0;
+    justify-content: flex-start;
+  }
+
+
+}
+
+
 //Footer
 footer ul {
   display: block;
   width: 100%;
   text-align: center;
-  border-top: 1px solid rgba(151, 151, 151, 0.2);
+  border-top: $borderColor;
 }
 
 @media (min-width: $tabletWidth) {

@@ -10,17 +10,21 @@ function save_selected_meal()
         $changes = $_POST["changes"];
         $sides = $_POST["sides"];
         $quantity = $_POST["quantity"];
+        $order_id = $_POST["order_id"];
+
 
         $table = $wpdb->prefix . 'selected_meals';
         $data = array(
             'user_id'=>$user_id,
             'meal_id'=>$meal_id,
             'changes'=>json_encode($changes),
-            'sides'=>json_encode($sides)
+            'sides'=>json_encode($sides),
+            'order_id'=>$order_id
         );
         $format = array(
             '%d',
             '%d',
+            '%s',
             '%s',
             '%s'
         );

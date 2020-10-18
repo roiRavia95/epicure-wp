@@ -3,6 +3,14 @@ $ = jQuery.noConflict();
 //(because it is relevant only when a dialog is opened)
 function submitDataToSession(event)
 {
+        //Create order id and add to it to the session storage
+    console.log(window.sessionStorage.getItem('order_id'));
+    if(!window.sessionStorage.getItem('order_id')){
+            let orderID = new Date().getTime();
+            window.sessionStorage.setItem('order_id',orderID);
+        }
+
+
         event.preventDefault()
         //Get hold of the meal's content
         let mealContent = $("div.dialog")[0].children[0].children;

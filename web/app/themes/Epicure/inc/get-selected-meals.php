@@ -6,10 +6,10 @@ function get_selected_meals($id)
     $table = $wpdb->prefix . "selected_meals";
     $data = $wpdb->get_results("SELECT * from $table WHERE user_id = $id ", ARRAY_A);
 
-//    print_r(count($data));
+    // Go over each doc and retrieve the relevant data
     foreach ($data as $meal) {
         $changes = json_decode($meal["changes"]);
         $sides = json_decode($meal["sides"]);
-        get_meal_by_id($meal["meal_id"],$changes,$sides);
+        get_meal_by_id($meal["meal_id"], $changes, $sides);
     }
 }
