@@ -1,6 +1,5 @@
 <?php
 function registerUser()
-
 {
     if (isset($_POST['register'])) {
         //Get hold of data submitted form
@@ -39,3 +38,28 @@ function register_url($link)
 }
 
 add_filter('register', 'register_url');
+
+
+//Custom Register page
+
+//Add stylesheet to the register page
+function custom_register_css()
+{
+    wp_enqueue_style('register-styles', get_template_directory_uri() . '/css/custom-register.css');
+}
+
+add_action('wp_enqueue_scripts', 'custom_register_css');
+
+
+
+function auto_login_new_user($user_id)
+{
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id);
+    $user = get_user_by('id', $user_id);
+    do_action('wp_login', $user->user_login);
+    wp_redirect(home_url());
+    exit;
+}
+
+add_action('user_register', 'auto_login_new_user');

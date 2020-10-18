@@ -5,16 +5,21 @@
 require get_template_directory() . "/inc/queries.php";
 //require the get_restaurants function from the file
 require get_template_directory() . "/inc/restaurants.php";
-//Require the register form handler
-require get_template_directory() . "/inc/register.php";
-//Require the login form handler
-require get_template_directory() . "/inc/login.php";
 //require the db initiating function
 require get_template_directory() . "/inc/database.php";
 //Require the meal form handler
 require get_template_directory() . "/inc/meal-submit.php";
 //Require the selected meals function
 require get_template_directory() . "/inc/get-selected-meals.php";
+//Require the selected meals function
+require get_template_directory() . "/inc/get-past-orders.php";
+//Require the checkout functionallity
+require get_template_directory() . "/inc/checkout.php";
+
+//Require the register form handler
+require get_template_directory() . "/inc/register.php";
+//Require the login form handler
+require get_template_directory() . "/inc/login.php";
 
 
 //Set up scripts
@@ -32,8 +37,13 @@ function epicure_scripts()
     wp_enqueue_script("session-storage", get_template_directory_uri() . "/js/session-storage.js", array("jquery"), "1.0.0", false);
     //Bag script
     wp_enqueue_script("bag", get_template_directory_uri() . "/js/bag.js", array("jquery"), "1.0.0", false);
-
+    //Meal Submit script
     wp_enqueue_script("meal-submit", get_template_directory_uri() . "/js/meal-submit.js", array("jquery"), "1.0.0", false);
+
+    //Bag Checkout script
+    if(is_page(get_page_by_title("bag"))){
+    wp_enqueue_script("checkout", get_template_directory_uri() . "/js/checkout.js", array("jquery"), "1.0.0", false);
+    }
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
         //Jquery-ui style
@@ -50,6 +60,11 @@ function epicure_scripts()
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-dialog');
     }
+    wp_localize_script("js","localized",array(
+        "ajaxURL"=> admin_url('admin-ajax.php'),
+        "nonce" =>wp_create_nonce('nonce_name'),
+        "isLoggedIn"=> is_user_logged_in()
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'epicure_scripts');
@@ -81,90 +96,3 @@ function epicure_menu()
 
 ;
 add_action('init', 'epicure_menu');
-
-//Custom Login page functions
-
-//Change to epicure logo
-function modify_logo()
-{
-    $logo_style = '<style type="text/css">';
-    $logo_style .= 'h1 a {background-image: url(' . get_template_directory_uri() . '/images/logo/login-logo.png) !important;}';
-    $logo_style .= '</style>';
-    echo $logo_style;
-}
-
-add_action('login_head', 'modify_logo');
-//Change the Logo's URL
-function custom_login_url()
-{
-    return home_url();
-}
-
-add_filter('login_headerurl', 'custom_login_url');
-
-//Add stylesheet to the login page
-function custom_login_css()
-{
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/custom-login.css');
-}
-
-add_action('wp_enqueue_scripts', 'custom_login_css');
-
-//Add stylesheet to the register page
-function custom_register_css()
-{
-    wp_enqueue_style('register-styles', get_template_directory_uri() . '/css/custom-register.css');
-}
-
-add_action('wp_enqueue_scripts', 'custom_register_css');
-
-function login_redirect_to_home()
-{
-    wp_redirect(home_url());
-//    wp_set_auth_cookie(get_current_user_id());
-    exit;
-}
-
-add_action('wp_login', 'login_redirect_to_home');
-
-
-function logout_redirect_to_home()
-{
-    wp_redirect(home_url() . "/login");
-    exit;
-}
-
-add_action('wp_logout', 'login_redirect_to_home');
-
-function auto_login_new_user($user_id)
-{
-    wp_set_current_user($user_id);
-    wp_set_auth_cookie($user_id);
-    $user = get_user_by('id', $user_id);
-    do_action('wp_login', $user->user_login);
-    wp_redirect(home_url());
-    exit;
-}
-
-add_action('user_register', 'auto_login_new_user');
-
-//checkout page only for logged in users
-function redirect_to_specific_page()
-{
-    if (is_page('checkout') && !is_user_logged_in()) {
-        wp_redirect(home_url(), 301);
-        exit;
-    }
-}
-
-add_action('template_redirect', 'redirect_to_specific_page');
-
-//add selected meals to user meta
-
-function user_meta_on_register($user_id)
-{
-    update_user_meta($user_id, 'selected_meals', array());
-}
-add_action('user_register', 'user_meta_on_register');
-add_action('personal_options_update', 'user_meta_on_register');
-add_action('edit_user_profile_update', 'user_meta_on_register');
