@@ -19,5 +19,6 @@
     "laravel-mix": "0.*"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }

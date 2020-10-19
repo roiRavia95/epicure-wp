@@ -2,20 +2,18 @@
 
 <main class="restaurants">
     <h1 class="title text-center"><?php the_title() ?></h1>
+    <!--Category Filter-->
     <ul class="category-filter">
-        <li><a href="#">All</a></li>
+        <li><a class="all-restaurants-page" href='/restaurants'>All</a></li>
         <?php
-        the_category();
-        $categories = get_categories();
-        foreach ($categories as $category) {
-            if ($category->name === "New" || $category->name === "Most Popular" || $category->name == "Open Now") {
-                ?>
-                <li><a href="<?php the_permalink($category->name) ?>"><?php echo $category->name ?></a></li>
-                <?php
-            }
-        }
+        $args = array(
+            "theme_location" => "restaurants-tabs",
+            "container" => "ul",
+        );
+        wp_nav_menu($args);
         ?>
     </ul>
+    <!--Get restaurants function -> restaurants.php -->
     <?php get_restaurants(); ?>
 </main>
 

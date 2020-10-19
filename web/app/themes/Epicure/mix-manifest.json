@@ -1,5 +1,7 @@
 {
   "/mix.js": "/mix.js",
   "/app.js": "/app.js",
-  "/style.css": "/style.css"
+  "/style.css": "/style.css",
+  "/css/custom-login.css": "/css/custom-login.css",
+  "/css/custom-register.css": "/css/custom-register.css"
 }

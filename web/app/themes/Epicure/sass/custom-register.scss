@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'helveticaneueregular';
+  src: url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
+  url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'helveticaneuethin';
+  src: url('../fonts/vendor/helveticaneue/helveticaneue_thin-webfont.woff2') format('woff2'),
+  url('../fonts/vendor/helveticaneue/helveticaneue_thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Font
+$mainFont: HelveticaNeue-thin;
+$secondaryFont: HelveticaNeue;
+
+main.register {
+  background-color: white;
+  font-family: $mainFont;
+}
+
+
+main.register label {
+  font-size: 18px;
+}
+
+main.register div.form-container {
+  width: 320px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+div.logo {
+  text-align: center;
+}
+
+div.logo img {
+  height: 84px;
+  width: 84px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+
+div.form-container form {
+  padding: 26px 24px 46px;
+  margin-top: 20px;
+}
+
+main.register div.form-container div input {
+  display: block;
+  font-size: 24px;
+  line-height: 1.33333333;
+  width: 100%;
+  border-width: 0.0625rem;
+  padding: 0.1875rem 0.3125rem;
+  margin: 0 6px 16px 0;
+  min-height: 40px;
+  max-height: none;
+  border-radius: 4px;
+}
+
+main.register label {
+  line-height: 1.5;
+  display: inline-block;
+  margin-bottom: 3px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+div.submit {
+  text-align: right;
+}
+
+div.submit button {
+  background: #007cba;
+  border-color: #007cba;
+  border-style: none;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+div.form-container a {
+  display: block;
+  margin: 10px 24px;
+
+}
+

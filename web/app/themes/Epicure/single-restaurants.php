@@ -30,15 +30,15 @@ if (have_posts()) {
 
             <?php
             //Print relevant navigation menu for the menu
-            $mealTimes = get_field("meal_times");
+            $meal_times = get_field("meal_times");
             ?>
-            <nav class="meal-nav">
+            <nav class="meal-nav sticky-nav">
                 <?php
-                if ($mealTimes && count($mealTimes) > 1) {
+                if ($meal_times && count($meal_times) > 1) {
                     ?>
                     <ul>
                         <?php
-                        foreach ($mealTimes as $i => $time) {
+                        foreach ($meal_times as $i => $time) {
                             if ($i === 0) {
                                 ?>
                                 <li>
@@ -62,15 +62,23 @@ if (have_posts()) {
             </nav>
             <?php
             //This function gets the meals of the specific meal time
-            if ($mealTimes) {
+            if ($meal_times) {
+                foreach ($meal_times as $time) {
+                    $meals = get_meals($time->slug);
+                }
                 ?>
-                <div id="dialog" style="display:none">
-                    <dialog>yo</dialog>
+                <div class="overlay">
+                    <div class="dialog-wrapper">
+                        <a class="exit-button" href="#"><img
+                                    src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.svg" alt="exit"></a>
+                        <div class="dialog">
+                            <div class="meal-content">
+                                <!--Content injected by JS-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <?php
-                foreach ($mealTimes as $time) {
-                    get_meals($time->slug);
-                }
             } else {
                 ?>
                 <div class="no-meals">
@@ -81,7 +89,8 @@ if (have_posts()) {
             }
             ?>
         </main>
-    <?php
+        <?php
     endwhile;
+    wp_reset_postdata();
 }
 get_footer() ?>

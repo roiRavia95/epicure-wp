@@ -1,30 +1,73 @@
 <?php
 
+//Requiring other php files with functions
+// require the queries file
+require get_template_directory() . "/inc/queries.php";
+//require the get_restaurants function from the file
+require get_template_directory() . "/inc/restaurants.php";
+//require the db initiating function
+require get_template_directory() . "/inc/database.php";
+//Require the meal form handler
+require get_template_directory() . "/inc/meal-submit.php";
+//Require the selected meals function
+require get_template_directory() . "/inc/get-selected-meals.php";
+//Require the selected meals function
+require get_template_directory() . "/inc/get-past-orders.php";
+//Require the checkout functionallity
+require get_template_directory() . "/inc/checkout.php";
+
+//Require the register form handler
+require get_template_directory() . "/inc/register.php";
+//Require the login form handler
+require get_template_directory() . "/inc/login.php";
+
+
 //Set up scripts
 function epicure_scripts()
 {
     //Styles
     wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0.0');
 
-
     //Scripts
+    //Mix
+    wp_enqueue_script("app", get_template_directory_uri() . "/js/app.js", array(""), "1.0.0", true);
+    //Mobile menu script
+    wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/js/mobile-menu.js", array("jquery"), "1.0.0", true);
+    //Session script
+    wp_enqueue_script("session-storage", get_template_directory_uri() . "/js/session-storage.js", array("jquery"), "1.0.0", false);
+    //Bag script
+    wp_enqueue_script("bag", get_template_directory_uri() . "/js/bag.js", array("jquery"), "1.0.0", false);
+    //Meal Submit script
+    wp_enqueue_script("meal-submit", get_template_directory_uri() . "/js/meal-submit.js", array("jquery"), "1.0.0", false);
 
+    //Bag Checkout script
+    if(is_page(get_page_by_title("bag"))){
+    wp_enqueue_script("checkout", get_template_directory_uri() . "/js/checkout.js", array("jquery"), "1.0.0", false);
+    }
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
+        //Jquery-ui style
         wp_enqueue_style('jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
-
-//        wp_enqueue_script('jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.12.1');
-        wp_enqueue_script("scripts", get_template_directory_uri() . "/js/restaurant-scripts.js", array("jquery"), "1.0.0", true);
-
+        //Dialog
+        wp_enqueue_script("dialog", get_template_directory_uri() . "/js/dialog.js", array("jquery"), "1.0.0", true);
+        //Restaurant Menu
+        wp_enqueue_script("restaurant-meal-menu", get_template_directory_uri() . "/js/restaurant-meal-menu.js", array("jquery"), "1.0.0", true);
+        wp_enqueue_script("restaurant-script", get_template_directory_uri() . "/js/restaurant-scripts.js", array("jquery"), "1.0.0", true);
+        //Sweet Alert 2
+        wp_enqueue_style("sweetalertcss", get_template_directory_uri() . "/css/sweetalert2.min.css");
+        wp_enqueue_script("sweetalertjs", get_template_directory_uri() . "/js/sweetalert2.min.js", array("jquery"), "5.5.1");
         //Jquery-ui
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-dialog');
     }
-
+    wp_localize_script("js","localized",array(
+        "ajaxURL"=> admin_url('admin-ajax.php'),
+        "nonce" =>wp_create_nonce('nonce_name'),
+        "isLoggedIn"=> is_user_logged_in()
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'epicure_scripts');
-
 
 //Adding theme support
 function epicure_theme_support()
@@ -32,10 +75,8 @@ function epicure_theme_support()
     add_image_size('restaurants-image', 342, 212, true);
     add_image_size('restaurant-hero', 1102, 395, true);
     add_image_size('meal-image', 236, 150, true);
-
     //Add featured images to every post/page
     add_theme_support('post-thumbnails');
-
     //SEO
     add_theme_support('title-tag');
 }
@@ -47,15 +88,11 @@ function epicure_menu()
 {
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'epicure'),
-        'mobile-menu-front' => __('Mobile Menu Front', 'epicure')
+        'restaurants-tabs' => __('Restaurants Tabs', 'epicure'),
+        'mobile-menu-front' => __('Mobile Menu Front', 'epicure'),
+        'footer-menu' => __('Footer', 'epicure')
     ));
 }
 
 ;
 add_action('init', 'epicure_menu');
-
-//Requiring other php files with functions
-// require the queries file
-require get_template_directory() . "/inc/queries.php";
-//require the get_restaurants function from the file
-require get_template_directory() . "/inc/restaurants.php";
