@@ -23,3 +23,7 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+#ssh key - aws
+/keys
+/keys/*

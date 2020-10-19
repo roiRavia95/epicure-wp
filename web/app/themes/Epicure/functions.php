@@ -15,12 +15,10 @@ require get_template_directory() . "/inc/get-selected-meals.php";
 require get_template_directory() . "/inc/get-past-orders.php";
 //Require the checkout functionallity
 require get_template_directory() . "/inc/checkout.php";
-
 //Require the register form handler
 require get_template_directory() . "/inc/register.php";
 //Require the login form handler
 require get_template_directory() . "/inc/login.php";
-
 
 //Set up scripts
 function epicure_scripts()

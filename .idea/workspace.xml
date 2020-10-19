@@ -32,25 +32,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Envoy.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/checkout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/get-past-orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/checkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/author.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/author.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/get-selected-meals.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/get-selected-meals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/meal-submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/meal-submit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/queries.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/queries.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/meal-submit.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/meal-submit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/session-storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/session-storage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/page-bag.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/page-bag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/images/hero/hero-picture@2x.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +135,7 @@
       <workItem from="1602408322665" duration="100019000" />
       <workItem from="1603003846244" duration="570000" />
       <workItem from="1603004489579" duration="2197000" />
-      <workItem from="1603008528925" duration="3324000" />
+      <workItem from="1603008528925" duration="11825000" />
     </task>
     <servers />
   </component>
