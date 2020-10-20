@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -31,13 +34,97 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Envoy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Envoy.blade.comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/epicure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/epicure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Envoy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Envoy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/images/hero/hero-picture@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/inc/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/inc/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/meal-submit.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/meal-submit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/restaurant-meal-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/restaurant-meal-menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/restaurant-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/restaurant-scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/session-storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/session-storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/@types/color-name/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/@types/color-name/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/@types/color-name/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/@types/color-name/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/base64-arraybuffer/lib/base64-arraybuffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/base64-arraybuffer/lib/base64-arraybuffer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/base64-arraybuffer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/base64-arraybuffer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync-client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/ansi-styles/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/ansi-styles/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/ansi-styles/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/ansi-styles/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/ansi-styles/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/ansi-styles/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/chokidar/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/node_modules/chokidar/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/browser-sync/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/eazy-logger/example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/eazy-logger/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/eazy-logger/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/engine.io.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/engine.io.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/dist/debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/debug/src/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/ms/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/ms/license.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/ms/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/node_modules/ms/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/engine.io-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseqs/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/parseuri/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.dev.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.dev.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.dev.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.dev.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/dist/socket.io.slim.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/lib/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/lib/manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/lib/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/lib/socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/dist/debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/debug/src/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/ms/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/ms/license.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/ms/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/node_modules/ms/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/socket.io-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/tfunk/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/tfunk/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/tfunk/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/node_modules/tfunk/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,14 +155,17 @@
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/roots/wp-password-bcrypt" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/roots/bedrock-autoloader" />
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
       <path value="$PROJECT_DIR$/vendor/roots/wp-config" />
       <path value="$PROJECT_DIR$/vendor/oscarotero/env" />
       <path value="$PROJECT_DIR$/vendor/roots/wordpress-core-installer" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/vlucas" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ij5mmD44cXAKywZ7mEzAvaXRVL" />
@@ -86,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/app/themes/Epicure/inc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/vlucas" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -101,7 +191,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vendor" />
+      <recent name="$PROJECT_DIR$/vendor/symfony" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vendor/vlucas" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/web/app/themes/Epicure/inc" />
       <recent name="$PROJECT_DIR$/web/app/themes/Epicure/js" />
       <recent name="$PROJECT_DIR$/web/app/themes/Epicure" />
@@ -135,7 +231,7 @@
       <workItem from="1602408322665" duration="100019000" />
       <workItem from="1603003846244" duration="570000" />
       <workItem from="1603004489579" duration="2197000" />
-      <workItem from="1603008528925" duration="11825000" />
+      <workItem from="1603008528925" duration="33991000" />
     </task>
     <servers />
   </component>
@@ -167,30 +263,34 @@
       <screen x="-1920" y="-131" width="1920" height="1080" />
     </state>
     <state x="-1500" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602595271772" />
-    <state width="1920" height="309" key="GridCell.Tab.0.bottom" timestamp="1602779846671">
-      <screen x="-1920" y="-131" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom" timestamp="1603185333104">
+      <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022652" />
     <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020419" />
     <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846671" />
-    <state width="1920" height="309" key="GridCell.Tab.0.center" timestamp="1602779846668">
-      <screen x="-1920" y="-131" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603185333104" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center" timestamp="1603185333102">
+      <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022644" />
     <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020417" />
     <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846668" />
-    <state width="1920" height="309" key="GridCell.Tab.0.left" timestamp="1602779846665">
-      <screen x="-1920" y="-131" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603185333102" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left" timestamp="1603185333102">
+      <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022642" />
     <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020411" />
     <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846665" />
-    <state width="1920" height="309" key="GridCell.Tab.0.right" timestamp="1602779846669">
-      <screen x="-1920" y="-131" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603185333102" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right" timestamp="1603185333103">
+      <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022645" />
     <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020418" />
     <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846669" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603185333103" />
     <state x="-1181" y="319" key="NewPhpFileDialog" timestamp="1602596657355">
       <screen x="-1920" y="-131" width="1920" height="1080" />
     </state>
@@ -199,20 +299,22 @@
       <screen x="-1920" y="-131" width="1920" height="1080" />
     </state>
     <state x="-1327" y="-56" key="RollbackChangesDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602411387818" />
-    <state x="209" y="3" key="SettingsEditor" timestamp="1603008667616">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1719" y="-124" key="SettingsEditor" timestamp="1603185384820">
+      <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state x="209" y="3" key="SettingsEditor/-1920.-108.1920.1057/0.0.1440.900@0.0.1440.900" timestamp="1603004178520" />
     <state x="-1610" y="-54" key="SettingsEditor/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602671926441" />
     <state x="209" y="3" key="SettingsEditor/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603008667616" />
+    <state x="1719" y="-124" key="SettingsEditor/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603185384820" />
     <state x="471" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603008160931">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="471" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603008160931" />
-    <state x="406" y="40" width="838" height="860" key="search.everywhere.popup" timestamp="1603004399248">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1981" y="-80" width="1118" height="1032" key="search.everywhere.popup" timestamp="1603185397136">
+      <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state x="-1379" y="-83" width="838" height="1032" key="search.everywhere.popup/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602671901222" />
     <state x="406" y="40" width="838" height="860" key="search.everywhere.popup/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603004399248" />
+    <state x="1981" y="-80" width="1118" height="1032" key="search.everywhere.popup/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603185397136" />
   </component>
 </project>

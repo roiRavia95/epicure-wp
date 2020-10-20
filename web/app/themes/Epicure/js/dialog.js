@@ -1,15 +1,11 @@
 //Show the Meal Dialog and trigger logic inside of it
-function showDialog() {
+window.showDialog = function () {
     $("li.meal").on("click", function (e) {
         e.preventDefault();
         let mealContent = e.currentTarget.children[0].children;
         $(mealContent).clone().prependTo("div.dialog div.meal-content");
         //Show the form inside the dialog
         $("div.dialog div.meal-content form").css("display","block");
-
-        //Add meal id to each meal when the dialog is opened
-        // let mealID = $('div.meal-content span.meal_id')[0].innerText;
-        // $('input.meal_id').val(mealID);
 
         //Only on desktop show extra info next to the header
         if ($(window).width() > 768) {
@@ -38,8 +34,8 @@ function showDialog() {
         //Handle the form Submit
         $("div.dialog div.meal-content form").submit(function (event) {
             //Must bind the "this" to the function
-            boundSubmitToSession = submitDataToSession.bind(this);
-            boundSubmitToDB = submitDataToDB.bind(this);
+            boundSubmitToSession = window.submitDataToSession.bind(this);
+            boundSubmitToDB = window.submitDataToDB.bind(this);
 
             //Invoke the functions with "this" pointing to the dialog form
             boundSubmitToSession(event);
@@ -57,7 +53,7 @@ function showDialog() {
 }
 
 //Close Dialog
-function hideDialog(submitted, name) {
+window.hideDialog = function(submitted, name) {
 
     $("body").css("overflow", "")
     $("div.overlay").fadeOut("fast", "linear", () => {

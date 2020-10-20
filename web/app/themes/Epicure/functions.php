@@ -13,7 +13,7 @@ require get_template_directory() . "/inc/meal-submit.php";
 require get_template_directory() . "/inc/get-selected-meals.php";
 //Require the selected meals function
 require get_template_directory() . "/inc/get-past-orders.php";
-//Require the checkout functionallity
+//Require the checkout functionality
 require get_template_directory() . "/inc/checkout.php";
 //Require the register form handler
 require get_template_directory() . "/inc/register.php";
@@ -28,29 +28,29 @@ function epicure_scripts()
 
     //Scripts
     //Mix
-    wp_enqueue_script("app", get_template_directory_uri() . "/js/app.js", array(""), "1.0.0", true);
+    wp_enqueue_script("app", get_template_directory_uri() . "/dist/app.js", array(""), "1.0.0", true);
     //Mobile menu script
-    wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/js/mobile-menu.js", array("jquery"), "1.0.0", true);
+    wp_enqueue_script("mobile-menu", get_template_directory_uri() . "/dist/js/mobile-menu.js", array("jquery"), "1.0.0", true);
     //Session script
-    wp_enqueue_script("session-storage", get_template_directory_uri() . "/js/session-storage.js", array("jquery"), "1.0.0", false);
+    wp_enqueue_script("session-storage", get_template_directory_uri() . "/dist/js/session-storage.js", array("jquery"), "1.0.0", false);
     //Bag script
-    wp_enqueue_script("bag", get_template_directory_uri() . "/js/bag.js", array("jquery"), "1.0.0", false);
+    wp_enqueue_script("bag", get_template_directory_uri() . "/dist/js/bag.js", array("jquery"), "1.0.0", false);
     //Meal Submit script
-    wp_enqueue_script("meal-submit", get_template_directory_uri() . "/js/meal-submit.js", array("jquery"), "1.0.0", false);
+    wp_enqueue_script("meal-submit", get_template_directory_uri() . "/dist/js/meal-submit.js", array("jquery"), "1.0.0", false);
 
     //Bag Checkout script
     if(is_page(get_page_by_title("bag"))){
-    wp_enqueue_script("checkout", get_template_directory_uri() . "/js/checkout.js", array("jquery"), "1.0.0", false);
-    }
+    wp_enqueue_script("checkout", get_template_directory_uri() . "/dist/js/checkout/checkout.js", array("jquery"), "1.0.0", false);
+    };
     //JS Script & Styles for single restaurant page
     if (is_single() && get_post_type() === "restaurants") {
         //Jquery-ui style
         wp_enqueue_style('jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
         //Dialog
-        wp_enqueue_script("dialog", get_template_directory_uri() . "/js/dialog.js", array("jquery"), "1.0.0", true);
+        wp_enqueue_script("dialog", get_template_directory_uri() . "/dist/js/restaurants/dialog.js", array("jquery"), "1.0.0", false);
         //Restaurant Menu
-        wp_enqueue_script("restaurant-meal-menu", get_template_directory_uri() . "/js/restaurant-meal-menu.js", array("jquery"), "1.0.0", true);
-        wp_enqueue_script("restaurant-script", get_template_directory_uri() . "/js/restaurant-scripts.js", array("jquery"), "1.0.0", true);
+        wp_enqueue_script("restaurant-meal-menu", get_template_directory_uri() . "/dist/js/restaurants/restaurant-meal-menu.js", array("jquery"), "1.0.0", false);
+        wp_enqueue_script("restaurant-script", get_template_directory_uri() . "/dist/js/restaurants/restaurant-scripts.js", array("jquery"), "1.0.0", true);
         //Sweet Alert 2
         wp_enqueue_style("sweetalertcss", get_template_directory_uri() . "/css/sweetalert2.min.css");
         wp_enqueue_script("sweetalertjs", get_template_directory_uri() . "/js/sweetalert2.min.js", array("jquery"), "5.5.1");

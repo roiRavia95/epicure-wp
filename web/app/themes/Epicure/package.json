@@ -15,10 +15,14 @@
   },
   "devDependencies": {
     "bootstrap-sass": "^3.4.1",
+    "compression-webpack-plugin": "^6.0.3",
     "jquery": "^3.5.1",
     "laravel-mix": "0.*"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "config-webpack": "^1.0.4",
+    "laravel-mix-versionhash": "^1.1.7"
+  }
 }

@@ -60,7 +60,7 @@ add_filter('login_headerurl', 'custom_login_url');
 //Add stylesheet to the login page
 function custom_login_css()
 {
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/custom-login.css');
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/css/custom-login.css');
 }
 
 add_action('wp_enqueue_scripts', 'custom_login_css');

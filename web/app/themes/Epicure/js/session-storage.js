@@ -1,7 +1,7 @@
 $ = jQuery.noConflict();
 //Create a function to submit the data to the session storage and pass it to the showDialog function
 //(because it is relevant only when a dialog is opened)
-function submitDataToSession(event)
+window.submitDataToSession = function(event)
 {
         //Create order id and add to it to the session storage
     console.log(window.sessionStorage.getItem('order_id'));
@@ -61,5 +61,5 @@ function submitDataToSession(event)
         window.sessionStorage.setItem(meal.title + window.sessionStorage.length, mealString);
         console.log("meal has been added to session storage")
     }
-        hideDialog(true, meal.title);
+        window.hideDialog(true, meal.title);
 }

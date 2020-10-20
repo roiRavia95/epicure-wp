@@ -1,7 +1,15 @@
 {
   "/mix.js": "/mix.js",
-  "/app.js": "/app.js",
-  "/style.css": "/style.css",
-  "/css/custom-login.css": "/css/custom-login.css",
-  "/css/custom-register.css": "/css/custom-register.css"
+  "/dist/app.js": "/dist/app.js",
+  "/dist/css/style.css": "/dist/css/style.css",
+  "/dist/css/custom-register.css": "/dist/css/custom-register.css",
+  "/dist/css/custom-login.css": "/dist/css/custom-login.css",
+  "/dist/js/session-storage.js": "/dist/js/session-storage.js",
+  "/dist/js/restaurants/restaurant-scripts.js": "/dist/js/restaurants/restaurant-scripts.js",
+  "/dist/js/restaurants/restaurant-meal-menu.js": "/dist/js/restaurants/restaurant-meal-menu.js",
+  "/dist/js/mobile-menu.js": "/dist/js/mobile-menu.js",
+  "/dist/js/meal-submit.js": "/dist/js/meal-submit.js",
+  "/dist/js/restaurants/dialog.js": "/dist/js/restaurants/dialog.js",
+  "/dist/js/checkout/checkout.js": "/dist/js/checkout/checkout.js",
+  "/dist/js/bag.js": "/dist/js/bag.js"
 }

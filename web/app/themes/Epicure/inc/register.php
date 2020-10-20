@@ -45,7 +45,7 @@ add_filter('register', 'register_url');
 //Add stylesheet to the register page
 function custom_register_css()
 {
-    wp_enqueue_style('register-styles', get_template_directory_uri() . '/css/custom-register.css');
+    wp_enqueue_style('register-styles', get_template_directory_uri() . '/dist/css/custom-register.css');
 }
 
 add_action('wp_enqueue_scripts', 'custom_register_css');

@@ -1,11 +1,10 @@
 $ = jQuery.noConflict();
-
 $(document).ready(() => {
 
-        scrollOnClick()
+        window.scrollOnClick()
 
-        changeCurrentMenu()
+        window.changeCurrentMenu()
 
-        showDialog()
+        window.showDialog()
     }
 )

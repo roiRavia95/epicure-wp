@@ -1,7 +1,7 @@
 $ = jQuery.noConflict();
 //Create a function to submit the data to the server using ajax and pass it to the showDialog function
 //(because it is relevant only when a dialog is opened)
-function submitDataToDB(event)
+window.submitDataToDB = function(event)
 {
     event.preventDefault();
     //Get Data from the form

@@ -1,5 +1,5 @@
 //Create scrolling functionality in restaurant menu
-function scrollOnClick() {
+window.scrollOnClick = function() {
     $(".meal-nav ul li a").click(function (event) {
         event.preventDefault();
         let mealTime = event.target.innerHTML;
@@ -13,7 +13,7 @@ function scrollOnClick() {
 }
 
 //Show which meal time menu is currently being watched by the user
-function changeCurrentMenu() {
+window.changeCurrentMenu = function () {
     //Get section's top Y-axis location
     let sectionArray = $("section.restaurant-menu").get();
     let sectionsY = {};
