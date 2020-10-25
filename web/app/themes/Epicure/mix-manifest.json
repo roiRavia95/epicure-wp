@@ -1,15 +1,13 @@
 {
-  "/mix.js": "/mix.js",
-  "/dist/app.js": "/dist/app.js",
-  "/dist/css/style.css": "/dist/css/style.css",
-  "/dist/css/custom-register.css": "/dist/css/custom-register.css",
-  "/dist/css/custom-login.css": "/dist/css/custom-login.css",
-  "/dist/js/session-storage.js": "/dist/js/session-storage.js",
-  "/dist/js/restaurants/restaurant-scripts.js": "/dist/js/restaurants/restaurant-scripts.js",
-  "/dist/js/restaurants/restaurant-meal-menu.js": "/dist/js/restaurants/restaurant-meal-menu.js",
-  "/dist/js/mobile-menu.js": "/dist/js/mobile-menu.js",
-  "/dist/js/meal-submit.js": "/dist/js/meal-submit.js",
-  "/dist/js/restaurants/dialog.js": "/dist/js/restaurants/dialog.js",
-  "/dist/js/checkout/checkout.js": "/dist/js/checkout/checkout.js",
-  "/dist/js/bag.js": "/dist/js/bag.js"
+    "/dist/js/bag.21c5f1.js": "/dist/js/bag.21c5f1.js",
+    "/dist/css/style.28a052.css": "/dist/css/style.28a052.css",
+    "/dist/css/custom-register.28a052.css": "/dist/css/custom-register.28a052.css",
+    "/dist/css/custom-login.28a052.css": "/dist/css/custom-login.28a052.css",
+    "/dist/js/checkout.157d50.js": "/dist/js/checkout.157d50.js",
+    "/dist/js/dialog.bcab24.js": "/dist/js/dialog.bcab24.js",
+    "/dist/js/meal-submit.90b013.js": "/dist/js/meal-submit.90b013.js",
+    "/dist/js/mobile-menu.41d383.js": "/dist/js/mobile-menu.41d383.js",
+    "/dist/js/restaurant-meal-menu.d6a83e.js": "/dist/js/restaurant-meal-menu.d6a83e.js",
+    "/dist/js/restaurant-scripts.39d963.js": "/dist/js/restaurant-scripts.39d963.js",
+    "/dist/js/session-storage.e60d84.js": "/dist/js/session-storage.e60d84.js"
 }

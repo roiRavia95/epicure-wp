@@ -24,7 +24,7 @@
                             the_post_thumbnail('medium');
                         } else {
                             ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/hero/hero-picture.png"
+                            <img src="<?php echo get_template_directory_uri() ?>/dist/images/hero/hero-picture.png"
                                  alt="img">
                             <?php
                         }

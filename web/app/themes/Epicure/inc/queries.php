@@ -46,9 +46,9 @@ function get_meals($mealTime)
                         <div class="extra-info">
                             <?php
                             //Add icon logic
-                            $spicyIcon = get_template_directory_uri() . '/images/meal-icons/spicy.svg';
-                            $veganIcon = get_template_directory_uri() . '/images/meal-icons/vegan.svg';
-                            $vegetarianIcon = get_template_directory_uri() . '/images/meal-icons/vegetarian.svg';
+                            $spicyIcon = get_template_directory_uri() . '/dist/images/meal-icons/spicy.svg';
+                            $veganIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegan.svg';
+                            $vegetarianIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegetarian.svg';
 
                             if (get_field("extra-info")["spicy"]) { ?>
                                 <img class="info-icon" src="<?php echo $spicyIcon ?>" alt="spicy">
@@ -106,12 +106,12 @@ function get_meals($mealTime)
                             <h3>Quantity</h3>
                             <div class="quantity">
                                 <button type="button" class="minus"><img
-                                            src="<?php echo get_template_directory_uri() ?>/images/quantity/minus.png"
+                                            src="<?php echo get_template_directory_uri() ?>/dist/images/quantity/minus.png"
                                             alt="-"></button>
                                 <input class="quantity" type="number" name="quantity" value="<?php echo $quantity ?>"
                                        min="1">
                                 <button type="button" class="plus"><img
-                                            src="<?php echo get_template_directory_uri() ?>/images/quantity/plus.png"
+                                            src="<?php echo get_template_directory_uri() ?>/dist/images/quantity/plus.png"
                                             alt="+"></button>
                             </div>
                             <input type="hidden" name='user_id' value='<?php echo get_current_user_id() ?>'>
@@ -165,9 +165,9 @@ function get_signature_meal($restaurant)
             <div class="extra-info">
                 <?php
                 //Add icon logic
-                $spicyIcon = get_template_directory_uri() . '/images/meal-icons/spicy.svg';
-                $veganIcon = get_template_directory_uri() . '/images/meal-icons/vegan.svg';
-                $vegetarianIcon = get_template_directory_uri() . '/images/meal-icons/vegetarian.svg';
+                $spicyIcon = get_template_directory_uri() . '/dist/images/meal-icons/spicy.svg';
+                $veganIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegan.svg';
+                $vegetarianIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegetarian.svg';
 
                 if (get_field("extra-info")["spicy"]) { ?>
                     <img class="info-icon" src="<?php echo $spicyIcon ?>" alt="spicy">

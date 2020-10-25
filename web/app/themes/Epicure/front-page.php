@@ -64,9 +64,9 @@ while (have_posts()):
         <section class="our-icons">
             <h1>The meaning of our icons :</h1>
             <?php
-            $spicyIcon = get_template_directory_uri() . '/images/meal-icons/spicy.svg';
-            $veganIcon = get_template_directory_uri() . '/images/meal-icons/vegan.svg';
-            $vegetarianIcon = get_template_directory_uri() . '/images/meal-icons/vegetarian.svg';
+            $spicyIcon = get_template_directory_uri() . '/dist/images/meal-icons/spicy.svg';
+            $veganIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegan.svg';
+            $vegetarianIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegetarian.svg';
             ?>
             <div class="icons-container">
                 <div class="icon spicy">
@@ -149,16 +149,16 @@ while (have_posts()):
                         <p><?php the_content() ?></p>
                     </div>
                 </div>
-                <?php $aboutLogo = get_template_directory_uri() . '/images/about-logo/about-logo@3x.png' ?>
+                <?php $aboutLogo = get_template_directory_uri() . '/dist/images/about-logo/about-logo@3x.png' ?>
                 <img src="<?php echo $aboutLogo ?>" alt="logo">
             </div>
             <div class="download-buttons">
                 <a href="#">
-                    <button><img src="<?php echo get_template_directory_uri() ?>/images/download-buttons/apple.png"
+                    <button><img src="<?php echo get_template_directory_uri() ?>/dist/images/download-buttons/apple.png"
                                  alt="apple">Download on the <span>App Store</span></button>
                 </a>
                 <a href="#">
-                    <button><img src="<?php echo get_template_directory_uri() ?>/images/download-buttons/google.png"
+                    <button><img src="<?php echo get_template_directory_uri() ?>/dist/images/download-buttons/google.png"
                                  alt="apple">
                         Get it on <span>Google Play</span></button>
                 </a>

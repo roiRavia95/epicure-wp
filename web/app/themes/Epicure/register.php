@@ -6,7 +6,7 @@ get_header() ?>
 <main class="register">
 <div class="form-container">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri() ?>/images/logo/login-logo.png" alt="logo">
+        <img src="<?php echo get_template_directory_uri() ?>/dist/images/logo/login-logo.png" alt="logo">
     </div>
     <form method="post" class="register-form">
         <div>

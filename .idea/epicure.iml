@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/keys" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/oscarotero/env" />
@@ -17,6 +19,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/advanced-custom-fields" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/disable-gutenberg" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/duplicate-post" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/epicure-post-types" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/regenerate-thumbnails" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/taxonomy-terms-order" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/themes/Epicure/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/uploads/2020" />
+      <excludeFolder url="file://$MODULE_DIR$/web/wp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

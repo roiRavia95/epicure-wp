@@ -21,7 +21,7 @@ if (have_posts()) {
                 if (strtolower($category->name) === "open now") {
                     ?>
                     <p class="open-now">
-                        <img src="<?php echo get_template_directory_uri() ?>/images/open-now/clock-icon@2x.png">Open now
+                        <img src="<?php echo get_template_directory_uri() ?>/dist/images/open-now/clock-icon@2x.png">Open now
                     </p>
                     <?php
                 }
@@ -70,7 +70,7 @@ if (have_posts()) {
                 <div class="overlay">
                     <div class="dialog-wrapper">
                         <a class="exit-button" href="#"><img
-                                    src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.svg" alt="exit"></a>
+                                    src="<?php echo get_template_directory_uri() ?>/dist/images/exit-icon/x.svg" alt="exit"></a>
                         <div class="dialog">
                             <div class="meal-content">
                                 <!--Content injected by JS-->

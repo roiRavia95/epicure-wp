@@ -43,7 +43,7 @@ add_action('wp_logout','logoutUser',10,2);
 function modify_logo()
 {
     $logo_style = '<style type="text/css">';
-    $logo_style .= 'h1 a {background-image: url(' . get_template_directory_uri() . '/images/logo/login-logo.png) !important;}';
+    $logo_style .= 'h1 a {background-image: url(' . get_template_directory_uri() . '/dist/images/logo/login-logo.png) !important;}';
     $logo_style .= '</style>';
     echo $logo_style;
 }
@@ -56,14 +56,6 @@ function custom_login_url()
     return home_url();
 }
 add_filter('login_headerurl', 'custom_login_url');
-
-//Add stylesheet to the login page
-function custom_login_css()
-{
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/css/custom-login.css');
-}
-
-add_action('wp_enqueue_scripts', 'custom_login_css');
 
 function login_redirect_to_home()
 {

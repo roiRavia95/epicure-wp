@@ -38,5 +38,5 @@ dist
 node_modules
 node_modules/*
 
+/web/app/themes/Epicure/node_modules/*
 /web/app/themes/Epicure/node_modules/
-web/app/themes/Epicure/node_modules

@@ -20,11 +20,11 @@
 <header class="site-header">
     <div class="navigation-menu">
         <a href="#" class="menu-button">
-            <img src="<?php echo get_template_directory_uri() ?>/images/hamburger/group-13@3x.png" alt="hamburger">
+            <img src="<?php echo get_template_directory_uri() ?>/dist/images/hamburger/group-13@3x.png" alt="hamburger">
         </a>
         <div class="mobile-hamburger-menu">
             <div>
-                <img class="exit-button" src="<?php echo get_template_directory_uri() ?>/images/exit-icon/x.png" alt="">
+                <img class="exit-button" src="<?php echo get_template_directory_uri() ?>/dist/images/exit-icon/x.png" alt="">
             </div>
             <hr>
             <?php wp_nav_menu(array("theme_location" => "main-menu")); ?>
@@ -32,7 +32,7 @@
         </div>
         <div class="menu-pages">
             <a href="<?php echo esc_html(home_url()) ?>">
-                <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/logo/logo@3x.png" alt="logo">
+                <img class="logo" src="<?php echo get_template_directory_uri() ?>/dist/images/logo/logo@3x.png" alt="logo">
             </a>
             <div class="menu-titles">
                 <a href="<?php echo esc_html(home_url()) ?>">
@@ -64,7 +64,7 @@
             ?>
             <p id="current-user-id" style="display:none;"><?php echo $current_user_id ?></p>
             <a href="<?php echo $userPage ?>">
-                <img src="<?php echo get_template_directory_uri() ?>/images/user-icon/user-icon@2x.png" alt="user">
+                <img src="<?php echo get_template_directory_uri() ?>/dist/images/user-icon/user-icon@2x.png" alt="user">
             </a>
             <a class="item-bag" href="<?php the_permalink(get_page_by_title('bag')->ID) ?>">
                 <div class="item-badge">
@@ -72,7 +72,7 @@
                 <div class="bag-items">
 
                 </div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/bag-icon/bag-icon@2x.png" alt="bag">
+                <img src="<?php echo get_template_directory_uri() ?>/dist/images/bag-icon/bag-icon@2x.png" alt="bag">
             </a>
         </div>
     </div>
