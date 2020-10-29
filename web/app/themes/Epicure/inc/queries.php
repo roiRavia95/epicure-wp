@@ -50,14 +50,17 @@ function get_meals($mealTime)
                             $veganIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegan.svg';
                             $vegetarianIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegetarian.svg';
 
-                            if (get_field("extra-info")["spicy"]) { ?>
+
+                            if ((get_field("extra-info")["spicy"]) && (get_field("extra-info")["spicy"] !== null)) {
+                                ?>
+
                                 <img class="info-icon" src="<?php echo $spicyIcon ?>" alt="spicy">
                             <?php }
-                            if (get_field("extra-info")["vegetarian"]) { ?>
+                            if ((get_field("extra-info")["vegetarian"]) && (get_field("extra-info")["vegetarian"] !== null)) { ?>
                                 <img class="info-icon" src="<?php echo $vegetarianIcon ?>" alt="vegetarian">
 
                             <?php }
-                            if (get_field("extra-info")["vegan"]) {
+                            if ((get_field("extra-info")["vegan"]) && (get_field("extra-info")["vegan"] !== null)) {
                                 ?>
                                 <img class="info-icon" src="<?php echo $veganIcon ?>" alt="vegan">
                             <?php } ?>
@@ -169,14 +172,14 @@ function get_signature_meal($restaurant)
                 $veganIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegan.svg';
                 $vegetarianIcon = get_template_directory_uri() . '/dist/images/meal-icons/vegetarian.svg';
 
-                if (get_field("extra-info")["spicy"]) { ?>
+                if ((get_field("extra-info")["spicy"]) && (get_field("extra-info")["spicy"] !== null)) {
                     <img class="info-icon" src="<?php echo $spicyIcon ?>" alt="spicy">
                 <?php }
-                if (get_field("extra-info")["vegetarian"]) { ?>
+                if ((get_field("extra-info")["vegetarian"]) && (get_field("extra-info")["vegetarian"] !== null)) { ?>
                     <img class="info-icon" src="<?php echo $vegetarianIcon ?>" alt="vegetarian">
 
                 <?php }
-                if (get_field("extra-info")["vegan"]) {
+                if ((get_field("extra-info")["vegan"]) && (get_field("extra-info")["vegan"] !== null)) {
                     ?>
                     <img class="info-icon" src="<?php echo $veganIcon ?>" alt="vegan">
                 <?php } ?>

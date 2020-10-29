@@ -21,6 +21,8 @@ $release = 'release_' . $deploy_date;
 $global_uploads_dir = '/home/ubuntu/uploads';
 $app_uploads_dir = $app_dir . '/web/app/uploads';
 
+$web_app_dir = 'web/app';
+
 $servers = [
     'local'=>'127.0.0.1',
     'dev' => 'ubuntu@3.137.151.188',
@@ -62,6 +64,9 @@ git clone --single-branch -b  {{$branch}} {{$repo}} {{$release}};
 cd {{ $release_dir }}/{{ $release }};
 cp ~/.env .
 composer install --no-dev --prefer-dist
+echo 'composer installed.'
+composer update --ignore-platform-reqs
+echo 'composer updated.'
 @endtask
 
 @task('run_after_install',['on'=>$target])
@@ -76,11 +81,61 @@ echo 'Setting permissions...'
 
 sudo chgrp -R www-data {{ $release }};
 sudo chmod -R ug+rwx {{ $release }};
+sudo chown -R www-data {{ $release }};
 
 echo 'Updating symlinks...'
 sudo ln -nfs {{ $release_dir }}/{{ $release }} {{ $app_dir }};
-
+sudo rm -r {{$app_uploads_dir}}
 sudo ln -s {{$global_uploads_dir}} {{$app_uploads_dir}}
 
 echo 'Deployment to {{$target}} finished successfully.'
 @endtask
+
+@story('setup_plugins')
+export_plugins
+extract_plugins
+@endstory
+
+@task('export_plugins',['on'=>'local'])
+cd {{ $web_app_dir }};
+
+tar -czf plugins.tar.gz plugins
+scp plugins.tar.gz  {{$servers[$target]}}:~
+rm -rf plugins.tar.gz
+
+echo 'Done setting up plugins'
+@endtask
+
+@task('extract_plugins',['on'=>$target])
+cd ~
+
+sudo tar -xzf plugins.tar.gz -C {{$app_dir}}/web/app/plugins
+rm -rf plugins.tar.gz
+
+echo 'finished extracting plugins'
+@endtask
+
+
+@story('setup_uploads')
+export_uploads
+extract_uploads
+@endstory
+
+@task('export_uploads',['on'=>'local'])
+cd {{ $web_app_dir }};
+
+tar -czf uploads.tar.gz uploads
+scp uploads.tar.gz  {{$servers[$target]}}:~
+rm -rf uploads.tar.gz
+
+echo 'Done setting up uploads'
+@endtask
+
+@task('extract_uploads',['on'=>$target])
+cd ~
+sudo tar -xzf uploads.tar.gz -C uploads
+rm -rf uploads.tar.gz
+
+echo 'finished extracting uploads'
+@endtask
+

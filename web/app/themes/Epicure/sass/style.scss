@@ -12,7 +12,6 @@ License URI:        http://opensource.org/licenses/MIT
 */
 
 // Bootstrap
-
 @font-face {
   font-family: 'helveticaneueregular';
   src: url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
@@ -2036,6 +2035,7 @@ div.dialog {
     width: 22px;
     border-radius: 50%;
     border: 2px solid white;
+    box-sizing: border-box;
   }
 
   form div.change input[type="checkbox"] {
@@ -2044,7 +2044,7 @@ div.dialog {
     height: 28px;
     width: 28px;
     position: relative;
-
+    cursor:pointer;
   }
 
   form div.change input[type="checkbox"]:focus {
@@ -2091,6 +2091,7 @@ div.dialog {
   form div.quantity button {
     background: none;
     border: none;
+    cursor: pointer;
   }
 
   div.quantity button:focus {
@@ -2126,6 +2127,7 @@ div.dialog {
     letter-spacing: 1.08px;
     border-radius: 2px;
     border: none;
+    cursor: pointer;
   }
 
   @media(min-width: $tabletWidth) {
