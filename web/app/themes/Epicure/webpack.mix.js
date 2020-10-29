@@ -51,6 +51,7 @@ mix
     .sass('sass/style.scss', 'dist/css/style.css')
     .sass('sass/custom-register.scss', 'dist/css/custom-register.css')
     .sass('sass/custom-login.scss', 'dist/css/custom-login.css')
+    .sass('sass/normalize.scss','dist/css/normalize.css')
 
 
     .options({

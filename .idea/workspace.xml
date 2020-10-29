@@ -35,8 +35,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Envoy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Envoy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +161,7 @@
       <workItem from="1603003846244" duration="570000" />
       <workItem from="1603004489579" duration="2197000" />
       <workItem from="1603008528925" duration="106615000" />
-      <workItem from="1603870172515" duration="19542000" />
+      <workItem from="1603870172515" duration="22040000" />
     </task>
     <servers />
   </component>
