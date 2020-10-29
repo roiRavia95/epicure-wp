@@ -87,8 +87,9 @@ echo 'Updating symlinks...'
 sudo ln -nfs {{ $release_dir }}/{{ $release }} {{ $app_dir }};
 sudo rm -r {{$app_uploads_dir}}
 sudo ln -s {{$global_uploads_dir}} {{$app_uploads_dir}}
+
 sudo rm -r {{$app_dir}}/{{$web_app_dir}}/plugins
-sudo -ln -nfs ~/plugins
+sudo ln -nfs ~/plugins {{$app_dir}}/{{$web_app_dir}}/plugins ;
 
 echo 'Deployment to {{$target}} finished successfully.'
 @endtask
