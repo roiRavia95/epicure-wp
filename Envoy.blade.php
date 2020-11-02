@@ -65,7 +65,7 @@ cd {{ $release_dir }}/{{ $release }};
 cp ~/.env .
 composer install --no-dev --prefer-dist
 echo 'composer installed.'
-composer update --ignore-platform-reqs
+composer update vlucas/phpdotenv --ignore-platform-reqs
 echo 'composer updated.'
 @endtask
 

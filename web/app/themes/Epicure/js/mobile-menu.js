@@ -21,7 +21,7 @@ $(document).ready(() => {
             $("div.mobile-search").slideToggle();
 
             //Get hold of images location
-            let imagesURL = "https://" + window.location.hostname + "/app/themes/Epicure/dist/images";
+            let imagesURL = "http://" + window.location.hostname + "/app/themes/Epicure/dist/images";
             let exitIcon = imagesURL + "/exit-icon/x.png";
             let searchIcon = imagesURL + "/search-icon/search-icon.svg";
 
