@@ -73,9 +73,6 @@ if (!bagLength) {
     $("main.bag div.total").append(totalHTML);
 
 if (!bagLength) {
-    $("a.checkout div").addClass('disabled-button')
-    $("a.checkout").on("click", function (e) {
-        e.preventDefault();
-    })
+    $("a.checkout").hide();
 }
 })
