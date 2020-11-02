@@ -13,7 +13,7 @@ $(document).ready(() => {
         })
     })
     //In mobile - click on search icon will open a larger search box.
-    if ($(window).width() < 990) {
+    if ($(window).width() < 1080) {
         //990 is the breakpoint for the header icons
         let isOpen = false;
         $("div.navigation-menu form.search-form button").on("click", (e) => {
@@ -21,7 +21,7 @@ $(document).ready(() => {
             $("div.mobile-search").slideToggle();
 
             //Get hold of images location
-            let imagesURL = "https://" + window.location.hostname + "/app/themes/Epicure/images";
+            let imagesURL = "https://" + window.location.hostname + "/app/themes/Epicure/dist/images";
             let exitIcon = imagesURL + "/exit-icon/x.png";
             let searchIcon = imagesURL + "/search-icon/search-icon.svg";
 

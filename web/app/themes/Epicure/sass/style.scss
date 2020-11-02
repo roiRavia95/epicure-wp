@@ -191,7 +191,7 @@ div.navigation-menu {
   align-items: center;
 }
 
-@media(min-width: 990px) {
+@media(min-width: 1080px) {
   div.navigation-menu {
     margin: 0 auto;
     width: 82%;
@@ -212,7 +212,7 @@ div.menu-titles {
   display: none;
 }
 
-@media(min-width: 990px) {
+@media(min-width: 1080px) {
 
   header.site-header div div.menu-pages {
     display: flex;
@@ -295,7 +295,7 @@ a.logout.header{
   display: none;
 }
 
-@media (min-width: $tabletWidth){
+@media (min-width: 1080px){
   a.logout.header{
     display: block;
   }
@@ -319,8 +319,8 @@ div.mobile-hamburger-menu {
   img.exit-button {
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    left: 39px;
+    top: 15px;
+    left: 4%;
   }
 
   hr {
@@ -400,7 +400,7 @@ form.search-form {
   position: relative;
 }
 
-@media(min-width: 990px) {
+@media(min-width: 1080px) {
   .menu-items form.search-form input {
     display: block;
   }
@@ -427,6 +427,7 @@ form.search-form {
   background-color: rgba(255, 255, 255, 0.11);
   font-size: 13px;
   padding-left: 16px;
+  box-sizing: border-box;
 }
 
 @media (min-width: $tabletWidth) {
@@ -451,7 +452,7 @@ div.mobile-search {
   button {
     position: absolute;
     right: 6px;
-    bottom: 3px;
+    bottom: 1px;
   }
 
   img {
@@ -544,7 +545,7 @@ div.hero-content form input {
 div.hero-content form button {
   position: absolute;
   left: 0;
-  bottom: 6px;
+  bottom: 2px;
   background: none;
 }
 
@@ -565,7 +566,7 @@ div.hero-content form button img {
 
   div.hero-content form button {
     left: 20px;
-    bottom: 8px;
+    bottom: 5px;
   }
   div.hero-content form button img {
     height: 31px;
@@ -1296,7 +1297,7 @@ main.restaurants h1.title {
   letter-spacing: 1.54px;
 }
 
-@media (min-width: 990px) {
+@media (min-width: 1080px) {
   main.restaurants h1.title {
     display: none;
   }
