@@ -24,7 +24,7 @@ function registerUser()
             wp_redirect(home_url());
             exit();
         } else {
-            print_r($error);
+            return ($error);
         }
     }
 }

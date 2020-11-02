@@ -4,7 +4,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
-mix.setPublicPath('dist')
+mix.setPublicPath('dist');
 mix.setResourceRoot('/app/themes/Epicure');
 
 mix.webpackConfig(() => {

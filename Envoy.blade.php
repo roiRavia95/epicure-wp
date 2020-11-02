@@ -139,6 +139,8 @@ cd ~
 sudo tar -xzf uploads.tar.gz -C uploads
 rm -rf uploads.tar.gz
 
+sudo chown -R www-data uploads;
+
 echo 'finished extracting uploads'
 @endtask
 

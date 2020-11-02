@@ -14,7 +14,7 @@ $(document).ready(() => {
     let bagLength = 0;
 
     //Loop over the session storage
-    keys.forEach((key,index) => {
+    keys.forEach((key, index) => {
         meals[key] = JSON.parse(window.sessionStorage.getItem(key))
         //Show the meals FROM SESSION before and after user logged in
         if (meals[key].user_id == currentID || meals[key].user_id == 0) {
@@ -58,18 +58,24 @@ $(document).ready(() => {
             $("ul.my-meals").append(mealHTML);
             total += parseInt(meals[key].price);
         }
-        ;
     })
 
     $("div.item-badge").text(bagLength);
     //If there are no meals - hide the badge.
-    if (!bagLength) {
-        $("a.item-bag div.item-badge").hide();
-    } else {
-        $("a.item-bag div.item-badge").show();
-    }
+if (!bagLength) {
+    $("a.item-bag div.item-badge").hide();
+} else {
+    $("a.item-bag div.item-badge").show();
+}
     //Total price HTML
     let totalHTML = `<p class='total price'>${total}</p>`;
 
     $("main.bag div.total").append(totalHTML);
+
+if (!bagLength) {
+    $("a.checkout div").addClass('disabled-button')
+    $("a.checkout").on("click", function (e) {
+        e.preventDefault();
+    })
+}
 })

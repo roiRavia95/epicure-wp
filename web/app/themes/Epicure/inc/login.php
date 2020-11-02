@@ -6,12 +6,10 @@ function loginUser()
         if (isset($_POST['login'])) {
             $email = esc_sql($_POST['email']);
             $password = esc_sql($_POST['password']);
-            $remember = esc_sql($_POST['remember']);
             if ($email !== "" && $password !== "") {
                 $userData = array(
                     "user_login" => $email,
                     "user_password" => $password,
-                    "remember" => $remember
                 );
                 $user = wp_signon($userData, false);
 
@@ -20,8 +18,7 @@ function loginUser()
                     do_action('set_current_user');
                     exit();
                 } else {
-                    print_r($user->get_error_code());
-                    exit();
+                    return ($user->get_error_code());
                 }
             }
         }

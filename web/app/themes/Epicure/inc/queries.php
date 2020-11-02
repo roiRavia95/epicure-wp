@@ -39,7 +39,17 @@ function get_meals($mealTime)
                     <a href="#">
                         <!--Meal ID for connecting meal to dialog-->
                         <span class="meal_id" style="display: none"><?php echo get_the_ID(); ?></span>
-                        <?php the_post_thumbnail('full'); ?>
+
+                        <?php
+                        if(has_post_thumbnail()) {
+                            the_post_thumbnail('full');
+                        }else{
+                            ?>
+                            <img class="meal-placeholder" src='<?php echo get_template_directory_uri()?>/dist/images/no-image/food-placeholder.png' alt="food-placeholder">
+                                <?php
+                        }
+
+                        ?>
 
                         <h2><?php the_title() ?></h2>
                         <p class="ingredients"> <?php the_content() ?></p>
@@ -206,7 +216,14 @@ function get_meal_by_id($id, $changes, $sides)
         $meal->the_post();
         ?>
         <li class='meal'>
-            <?php the_post_thumbnail('full'); ?>
+            <?php
+            if(has_post_thumbnail()) {
+                the_post_thumbnail('full');
+            }else{
+                ?>
+                <img class="meal-placeholder" src='<?php echo get_template_directory_uri()?>/dist/images/no-image/food-placeholder.png' alt="food-placeholder">
+                <?php
+            }            ?>
             <div class="meal-content">
                 <div class="main-content">
                     <h2><?php the_title() ?></h2>

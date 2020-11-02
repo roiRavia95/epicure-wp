@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <?php
     wp_head()?>
 
@@ -28,7 +29,10 @@
             </div>
             <hr>
             <?php wp_nav_menu(array("theme_location" => "main-menu")); ?>
-            <?php wp_nav_menu(array("theme_location" => "footer-menu")); ?>
+            <?php wp_nav_menu(array("theme_location" => "footer-menu"));
+            if (is_user_logged_in()) {?>
+                <a class="mobile-logout" href="<?php echo wp_logout_url() ?>" >Logout</a>
+            <?php } ?>
         </div>
         <div class="menu-pages">
             <a href="<?php echo esc_html(home_url()) ?>">
@@ -54,7 +58,7 @@
             if (is_user_logged_in()) {
                 $userPage .= "/author/" . wp_get_current_user()->user_nicename;
                 ?>
-                <a class="logout" href="<?php echo wp_logout_url() ?>" >Logout</a>
+                <a class="logout header" href="<?php echo wp_logout_url() ?>" >Logout</a>
                 <?php
             } else {
                 $userPage .= "/login";

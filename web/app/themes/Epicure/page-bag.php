@@ -24,7 +24,7 @@ get_header(); ?>
             $checkoutLink .= "/login";
         }
         ?>
-        <a href="<?php echo $checkoutLink ?>"class="button checkout"> Finish Order</a>
+        <a href="<?php echo $checkoutLink ?>"class="button checkout"><div>Finish Order</div></a>
         <?php
     endwhile;
     wp_reset_postdata();

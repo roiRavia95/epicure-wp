@@ -75,23 +75,32 @@ main.login label {
 }
 
 div.submit {
-  text-align: right;
+  text-align: center;
 }
 
 div.submit button {
-  background: #007cba;
-  border-color: #007cba;
-  border-style: none;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: none;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 15px 30px;
+  background-color: black;
+  color: #ffffff;
+  font-size: 18.9px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
 }
 
 div.form-container a {
   display: block;
   margin: 10px 24px;
-
+}
+p.error{
+  margin-top: 0;
+  color: #d82525;
+  font-size: 16px;
+  font-weight: normal;
 }
 

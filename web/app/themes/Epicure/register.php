@@ -9,6 +9,11 @@ get_header() ?>
         <img src="<?php echo get_template_directory_uri() ?>/dist/images/logo/login-logo.png" alt="logo">
     </div>
     <form method="post" class="register-form">
+        <?php
+        $error = registerUser();
+        print_r($error);
+        ?>
+            <p class="error"><?php echo ucfirst(str_replace('_',' ',$error)); ?></p>
         <div>
             <label for="name">Username</label>
             <input type="text" name="name" id="name" required>

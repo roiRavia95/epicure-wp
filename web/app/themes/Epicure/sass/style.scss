@@ -27,8 +27,38 @@ License URI:        http://opensource.org/licenses/MIT
   font-weight: normal;
   font-style: normal;
 }
+//Use table of contents to search through the stylesheet
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+#Globals
+#Utilities
+#Mobile Menu
+- Mobile header search
+#Pages
+- Front Page
+    Hero - Section
+    front-page menu - Section
+    Popular Restaurants - Section
+    Signature Dishes - Section
+    Our Icons - Section
+    Chef of the week - Section
+    About us - Section
+    Download Buttons
+- Restaurants
+- Single Restaurant
+    Meal Dialog overlay
+    Meal Dialog
+    Sweet alert
+- Item Bag Page
+- Restaurant page without meals
+- Search Results Page
+- User Page
+#Footer
+--------------------------------------------------------------*/
 
-//Globals
+
+// *** Globals ***
 //Font
 $mainFont: HelveticaNeue-thin;
 $secondaryFont: HelveticaNeue;
@@ -69,7 +99,7 @@ html {
   }
 }
 
-//Utilities
+// *** Utilities ***
 .container {
   max-width: $desktopWidth;
   width: 80%;
@@ -261,7 +291,17 @@ header.site-header div.menu-items a.item-bag div.item-badge {
   display: none;
 }
 
-//Hamburger Menu
+a.logout.header{
+  display: none;
+}
+
+@media (min-width: $tabletWidth){
+  a.logout.header{
+    display: block;
+  }
+}
+
+// *** Mobile Menu ***
 div.mobile-hamburger-menu {
   display: none;
   width: 100vw;
@@ -395,7 +435,7 @@ form.search-form {
   }
 }
 
-//Mobile header search
+// *** Mobile header search ***
 div.mobile-search {
   display: none;
   margin: 3% 4%;
@@ -450,8 +490,8 @@ body.single-restaurants, {
 
 
 //Pages
-//***Front Page***
-//Hero - Section
+// *** Front Page ***
+// *** Hero - Section ***
 section.hero {
   height: 269px;
 }
@@ -556,7 +596,7 @@ h1.hero-content-text {
   }
 }
 
-//front-page menu - Section
+// *** front-page menu - Section ***
 section.front-page-menu {
   width: 100%;
   height: 125px;
@@ -595,7 +635,7 @@ section.front-page-menu ul li {
   }
 }
 
-//Popular Restaurants - Section
+// *** Popular Restaurants - Section ***
 section.popular-restaurants {
   margin-bottom: 100px;
 }
@@ -700,7 +740,7 @@ section.popular-restaurants a.all-restaurants {
   }
 }
 
-//Signature Dishes - Section
+// *** Signature Dishes - Section ***
 section.signature-dishes {
   margin-bottom: 95px;
 }
@@ -852,7 +892,7 @@ section.signature-dishes div.price-line p:before {
 }
 
 
-//Our Icons - Section
+// *** Our Icons - Section ***
 
 section.our-icons {
   background: #fafafa;
@@ -922,7 +962,7 @@ section.our-icons div.icons-container h2 {
   }
 }
 
-//Chef of the week - Section
+// *** Chef of the week - Section ***
 
 section.chef {
   text-align: center;
@@ -1093,7 +1133,7 @@ section.chef ul li h3 {
 }
 
 
-//About us - Section
+// *** About us - Section ***
 section#about-us {
   background-color: #fafafa;
   text-align: center;
@@ -1171,7 +1211,7 @@ section#about-us img {
   }
 }
 
-//Download Buttons
+// *** Download Buttons ***
 section#about-us div.download-buttons {
   margin: 34px auto 0 auto;
   padding-bottom: 63px;
@@ -1611,6 +1651,12 @@ ul.meals li.meal a img {
   }
 }
 
+img.meal-placeholder{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 ul.meals li.meal h2 {
   margin-top: 12px;
   font-size: 15px;
@@ -1768,7 +1814,7 @@ div.title-line h2 {
   }
 }
 
-//Meal Dialog overlay
+// *** Meal Dialog overlay ***
 div.overlay {
   display: none;
   width: 100vw;
@@ -1822,7 +1868,7 @@ a.exit-button {
   }
 }
 
-//Meal Dialog
+// *** Meal Dialog ***
 
 div.dialog {
   width: 100%;
@@ -2137,12 +2183,12 @@ div.dialog {
   }
 }
 
-//Sweet alert after meal submit
+// *** Sweet alert ***
 div.swal2-popup {
   font-size: 20px;
 }
 
-//Item Bag Page
+// *** Item Bag Page ***
 
 main.bag,
 div.past-orders{
@@ -2312,8 +2358,35 @@ div.total p {
   letter-spacing: 1.5px;
 }
 
+a.checkout div{
+  padding: 15px 30px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18.9px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+}
+@media(min-width: $tabletWidth){
+  a.checkout div{
+    width: 10%;
+    margin-left: auto;
+    margin-right: 10%;
+  }
+}
 
-//Restaurant page without meals
+.disabled-button{
+  opacity: 0.2;
+}
+
+// *** Restaurant page without meals ***
 div.no-meals {
   margin: 50px 0;
 }
@@ -2331,7 +2404,7 @@ div.no-meals a {
   letter-spacing: 1.21px;
 }
 
-//Search Results Page
+// *** Search Results Page ***
 main.search {
   text-align: center;
   margin-top: 100px;
@@ -2400,7 +2473,7 @@ main.search {
 }
 
 
-//User Page
+// *** User Page ***
 body.author main{
   div.past-orders{
     width: 95%;
@@ -2466,7 +2539,7 @@ body.author main{
 }
 
 
-//Footer
+// *** Footer ***
 footer ul {
   display: block;
   width: 100%;
