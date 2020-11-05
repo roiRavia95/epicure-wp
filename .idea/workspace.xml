@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:epicure-wp" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:epicure-wp" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/images/bag/bag-placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/bag.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/bag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/page-bag.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/page-bag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="file://$PROJECT_DIR$/web/app/themes/Epicure/package-lock.json" />
+    </disable_hints>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" max_simultaneous_connections="2" xdebug_force_break_when_no_path_mapping="false" xdebug_force_break_when_outside_project="false" />
+  <component name="PhpServers">
+    <servers>
+      <server host="epicure.test" id="b0c79e28-0b9f-4da0-b3b4-a8d65a5fbdee" name="epicure.test" port="443" />
+      <server host="localhost" id="147242b8-a19a-4772-8008-b0900951dbce" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="$PROJECT_DIR$/web" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost:80" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/roots/wp-password-bcrypt" />
+      <path value="$PROJECT_DIR$/vendor/roots/bedrock-autoloader" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/roots/wp-config" />
+      <path value="$PROJECT_DIR$/vendor/oscarotero/env" />
+      <path value="$PROJECT_DIR$/vendor/roots/wordpress-core-installer" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/vlucas" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+    </include_path>
+  </component>
+  <component name="PhpXdebugProxy" ide_key="PHPSTORM" />
+  <component name="ProjectId" id="1ij5mmD44cXAKywZ7mEzAvaXRVL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/templates" />
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/dist/js" />
+      <recent name="$PROJECT_DIR$/vendor/vlucas" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/inc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/images/bag" />
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/images/hero" />
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure" />
+      <recent name="$PROJECT_DIR$/vendor" />
+      <recent name="$PROJECT_DIR$/vendor/symfony" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="xdebugtest.app">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/app/themes/Epicure/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/app/themes/Epicure/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/app/themes/Epicure/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="production" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/app/themes/Epicure/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.prod" />
+      <item itemvalue="npm.production" />
+      <item itemvalue="npm.watch" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prod" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.production" />
+        <item itemvalue="npm.watch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="" />
+      <created>1602408321587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602408321587</updated>
+      <workItem from="1602408322665" duration="100019000" />
+      <workItem from="1603003846244" duration="570000" />
+      <workItem from="1603004489579" duration="2197000" />
+      <workItem from="1603008528925" duration="106615000" />
+      <workItem from="1603870172515" duration="22040000" />
+      <workItem from="1604215394088" duration="35937000" />
+      <workItem from="1604421406191" duration="16000" />
+      <workItem from="1604485669795" duration="6671000" />
+      <workItem from="1604561579295" duration="656000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1884" y="-9" key="#CLI_Interpreters" timestamp="1604317563273">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="-1476" y="-12" key="#CLI_Interpreters/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602501300216" />
+    <state x="1884" y="-9" key="#CLI_Interpreters/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604317563273" />
+    <state x="220" y="12" key="#Plugins" timestamp="1603004430595">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="220" y="12" key="#Plugins/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603004430595" />
+    <state x="1884" y="20" key="#Servers" timestamp="1604249093277">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="1884" y="20" key="#Servers/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604249093277" />
+    <state x="2150" y="100" key="#Web_Browsers" timestamp="1604249084147">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="2150" y="100" key="#Web_Browsers/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604249084147" />
+    <state x="1860" y="-128" width="1082" height="1080" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604318939644">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="-1500" y="3" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602595271772" />
+    <state x="1860" y="-128" width="1082" height="1080" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604318939644" />
+    <state x="2037" y="190" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604239946719">
+      <screen x="1440" y="-105" width="1920" height="977" />
+    </state>
+    <state x="2037" y="198" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603902924877" />
+    <state x="2037" y="190" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/1440.-105.1920.977@1440.-105.1920.977" timestamp="1604239946719" />
+    <state x="2054" y="199" width="867" height="456" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1604319585473">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="2054" y="199" width="867" height="456" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604319585473" />
+    <state x="1540" y="-28" width="1720" height="880" key="DiffContextDialog" timestamp="1603271802148">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="1540" y="-28" width="1720" height="880" key="DiffContextDialog/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603271802148" />
+    <state x="2135" y="117" key="FileChooserDialogImpl" timestamp="1603621901332">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="2135" y="117" key="FileChooserDialogImpl/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603621901332" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom" timestamp="1604421045490">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022652" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020419" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846671" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045490" />
+    <state width="1920" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973451" />
+    <state width="1920" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603820047503" />
+    <state width="1920" height="300" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842219" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center" timestamp="1604421045488">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022644" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020417" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846668" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045488" />
+    <state width="1920" height="300" key="GridCell.Tab.0.center/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973450" />
+    <state width="1920" height="300" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603820047501" />
+    <state width="1920" height="300" key="GridCell.Tab.0.center/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842217" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left" timestamp="1604421045487">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022642" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020411" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846665" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045487" />
+    <state width="1920" height="300" key="GridCell.Tab.0.left/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973449" />
+    <state width="1920" height="300" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603820047500" />
+    <state width="1920" height="300" key="GridCell.Tab.0.left/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842217" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right" timestamp="1604421045489">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022645" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020418" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846669" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045489" />
+    <state width="1920" height="300" key="GridCell.Tab.0.right/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973450" />
+    <state width="1920" height="300" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603820047501" />
+    <state width="1920" height="300" key="GridCell.Tab.0.right/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842218" />
+    <state width="1920" height="300" key="GridCell.Tab.1.bottom" timestamp="1604320973453">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.1.bottom/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973453" />
+    <state width="1920" height="300" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603820047507" />
+    <state width="1920" height="300" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842222" />
+    <state width="1920" height="300" key="GridCell.Tab.1.center" timestamp="1604320973452">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.1.center/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973452" />
+    <state width="1920" height="300" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1603820047505" />
+    <state width="1920" height="300" key="GridCell.Tab.1.center/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842221" />
+    <state width="1920" height="300" key="GridCell.Tab.1.left" timestamp="1604320973451">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.1.left/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973451" />
+    <state width="1920" height="300" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1603820047504" />
+    <state width="1920" height="300" key="GridCell.Tab.1.left/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842220" />
+    <state width="1920" height="300" key="GridCell.Tab.1.right" timestamp="1604320973452">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.1.right/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973452" />
+    <state width="1920" height="300" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1603820047506" />
+    <state width="1920" height="300" key="GridCell.Tab.1.right/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842221" />
+    <state width="1920" height="300" key="GridCell.Tab.2.bottom" timestamp="1604320973455">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.2.bottom/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973455" />
+    <state width="1920" height="300" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603820047511" />
+    <state width="1920" height="300" key="GridCell.Tab.2.bottom/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842224" />
+    <state width="1920" height="300" key="GridCell.Tab.2.center" timestamp="1604320973454">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.2.center/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973454" />
+    <state width="1920" height="300" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1603820047509" />
+    <state width="1920" height="300" key="GridCell.Tab.2.center/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842223" />
+    <state width="1920" height="300" key="GridCell.Tab.2.left" timestamp="1604320973454">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.2.left/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973454" />
+    <state width="1920" height="300" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1603820047508" />
+    <state width="1920" height="300" key="GridCell.Tab.2.left/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842222" />
+    <state width="1920" height="300" key="GridCell.Tab.2.right" timestamp="1604320973455">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.2.right/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973455" />
+    <state width="1920" height="300" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1603820047510" />
+    <state width="1920" height="300" key="GridCell.Tab.2.right/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842224" />
+    <state width="1920" height="300" key="GridCell.Tab.3.bottom" timestamp="1604241039171">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.3.bottom/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604241039171" />
+    <state width="1920" height="300" key="GridCell.Tab.3.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603820047514" />
+    <state width="1920" height="300" key="GridCell.Tab.3.center" timestamp="1604241039168">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.3.center/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604241039168" />
+    <state width="1920" height="300" key="GridCell.Tab.3.center/0.0.1440.900@0.0.1440.900" timestamp="1603820047512" />
+    <state width="1920" height="300" key="GridCell.Tab.3.left" timestamp="1604241039167">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.3.left/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604241039167" />
+    <state width="1920" height="300" key="GridCell.Tab.3.left/0.0.1440.900@0.0.1440.900" timestamp="1603820047512" />
+    <state width="1920" height="300" key="GridCell.Tab.3.right" timestamp="1604241039169">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="300" key="GridCell.Tab.3.right/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604241039169" />
+    <state width="1920" height="300" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1603820047513" />
+    <state x="2179" y="322" key="NewPhpFileDialog" timestamp="1604304818203">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="-1181" y="319" key="NewPhpFileDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602596657355" />
+    <state x="2179" y="322" key="NewPhpFileDialog/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604304818203" />
+    <state x="2111" y="286" key="PhpMappingAdvancedResolveDialog" timestamp="1604319645916">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="2111" y="286" key="PhpMappingAdvancedResolveDialog/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604319645916" />
+    <state x="-1327" y="-56" key="RollbackChangesDialog" timestamp="1602411387818">
+      <screen x="-1920" y="-131" width="1920" height="1080" />
+    </state>
+    <state x="-1327" y="-56" key="RollbackChangesDialog/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602411387818" />
+    <state x="1825" y="-105" key="SettingsEditor" timestamp="1604319694098">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="209" y="3" key="SettingsEditor/-1920.-108.1920.1057/0.0.1440.900@0.0.1440.900" timestamp="1603004178520" />
+    <state x="-1610" y="-54" key="SettingsEditor/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602671926441" />
+    <state x="209" y="3" key="SettingsEditor/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603008667616" />
+    <state x="1825" y="-105" key="SettingsEditor/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604319694098" />
+    <state x="2068" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603207881639">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="471" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603008160931" />
+    <state x="2068" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603207881639" />
+    <state x="1836" y="-18" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604319145033">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="1836" y="-18" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604319145033" />
+    <state x="2035" y="-80" width="781" height="984" key="find.popup" timestamp="1604312965324">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="2035" y="-80" width="781" height="984" key="find.popup/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604312965324" />
+    <state x="1981" y="-80" width="1118" height="1032" key="search.everywhere.popup" timestamp="1604244824049">
+      <screen x="1440" y="-128" width="1920" height="1080" />
+    </state>
+    <state x="-1379" y="-83" width="838" height="1032" key="search.everywhere.popup/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602671901222" />
+    <state x="406" y="40" width="838" height="860" key="search.everywhere.popup/-1920.-131.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1603004399248" />
+    <state x="1981" y="-80" width="1118" height="1032" key="search.everywhere.popup/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604244824049" />
+  </component>
+</project>

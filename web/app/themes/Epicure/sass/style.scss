@@ -12,15 +12,12 @@ License URI:        http://opensource.org/licenses/MIT
 */
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 @font-face {
   font-family: 'helveticaneueregular';
   src: url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
   url('../fonts/vendor/helveticaneue/helveticaneue-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
@@ -29,18 +26,48 @@ License URI:        http://opensource.org/licenses/MIT
   url('../fonts/vendor/helveticaneue/helveticaneue_thin-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
+//Use table of contents to search through the stylesheet
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+#Globals
+#Utilities
+#Mobile Menu
+- Mobile header search
+#Pages
+- Front Page
+    Hero - Section
+    front-page menu - Section
+    Popular Restaurants - Section
+    Signature Dishes - Section
+    Our Icons - Section
+    Chef of the week - Section
+    About us - Section
+    Download Buttons
+- Restaurants
+- Single Restaurant
+    Meal Dialog overlay
+    Meal Dialog
+    Sweet alert
+- Item Bag Page
+- Restaurant page without meals
+- Search Results Page
+- User Page
+#Footer
+--------------------------------------------------------------*/
 
-//Globals
+
+// *** Globals ***
 //Font
 $mainFont: HelveticaNeue-thin;
 $secondaryFont: HelveticaNeue;
 
 //Colors
 $black: #000;
-$activeColor: rgba(222, 146, 0, 0.9);
+$activeColor: rgba(222, 146, 0, 0.5);
 $cardBackground: #f9f4ea;
+$borderColor:1px solid rgba(151, 151, 151, 0.2);
 
 //Widths
 $desktopWidth: 1440px;
@@ -72,7 +99,7 @@ html {
   }
 }
 
-//Utilities
+// *** Utilities ***
 .container {
   max-width: $desktopWidth;
   width: 80%;
@@ -84,7 +111,7 @@ a {
   color: $black;
 }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: none;
   color: $black;
 }
@@ -105,11 +132,54 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+body.home section ul {
+  display: flex;
+  margin-left: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+@media (min-width: 1103px) {
+  body.home section ul {
+    justify-content: center;
+  }
+}
+
+
+body.home section h1 {
+  font-size: 14px;
+  font-weight: 100;
+  font-family: $secondaryFont;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  body.home section:not(.about-us) h1 {
+    font-size: 30px;
+    font-family: $mainFont;
+    line-height: 1.33;
+    letter-spacing: 1.25px;
+  }
+}
+
+section:not(.hero,.about-us,.our-icons) {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 //***Global Components***
 //Header
 header.site-header {
   width: 100%;
-  border-bottom: 0.2px solid rgba(151, 151, 151, 0.2);
+  border-bottom: $borderColor;
 }
 
 div.navigation-menu {
@@ -121,10 +191,13 @@ div.navigation-menu {
   align-items: center;
 }
 
-@media(min-width: $tabletWidth) {
+@media(min-width: 1080px) {
   div.navigation-menu {
     margin: 0 auto;
     width: 82%;
+    padding: 5px 0 7px;
+  }
+  body.home div.navigation-menu {
     padding: 15px 0;
   }
 }
@@ -139,7 +212,7 @@ div.menu-titles {
   display: none;
 }
 
-@media(min-width: $tabletWidth) {
+@media(min-width: 1080px) {
 
   header.site-header div div.menu-pages {
     display: flex;
@@ -170,6 +243,7 @@ div.menu-titles {
   header.site-header div.menu-pages nav ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
     margin: 0;
   }
@@ -182,6 +256,7 @@ div.menu-titles {
   header.site-header div.menu-items a:first-of-type {
     margin-left: 41px;
   }
+
   div a.menu-button {
     display: none;
   }
@@ -195,6 +270,105 @@ a.menu-button img {
   height: 14px;
   width: 18px;
 }
+
+//Bag Badge
+header.site-header div.menu-items a.item-bag {
+  position: relative;
+}
+
+header.site-header div.menu-items a.item-bag div.item-badge {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 11px;
+  font-weight: 400;
+  border-radius: 50%;
+  display: none;
+}
+
+a.logout.header{
+  display: none;
+}
+
+@media (min-width: 1080px){
+  a.logout.header{
+    display: block;
+  }
+}
+
+// *** Mobile Menu ***
+div.mobile-hamburger-menu {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  overflow-y: auto;
+  text-align: center;
+
+  img.exit-button {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 4%;
+    width: 16px;
+  }
+
+  hr {
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-top: 45px;
+  }
+
+  ul li {
+    margin-bottom: 48px;
+  }
+
+  ul#menu-menu-1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  ul#menu-menu-1 li:first-of-type {
+    padding-bottom: 49px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 196px;
+    margin: 0 auto;
+  }
+
+  ul#menu-menu-1 li:first-of-type:before {
+    content: "All ";
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.33px;
+  }
+
+  ul#menu-menu-1 li:last-of-type {
+    margin-top: 62px;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.33px;
+  }
+}
+
 
 header.site-header div.menu-pages {
   position: absolute;
@@ -227,7 +401,7 @@ form.search-form {
   position: relative;
 }
 
-@media(min-width: $tabletWidth) {
+@media(min-width: 1080px) {
   .menu-items form.search-form input {
     display: block;
   }
@@ -252,8 +426,39 @@ form.search-form {
   border-radius: 4px;
   border: 1px solid $black;
   background-color: rgba(255, 255, 255, 0.11);
-  font-size: 18px;
+  font-size: 13px;
   padding-left: 16px;
+  box-sizing: border-box;
+}
+
+@media (min-width: $tabletWidth) {
+  .search-input {
+    font-size: 18px;
+  }
+}
+
+// *** Mobile header search ***
+div.mobile-search {
+  display: none;
+  margin: 3% 4%;
+
+  form {
+    margin: 0 auto;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    position: absolute;
+    right: 6px;
+    bottom: 1px;
+  }
+
+  img {
+    height: 25px;
+  }
 }
 
 .menu-items img {
@@ -263,72 +468,824 @@ form.search-form {
 
 form.search-form button {
   border: none;
-  background: white;
+  background: transparent;
 }
 
 
-li.current-menu-item {
-  padding-bottom: 10px;
+nav.main-nav li.current-menu-item {
+  padding: 10px 0;
+  margin-bottom: 2px;
   border-bottom: 2px solid $activeColor;
 }
 
-//Pages
+body.category-new,
+body.category-most-popular,
+body.category-open-now,
+body.single-restaurants, {
 
-//***Front Page***
+  nav.main-nav li:first-of-type {
+    padding: 10px 0;
+    border-bottom: 2px solid $activeColor;
+  }
+
+}
+
+
+//Pages
+// *** Front Page ***
+// *** Hero - Section ***
 section.hero {
-  height: 696px;
+  height: 269px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.hero {
+    height: 696px;
+    margin-bottom: 140px;
+  }
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 div.hero-content {
-  width: 781px;
-  height: 222px;
+  width: 335px;
+  height: 125px;
   background-color: rgba(255, 255, 255, 0.88);
   margin: 0 auto;
   position: relative;
-  top: 234px;
+  top: 73px;
+}
+
+@media (min-width: $tabletWidth) {
+  div.hero-content {
+    width: 781px;
+    height: 266px;
+    top: 234px;
+  }
 }
 
 
 div.hero-content form {
   margin: 0 auto;
-  width: 511px;
-  height: 48px;
+  width: 269px;
+  height: 33px;
 }
 
 div.hero-content form input {
   width: 100%;
   height: 100%;
-  padding-left: 71px;
+  padding-left: 33px;
 }
 
 div.hero-content form button {
   position: absolute;
-  left: 20px;
-  bottom: 8px;
+  left: 0;
+  bottom: 2px;
   background: none;
 }
 
-h2.hero-content-text {
-  padding: 41px 0 18px 0;
+div.hero-content form button img {
+  height: 20px;
+}
+
+@media (min-width: $tabletWidth) {
+  div.hero-content form {
+    margin: 0 auto;
+    width: 511px;
+    height: 48px;
+  }
+
+  div.hero-content form input {
+    padding-left: 71px;
+  }
+
+  div.hero-content form button {
+    left: 20px;
+    bottom: 5px;
+  }
+  div.hero-content form button img {
+    height: 31px;
+  }
+}
+
+h1.hero-content-text {
+  padding-top: 18px;
+  padding-bottom: 13px;
   margin: auto;
-  width: 437px;
-  font-size: 35px;
+  width: 202px;
+  font-size: 16px;
   font-weight: 100;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1;
-  letter-spacing: 1.97px;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+@media (min-width: $tabletWidth) {
+  h1.hero-content-text {
+    padding-top: 41px;
+    padding-bottom: 18px;
+    width: 500px;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: 1.97px;
+  }
+}
+
+// *** front-page menu - Section ***
+section.front-page-menu {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  margin-bottom: 51px;
+}
+
+section.front-page-menu ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+section.front-page-menu ul li:last-of-type {
+  margin-right: 17px;
+}
+
+section.front-page-menu ul li {
+  padding: 15px;
+  background-color: rgba(232, 196, 122, 0.8);
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+}
+
+@media (min-width: $tabletWidth) {
+  section.front-page-menu {
+    display: none;
+  }
+}
+
+// *** Popular Restaurants - Section ***
+section.popular-restaurants {
+  margin-bottom: 100px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants {
+    margin-bottom: 153px;
+  }
+}
+
+section.popular-restaurants h1 {
+  margin-bottom: 13px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants h1 {
+    margin-bottom: 42px;
+  }
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul {
+    margin: 0;
+  }
 }
 
 
-// *** Restaurants ***
+section.popular-restaurants ul li {
+  margin-right: 14px;
+  background-color: #f9f4ea;
+  height: 357px;
+  transition: background-color .3s ease;
+}
 
+section.popular-restaurants ul li:hover {
+  background-color: #f7e0b2
+}
+
+section.popular-restaurants ul li img {
+  width: 206px;
+  height: 224px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul li img {
+    width: 360px;
+  }
+}
+
+section.popular-restaurants ul li h2 {
+  font-size: 25px;
+  letter-spacing: 1.67px;
+  margin-top: 25px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul li h2 {
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2.67px;
+  }
+}
+
+
+section.popular-restaurants ul li h3 {
+  font-size: 20px;
+  letter-spacing: 1.33px;
+  margin-top: 4px;
+  margin-bottom: 33px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants ul li h3 {
+    font-size: 25px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.67px;
+  }
+}
+
+
+section.popular-restaurants a.all-restaurants {
+  display: none;
+}
+
+@media (min-width: $tabletWidth) {
+  section.popular-restaurants a.all-restaurants {
+    display: block;
+    text-align: right;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    margin-top: 31px;
+  }
+}
+
+// *** Signature Dishes - Section ***
+section.signature-dishes {
+  margin-bottom: 95px;
+}
+
+section.signature-dishes h1 {
+  text-transform: uppercase;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes h1 {
+    margin-bottom: 42px;
+  }
+}
+
+section.signature-dishes ul li {
+  width: 259px;
+  height: 516px;
+  margin-right: 14px;
+  text-align: center;
+  background-color: #f9f4ea;
+  white-space: normal;
+  position: relative;
+  transition: background-color .3s ease;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes ul li {
+    width: 360px;
+    height: 654px;
+    margin-right: 11px;
+  }
+  section.signature-dishes ul li:hover {
+    background-color: #f7e0b2;
+  }
+}
+
+
+section.signature-dishes ul h2.restaurant {
+  font-size: 16px;
+  text-transform: none;
+  font-weight: 400;
+  background-color: #ffffff;
+  padding: 14px 0;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes ul h2.restaurant {
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.77px;
+    padding: 0 0 23px 0
+  }
+}
+
+section.signature-dishes ul img {
+  width: 259px;
+  height: 208px;
+  object-fit: cover;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes ul img {
+    width: 360px;
+    height: 290px;
+  }
+}
+
+section.signature-dishes h2:not(.restaurant) {
+  font-size: 27.6px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: 1.84px;
+  margin: 11px auto;
+  width: 50%;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes h2:not(.restaurant) {
+    font-size: 38.4px;
+    letter-spacing: 2.56px;
+  }
+}
+
+section.signature-dishes p {
+  font-size: 17.3px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 1.15px;
+  width: 80%;
+  margin: auto;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes p {
+    font-size: 24px;
+    letter-spacing: 1.6px;
+  }
+}
+
+section.signature-dishes div.extra-info {
+  position: relative;
+  z-index: 2;
+  margin: 15% auto;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes div.extra-info {
+    margin: 5% auto;
+  }
+}
+
+section.signature-dishes div.extra-info img.info-icon {
+  width: 40px;
+  height: 30px;
+
+}
+
+section.signature-dishes div.price-line p {
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.67px;
+  background-color: #f9f4ea;
+  padding: 0 4px;
+  transition: background-color .3s ease;
+}
+
+@media (min-width: $tabletWidth) {
+  section.signature-dishes div.price-line p {
+    font-family: $mainFont;
+  }
+  section.signature-dishes li:hover div.price-line p {
+    background-color: #f7e0b2;
+  }
+}
+
+section.signature-dishes div.price-line p:before {
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+
+// *** Our Icons - Section ***
+
+section.our-icons {
+  background: #fafafa;
+  text-align: center;
+  padding: 14px 0;
+  margin-bottom: 71px;
+}
+
+section.our-icons h1 {
+  padding-top: 16px;
+  padding-bottom: 22px;
+}
+
+section.our-icons div.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container {
+    justify-content: center;
+  }
+}
+
+section.our-icons div.icons-container div {
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container div {
+    margin-right: 85px;
+  }
+  section.our-icons div.icons-container div:last-of-type {
+    margin-right: 0;
+  }
+}
+
+section.our-icons div.icons-container img {
+  width: 44px;
+  height: 34px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container img {
+    width: 80px;
+    height: 61px;
+    margin-bottom: 29px;
+  }
+}
+
+
+section.our-icons div.icons-container h2 {
+  font-size: 14px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.our-icons div.icons-container h2 {
+    font-size: 25.2px;
+    letter-spacing: 1.94px;
+  }
+}
+
+// *** Chef of the week - Section ***
+
+section.chef {
+  text-align: center;
+  margin-bottom: 98px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef {
+    text-align: initial;
+    margin-bottom: 117px;
+  }
+}
+
+section.chef h1 {
+  margin-bottom: 16px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef h1 {
+    margin-bottom: 42px;
+  }
+}
+
+section.chef div.chef-profile {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-profile {
+    position: relative;
+    margin-bottom: 59px;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+section.chef div.chef-profile img {
+  width: 334px;
+  height: 239.4px;
+  object-fit: cover;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-profile img {
+    width: 433px;
+    height: 338px;
+  }
+}
+
+section.chef div.chef-profile h2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-profile h2 {
+    padding: 15px 0;
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.43px;
+  }
+}
+
+section.chef p {
+  margin: 0 20px 30px 20px;
+  font-size: 13.5px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.04px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef div.chef-info {
+    display: flex;
+  }
+  section.chef p {
+    margin-left: 69px;
+    font-size: 25px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 1.08px;
+    text-align: justify;
+  }
+}
+
+section.chef h2.chef-restaurants {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: $secondaryFont;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.88px;
+  margin: 0 20px 19px 20px;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef h2.chef-restaurants {
+    font-size: 30px;
+    line-height: 1;
+    font-family: $mainFont;
+    letter-spacing: 1.29px;
+  }
+}
+
+
+section.chef ul li {
+  margin-right: 14px;
+  height: 237px;
+  width: 153px;
+  background-color: #f9f4ea;
+  transition: background-color .3s ease;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef ul.chef-restaurants-ul {
+    justify-content: flex-start;
+  }
+  section.chef ul li {
+    margin-right: 20px;
+    height: 224px;
+    width: 231px;
+  }
+  section.chef ul li:hover {
+    background-color: #f7e0b2;
+  }
+
+}
+
+section.chef img {
+  width: 100%;
+  object-fit: cover;
+  height: 149px;
+}
+
+section.chef ul li h3 {
+  font-family: $secondaryFont;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.33px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section.chef ul li h3 {
+    font-family: $secondaryFont;
+    font-size: 30px;
+    letter-spacing: 2px;
+
+  }
+}
+
+
+// *** About us - Section ***
+section#about-us {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us {
+    text-align: left;
+  }
+}
+
+@media (min-width: $tabletWidth) {
+  div.about-us-div {
+    max-width: 1100px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+section#about-us h1 {
+  margin-bottom: 7px;
+  padding-top: 28px;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us h1 {
+    font-size: 30px;
+    font-family: $mainFont;
+    line-height: 1.33;
+    letter-spacing: 1.25px;
+    margin-bottom: 20px;
+    padding-top: 65px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+
+
+section#about-us p {
+  font-size: 14px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  text-align: center;
+  margin: 0 35px;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us p {
+    font-size: 22px;
+    width: 567px;
+    letter-spacing: 1.69px;
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+section#about-us img {
+  width: 135px;
+  height: 126px;
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+
+@media (min-width: $tabletWidth) {
+  section#about-us img {
+    width: 178px;
+    height: 166px;
+    margin: 0 0 0 182px;
+  }
+}
+
+// *** Download Buttons ***
+section#about-us div.download-buttons {
+  margin: 34px auto 0 auto;
+  padding-bottom: 63px;
+}
+
+section#about-us div.download-buttons button {
+  width: 127px;
+  height: 37px;
+  font-size: 9.2px;
+  font-family: $mainFont;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-align: center;
+  background: white;
+  border-radius: 9.6px;
+  border: solid 0.6px #000000;
+  padding-left: 26px;
+  position: relative;
+  margin-right: 10px;
+}
+
+section#about-us div.download-buttons button span {
+  font-size: 12px;
+  display: block;
+  font-family: $secondaryFont;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.29px;
+}
+
+section#about-us div.download-buttons button img {
+  width: 18px;
+  height: 20px;
+  position: absolute;
+  left: 7px;
+  bottom: 8px;
+  margin: 0;
+}
+
+@media (min-width: $tabletWidth) {
+  section#about-us div.download-buttons {
+    max-width: 1100px;
+    margin: 23px auto 0 auto;
+  }
+
+  section#about-us div.download-buttons button {
+    width: 181px;
+    height: 52px;
+    font-size: 13.2px;
+    letter-spacing: 1.29px;
+    padding-left: 40px;
+    margin-right: 15px;
+  }
+
+  section#about-us div.download-buttons button span {
+    font-size: 16px;
+  }
+
+  section#about-us div.download-buttons button img {
+    width: 20px;
+    height: 26px;
+    left: 11px;
+    bottom: 13px;
+  }
+}
+
+// *** Restaurants ***
 main.restaurants h1.title {
   display: block;
   margin-bottom: 0;
@@ -341,8 +1298,7 @@ main.restaurants h1.title {
   letter-spacing: 1.54px;
 }
 
-@media (min-width: $tabletWidth) {
-
+@media (min-width: 1080px) {
   main.restaurants h1.title {
     display: none;
   }
@@ -354,6 +1310,11 @@ main.restaurants ul.category-filter {
   margin-top: 22px;
 }
 
+main.restaurants ul.menu {
+  display: flex;
+  margin-left: 27px;
+}
+
 @media (min-width: $tabletWidth) {
   main.restaurants ul.category-filter {
     margin-top: 43px;
@@ -361,7 +1322,8 @@ main.restaurants ul.category-filter {
 }
 
 
-main.restaurants ul.category-filter li {
+main.restaurants ul.category-filter li,
+main.restaurants ul.menu li {
   font-size: 16px;
   margin-right: 27px;
   font-weight: 100;
@@ -372,7 +1334,8 @@ main.restaurants ul.category-filter li {
 }
 
 @media (min-width: $tabletWidth) {
-  main.restaurants ul.category-filter li {
+  main.restaurants ul.category-filter li
+  main.restaurants ul.menu li {
     margin-right: 36px;
     font-size: 18px;
     letter-spacing: 1.92px;
@@ -381,6 +1344,14 @@ main.restaurants ul.category-filter li {
 
 main.restaurants ul.category-filter li:last-of-type {
   margin: 0;
+}
+
+main.restaurants ul.category-filter li a.all-restaurants-page {
+  font-family: $secondaryFont;
+}
+
+main.restaurants ul.category-filter li.current-menu-item a {
+  font-family: $secondaryFont;
 }
 
 main.restaurants ul.restaurant-list {
@@ -392,7 +1363,7 @@ main.restaurants ul.restaurant-list {
   padding: 0;
 }
 
-@media (min-width: $tabletWidth) {
+@media (min-width: 1103px) {
   main.restaurants ul.restaurant-list {
     grid-template-columns: repeat(3, 342px);
     gap: 38px;
@@ -401,25 +1372,30 @@ main.restaurants ul.restaurant-list {
   }
 }
 
-main.restaurants ul.restaurant-list li {
+ul.restaurant-list li {
   text-align: center;
   background-color: $cardBackground;
+  transition: background-color .3s ease;
 }
 
-main.restaurants ul.restaurant-list li img {
+ul.restaurant-list li:hover {
+  background-color: #f7e0b2
+}
+
+ul.restaurant-list li img {
   width: 162px;
   height: 124px;
   object-fit: cover;
 }
 
-@media (min-width: $tabletWidth) {
-  main.restaurants ul.restaurant-list li img {
+@media (min-width: 1103px) {
+  ul.restaurant-list li img {
     width: 100%;
     height: 212px;
   }
 }
 
-main.restaurants ul.restaurant-list li h2 {
+ul.restaurant-list li h2 {
   margin-top: 11px;
   margin-bottom: 0;
   font-size: 17.2px;
@@ -431,8 +1407,8 @@ main.restaurants ul.restaurant-list li h2 {
   letter-spacing: 1.15px;
 }
 
-@media (min-width: $tabletWidth) {
-  main.restaurants ul.restaurant-list li h2 {
+@media (min-width: 1103px) {
+  ul.restaurant-list li h2 {
     margin-top: 26px;
     margin-bottom: 0;
     font-size: 38px;
@@ -440,7 +1416,7 @@ main.restaurants ul.restaurant-list li h2 {
   }
 }
 
-main.restaurants ul.restaurant-list li h3 {
+ul.restaurant-list li h3 {
   margin-bottom: 13px;
   margin-top: 6px;
   font-size: 13.3px;
@@ -451,8 +1427,8 @@ main.restaurants ul.restaurant-list li h3 {
   letter-spacing: 0.89px;
 }
 
-@media (min-width: $tabletWidth) {
-  main.restaurants ul.restaurant-list li h3 {
+@media (min-width: 1103px) {
+  ul.restaurant-list li h3 {
     margin-bottom: 24px;
     margin-top: 4px;
     font-size: 23.8px;
@@ -616,17 +1592,16 @@ nav.meal-nav li a {
   }
 }
 
-nav.meal-nav.fixed-nav {
+nav.meal-nav.sticky-nav {
   position: sticky;
   display: flex;
   justify-content: space-evenly;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100.3%;
   background-color: #ffffff;
-  z-index: 100;
+  z-index: 2;
 }
-
 ul.meals {
   display: grid;
   grid-template-columns: repeat(2, 157px);
@@ -652,7 +1627,12 @@ ul.meals {
 ul.meals li.meal {
   background-color: $cardBackground;
   position: relative;
-  height: 274px;
+  height: 310px; //This is in case of long ingredients
+  transition: background-color .3s ease;
+}
+
+ul.meals li.meal:hover {
+  background-color: #f7e0b2
 }
 
 @media (min-width: $tabletWidth) {
@@ -664,12 +1644,19 @@ ul.meals li.meal {
 ul.meals li.meal a img {
   height: 100px;
   width: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: $tabletWidth) {
   ul.meals li.meal a img {
     height: 191px;
   }
+}
+
+img.meal-placeholder{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 ul.meals li.meal h2 {
@@ -700,6 +1687,8 @@ ul.meals li.meal p:not(.price) {
   font-style: normal;
   line-height: 1.31;
   letter-spacing: 0.87px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: $tabletWidth) {
@@ -714,7 +1703,27 @@ ul.meals li.meal p:not(.price) {
   }
 }
 
-ul.meals li.meal div.price-line {
+
+li.meal div.extra-info {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 5px auto;
+  align-items: center;
+  width: 80%;
+}
+
+ul.meals li.meal div.extra-info img.info-icon {
+  width: 20px;
+  height: 16px;
+}
+
+@media (min-width: $tabletWidth) {
+  ul.meals li.meal div.extra-info img.info-icon {
+    height: 0;
+  }
+}
+
+div.price-line {
   position: absolute;
   bottom: 17px;
   width: 80%;
@@ -724,7 +1733,7 @@ ul.meals li.meal div.price-line {
   border-bottom: 1px solid #979797;
 }
 
-ul.meals li.meal div.price-line p.price {
+div.price-line p.price {
   position: relative;
   font-size: 14px;
   font-weight: normal;
@@ -737,27 +1746,32 @@ ul.meals li.meal div.price-line p.price {
   padding: 0 15px;
   display: inline;
   background-color: $cardBackground;
+  transition: background-color .3s ease;
 }
 
-ul.meals li.meal div.price-line p.price:before {
+li:hover div.price-line p.price {
+  background-color: #f7e0b2
+}
+
+p.price:before {
   content: "₪";
   font-size: 10px;
 }
 
 @media (min-width: $tabletWidth) {
-  ul.meals li.meal div.price-line {
+  div.price-line {
     bottom: 26px;
   }
 
 
-  ul.meals li.meal div.price-line p.price {
+  div.price-line p.price {
     font-size: 21px;
     letter-spacing: 0.9px;
     top: 13px;
     padding: 0 10px;
   }
 
-  ul.meals li.meal div.price-line p.price:before {
+  div.price-line p.price:before {
     font-size: 14px;
   }
 }
@@ -802,29 +1816,748 @@ div.title-line h2 {
   }
 }
 
-div.ui-dialog.ui-widget {
-  width: 100%;
+// *** Meal Dialog overlay ***
+div.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  overflow-y: auto;
 }
 
-@media (min-width: $tabletWidth) {
-  div.ui-widget-overlay {
-    background-color: black;
-    opacity: 0.8;
+@media(min-width: $tabletWidth) {
+  div.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 
-//Footer
-footer {
+div.dialog-wrapper {
+  position: relative;
+  margin: 70px auto;
+}
+
+@media(min-width: $tabletWidth) {
+  div.dialog-wrapper {
+    width: 608px;
+    height: 1081px;
+  }
+}
+
+a.exit-button {
+  position: absolute;
+  top: -34px;
+  left: 18px;
+
+  img {
+    filter: invert(1);
+  }
+}
+
+@media(min-width: $tabletWidth) {
+  a.exit-button {
+    top: -30px;
+    left: 0;
+
+    img {
+      filter: unset;
+    }
+  }
+}
+
+// *** Meal Dialog ***
+
+div.dialog {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 4;
+  text-align: center;
+
+  img.wp-post-image {
+    width: 100.3%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 24.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.63px;
+    margin-top: 26px;
+    margin-bottom: 5px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    h2 {
+      margin-bottom: 14px;
+      font-size: 35px;
+      letter-spacing: 2.33px;
+      position: relative;
+      display: inline-block;
+    }
+  }
+
+  h2 div.extra-info {
+    position: absolute;
+    bottom: 6px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    h2 div.extra-info {
+      left: -18%;
+      bottom: 5px;
+    }
+  }
+
+  div.extra-info img {
+    width: 32px;
+    height: 24px;
+    margin-top: 14px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    div.extra-info img {
+      width: 28px;
+      height: 20px;
+      margin: 0;
+    }
+  }
+
+  p {
+    width: 212px;
+    font-size: 16.8px;
+    margin: 0 auto;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.12px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    p {
+      width: 233px;
+      font-size: 14px;
+      letter-spacing: 0.93px;
+    }
+  }
+
+  div.price-line {
+    position: unset;
+    width: 212px;
+    margin-top: 14px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    div.price-line {
+      width: 233px;
+      margin-top: 4px;
+    }
+  }
+
+
+  div.price-line p.price {
+    background-color: #ffffff;
+  }
+
+  form {
+    margin: 0 auto;
+  }
+
+  @media(min-width: $tabletWidth) {
+    form {
+      width: 206px;
+    }
+  }
+
+  form h3 {
+    font-size: 17px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.21px;
+    padding-bottom: 4px;
+    border-bottom: 1.8px solid rgba(222, 146, 0, 0.9);
+    display: inline-block;
+    margin-bottom: 28px;
+    margin-top: 61px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    form h3 {
+      font-size: 20.4px;
+      letter-spacing: 1.46px;
+      padding-bottom: 5px;
+      margin-bottom: 24px;
+      margin-top: 45px;
+    }
+  }
+
+  form div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    :not(.quantity) {
+      margin-left: 20px;
+    }
+  }
+
+  @media(min-width: $tabletWidth) {
+    form div {
+      margin: 0;
+      align-items: unset;
+    }
+  }
+
+  form div:nth-of-type(1),
+  form div:nth-of-type(3), {
+    margin-bottom: 28px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    form div:nth-of-type(1),
+    form div:nth-of-type(3), {
+      margin-bottom: 24px;
+    }
+  }
+
+  form div label {
+    font-size: 15px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-left: 18px;
+    margin-bottom: 0;
+  }
+
+  @media(min-width: $tabletWidth) {
+    form div label {
+      font-size: 18px;
+      margin-left: 25px;
+    }
+
+  }
+
+  form input {
+    margin-top: 0;
+  }
+
+  form div.side input[type="checkbox"] {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .3s ease;
+  }
+
+  form div.side input[type="checkbox"]:focus {
+    outline: none;
+  }
+
+  form div.side input[type="checkbox"]:checked {
+    border-radius: 50%;
+    background-color: #000000;
+
+  }
+
+  form div.side input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-sizing: border-box;
+  }
+
+  form div.change input[type="checkbox"] {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 28px;
+    width: 28px;
+    position: relative;
+    cursor:pointer;
+  }
+
+  form div.change input[type="checkbox"]:focus {
+    outline: none;
+  }
+
+  form div.change input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 15px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+    transition: .3s ease;
+
+  }
+
+  form div.quantity {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  form div.quantity input[type="number"] {
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    font-size: 18px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  form div.quantity button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  div.quantity button:focus {
+    outline: none;
+  }
+
+  form div.quantity button.plus {
+    position: absolute;
+    right: 40px;
+  }
+
+  form div.quantity button.minus {
+    position: absolute;
+    opacity: 0.2;
+    left: 0;
+
+    img {
+      background-color: black;
+      height: 2px;
+    }
+  }
+
+  form button.submit {
+    margin-top: 107px;
+    padding: 15px 30px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 18.9px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.08px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media(min-width: $tabletWidth) {
+    form button.submit {
+      margin-top: 50px;
+    }
+  }
+}
+
+// *** Sweet alert ***
+div.swal2-popup {
+  font-size: 20px;
+}
+
+// *** Item Bag Page ***
+
+main.bag,
+div.past-orders{
+  font-family: $mainFont;
+
+  div.bag-placeholder{
+    padding:30px 0;
+    text-align: center;
+    img{
+      opacity: 0.7;
+    }
+    p{
+      padding-top:20px;
+    }
+  }
+
+  h1 {
+    margin: 50px 0;
+  }
+
+  @media(min-width: $tabletWidth) {
+    ul li {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  li {
+    margin: 20px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 3px;
+  }
+
+  @media (min-width: $tabletWidth) {
+    img {
+      height: 220px;
+      width: 346px;
+    }
+  }
+
+  div.meal-content {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.meal-content {
+      display: flex;
+      flex-direction: column;
+      width: 65%;
+    }
+  }
+
+  h2 {
+    font-family: $secondaryFont;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1.8px;
+  }
+
+  @media (min-width: $tabletWidth) {
+    h2 {
+      font-size: 32.5px;
+    }
+  }
+
+
+  p.ingredients {
+    width: 80%;
+  }
+
+  @media (min-width: $tabletWidth) {
+    p.ingredients {
+      width: 50%;
+      font-size: 18.5px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  div.extra-info-bag {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  div.extra-info-bag h3 {
+    font-family: $secondaryFont;
+    font-size: 14.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.extra-info-bag h3 {
+      font-family: $secondaryFont;
+      font-size: 16.5px;
+    }
+  }
+
+  div.extra-info-bag div:first-of-type {
+    margin: 0 15px 0 0;
+  }
+
+  div.extra-info-bag div:last-of-type {
+    margin-top: 0;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.extra-info-bag div:first-of-type {
+      margin: 10px 30px 0 0;
+    }
+
+    div.extra-info-bag div:last-of-type {
+      margin-top: 10px;
+    }
+  }
+
+  div.meal-content p.price {
+    margin: 0 0 0 auto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1.5px;
+    align-self: center;
+  }
+
+  @media (min-width: $tabletWidth) {
+    div.meal-content p.price {
+      position: absolute;
+      right: 10%;
+      bottom: 50%;
+      font-size: 22.5px;
+    }
+  }
+
+  p.price:before {
+    font-size: 14.5px;
+  }
+
+}
+
+div.total {
+  display: flex;
+  margin: 20px;
+  justify-content: flex-end;
+  width: 88%;
+  align-items: center;
+}
+
+div.total p {
+  margin: 0 0 0 20px;
+  font-size: 22.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 1.5px;
+}
+
+a.checkout div{
+  padding: 15px 30px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18.9px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+}
+@media(min-width: $tabletWidth){
+  a.checkout div{
+    width: 10%;
+    margin-left: auto;
+    margin-right: 10%;
+  }
+}
+
+// *** Restaurant page without meals ***
+div.no-meals {
+  margin: 50px 0;
+}
+
+div.no-meals h3 {
+  margin-bottom: 15px;
+}
+
+div.no-meals a {
+  font-size: 17px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.21px;
+}
+
+// *** Search Results Page ***
+main.search {
+  text-align: center;
+  margin-top: 100px;
+
+  h2.search-title {
+    margin-bottom: 50px;
+    font-size: 28.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.63px;
+    font-family: $secondaryFont;
+  }
+
+  .search-results {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 157px);
+    gap: 14px
+  }
+
+  @media (min-width: 1103px) {
+    .search-results {
+      grid-template-columns: repeat(4, 236px);
+      gap: 53px;
+    }
+  }
+
+
+  div.result-card {
+    background-color: #f9f4ea;
+    height: 325px;
+    transition: background-color .3s ease;
+  }
+
+  div.result-card:hover {
+    background-color: #f7e0b2;
+  }
+
+  img {
+    width: 100%;
+    height: 191px;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  div.pagination {
+    margin: 20px auto;
+    width: 50%;
+    font-size: 18.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.13px;
+    font-family: $mainFont;
+
+    .current {
+      font-weight: 700;
+    }
+  }
+}
+
+
+// *** User Page ***
+body.author main{
+  div.past-orders{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  div.title{
+    text-align: center;
+    margin: 100px auto;
+    padding-bottom:50px;
+    border-bottom: $borderColor;
+    width: 30%;
+  }
+  h1{
+    font-size: 36px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.26px;
+  }
+  h2{
+    font-size: 24px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.26px;
+  }
+
+  div.order{
+    margin: 20px auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  @media (min-width: $tabletWidth){
+    div.order{
+      text-align: unset;
+    }
+  }
+
+  div.order div{
+    text-align: left;
+  }
+
+  img{
+    width: 100%;
+  }
+  @media (min-width: $tabletWidth){
+    img{
+      width: 300px;
+    }
+  }
+  li.meal{
+    margin-left: 0;
+    margin-bottom: 0;
+    justify-content: flex-start;
+  }
+
+
+}
+
+
+// *** Footer ***
+footer ul {
   display: block;
-  margin-top: 21px;
   width: 100%;
   text-align: center;
-  border-top: 1px solid rgba(151, 151, 151, 0.2);
+  border-top: $borderColor;
 }
 
 @media (min-width: $tabletWidth) {
-  footer {
-    margin-top: 24px;
+  footer ul {
     display: flex;
     justify-content: center;
   }

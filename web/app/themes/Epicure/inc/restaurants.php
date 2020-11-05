@@ -1,5 +1,5 @@
 <?php
-function get_restaurants($category = "", $num = -1)
+function get_restaurants($category = "", $num = -1, $imageSize = 'restaurants-image')
 {
     $args = array(
         "post_type" => "restaurants",
@@ -19,7 +19,7 @@ function get_restaurants($category = "", $num = -1)
 
             <li>
                 <a href="<?php esc_html(the_permalink()) ?>">
-                    <?php the_post_thumbnail('restaurants-image'); ?>
+                    <?php the_post_thumbnail($imageSize); ?>
                     <h2><?php the_title() ?></h2>
                     <h3><?php echo $owner->post_title ?></h3>
                 </a>

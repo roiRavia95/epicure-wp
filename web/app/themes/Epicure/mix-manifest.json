@@ -1,5 +1,13 @@
 {
-  "/mix.js": "/mix.js",
-  "/app.js": "/app.js",
-  "/style.css": "/style.css"
+    "/dist/js/bag.21c5f1.js": "/dist/js/bag.21c5f1.js",
+    "/dist/css/style.28a052.css": "/dist/css/style.28a052.css",
+    "/dist/css/custom-register.28a052.css": "/dist/css/custom-register.28a052.css",
+    "/dist/css/custom-login.28a052.css": "/dist/css/custom-login.28a052.css",
+    "/dist/js/checkout.157d50.js": "/dist/js/checkout.157d50.js",
+    "/dist/js/dialog.bcab24.js": "/dist/js/dialog.bcab24.js",
+    "/dist/js/meal-submit.90b013.js": "/dist/js/meal-submit.90b013.js",
+    "/dist/js/mobile-menu.41d383.js": "/dist/js/mobile-menu.41d383.js",
+    "/dist/js/restaurant-meal-menu.d6a83e.js": "/dist/js/restaurant-meal-menu.d6a83e.js",
+    "/dist/js/restaurant-scripts.39d963.js": "/dist/js/restaurant-scripts.39d963.js",
+    "/dist/js/session-storage.e60d84.js": "/dist/js/session-storage.e60d84.js"
 }
