@@ -72,7 +72,9 @@ if (!bagLength) {
 
     $("main.bag div.total").append(totalHTML);
 
+    $("div.bag-placeholder").hide();
 if (!bagLength) {
     $("a.checkout").hide();
+    $("div.bag-placeholder").show();
 }
 })

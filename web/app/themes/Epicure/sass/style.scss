@@ -2196,6 +2196,17 @@ main.bag,
 div.past-orders{
   font-family: $mainFont;
 
+  div.bag-placeholder{
+    padding:30px 0;
+    text-align: center;
+    img{
+      opacity: 0.7;
+    }
+    p{
+      padding-top:20px;
+    }
+  }
+
   h1 {
     margin: 50px 0;
   }

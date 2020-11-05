@@ -11,6 +11,11 @@ get_header(); ?>
         <ul class="my-meals">
             <!--Inject content with JS-->
         </ul>
+        <div class="bag-placeholder">
+        <img  src="<?php echo get_template_directory_uri() . '/dist/images/bag/bag-placeholder.png' ?>" alt="placeholder">
+        <?php
+        the_content(); ?>
+        </div>
         <hr>
         <div class="total">
             <h1>Total: </h1>

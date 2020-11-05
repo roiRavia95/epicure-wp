@@ -34,9 +34,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a98922a-7139-4c07-8134-389117889ddd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/app/themes/Epicure/images/bag/bag-placeholder.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Envoy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Envoy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/mobile-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/mobile-menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/js/bag.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/js/bag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/page-bag.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/page-bag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/Epicure/sass/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/app/themes/Epicure/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -120,12 +122,6 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/images/hero" />
-      <recent name="$PROJECT_DIR$/web/app/themes/Epicure" />
-      <recent name="$PROJECT_DIR$/vendor" />
-      <recent name="$PROJECT_DIR$/vendor/symfony" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/app/themes/Epicure/templates" />
       <recent name="$PROJECT_DIR$/web/app/themes/Epicure/dist/js" />
@@ -133,8 +129,15 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/web/app/themes/Epicure/inc" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/images/bag" />
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure/images/hero" />
+      <recent name="$PROJECT_DIR$/web/app/themes/Epicure" />
+      <recent name="$PROJECT_DIR$/vendor" />
+      <recent name="$PROJECT_DIR$/vendor/symfony" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="xdebugtest.app">
       <method v="2" />
     </configuration>
@@ -206,7 +209,10 @@
       <workItem from="1603004489579" duration="2197000" />
       <workItem from="1603008528925" duration="106615000" />
       <workItem from="1603870172515" duration="22040000" />
-      <workItem from="1604215394088" duration="31408000" />
+      <workItem from="1604215394088" duration="35937000" />
+      <workItem from="1604421406191" duration="16000" />
+      <workItem from="1604485669795" duration="6671000" />
+      <workItem from="1604561579295" duration="656000" />
     </task>
     <servers />
   </component>
@@ -265,39 +271,43 @@
       <screen x="1440" y="-128" width="1920" height="1080" />
     </state>
     <state x="2135" y="117" key="FileChooserDialogImpl/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1603621901332" />
-    <state width="1920" height="300" key="GridCell.Tab.0.bottom" timestamp="1604320973451">
-      <screen x="1440" y="-128" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom" timestamp="1604421045490">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022652" />
     <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020419" />
     <state width="1920" height="309" key="GridCell.Tab.0.bottom/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846671" />
+    <state width="1920" height="309" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045490" />
     <state width="1920" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973451" />
     <state width="1920" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603820047503" />
     <state width="1920" height="300" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842219" />
-    <state width="1920" height="300" key="GridCell.Tab.0.center" timestamp="1604320973450">
-      <screen x="1440" y="-128" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center" timestamp="1604421045488">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022644" />
     <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020417" />
     <state width="1920" height="309" key="GridCell.Tab.0.center/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846668" />
+    <state width="1920" height="309" key="GridCell.Tab.0.center/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045488" />
     <state width="1920" height="300" key="GridCell.Tab.0.center/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973450" />
     <state width="1920" height="300" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603820047501" />
     <state width="1920" height="300" key="GridCell.Tab.0.center/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842217" />
-    <state width="1920" height="300" key="GridCell.Tab.0.left" timestamp="1604320973449">
-      <screen x="1440" y="-128" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left" timestamp="1604421045487">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022642" />
     <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020411" />
     <state width="1920" height="309" key="GridCell.Tab.0.left/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846665" />
+    <state width="1920" height="309" key="GridCell.Tab.0.left/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045487" />
     <state width="1920" height="300" key="GridCell.Tab.0.left/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973449" />
     <state width="1920" height="300" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603820047500" />
     <state width="1920" height="300" key="GridCell.Tab.0.left/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842217" />
-    <state width="1920" height="300" key="GridCell.Tab.0.right" timestamp="1604320973450">
-      <screen x="1440" y="-128" width="1920" height="1080" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right" timestamp="1604421045489">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.0.1440.900@-1920.-131.1920.1080" timestamp="1602772022645" />
     <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.23.1440.797@-1920.-131.1920.1080" timestamp="1602772020418" />
     <state width="1920" height="309" key="GridCell.Tab.0.right/-1920.-131.1920.1080/0.23.1440.877@-1920.-131.1920.1080" timestamp="1602779846669" />
+    <state width="1920" height="309" key="GridCell.Tab.0.right/0.0.1440.900/1440.-128.1920.1080@0.0.1440.900" timestamp="1604421045489" />
     <state width="1920" height="300" key="GridCell.Tab.0.right/0.0.1440.900/1440.-128.1920.1080@1440.-128.1920.1080" timestamp="1604320973450" />
     <state width="1920" height="300" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603820047501" />
     <state width="1920" height="300" key="GridCell.Tab.0.right/0.23.1440.877/1440.-105.1920.1057@1440.-105.1920.1057" timestamp="1604319842218" />
